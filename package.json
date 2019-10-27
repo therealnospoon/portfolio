@@ -14,7 +14,8 @@
     "svelte-preprocess": "^3.2.0-alpha.2"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "splitting": "^1.0.6"
   },
   "scripts": {
     "build": "rollup -c",
