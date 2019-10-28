@@ -79,8 +79,8 @@
 			border: none;
 			margin-top: 2rem;
 			border-radius: 4px;
-			background-color: rgb(255, 194, 204);
-			color: $primary;
+			background-color: $primary;
+			color: rgb(255, 194, 204);
 		}
 	}
 		
@@ -90,7 +90,7 @@
 		<div class="main-statement d-flex flex-column justify-content-center align-items-center">
 			<div class="row">
 				<div class="col-12">
-					<h1 class="statement" data-splitting>Let me open the door for you { name }</h1>
+					<h1 class="statement" data-splitting>I will open doors for you</h1>
 				</div>
 			</div>
 			<div class="row">
