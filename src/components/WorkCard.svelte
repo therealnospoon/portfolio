@@ -69,13 +69,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <h1 class="title mt-1">{title}</h1>
+      <div class="col-12 mt-2">
+        <h3 class="title">{title}</h3>
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <p class="description mt-1">{description}</p>
+      <div class="col mt-2">
+        <p class="description">{description}</p>
       </div>
     </div>
   </div>

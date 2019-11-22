@@ -25,9 +25,11 @@
 </script>
 
 <style type="text/scss">
+
   .section-wrapper {
     height: 100vh;
     background: #fff;
+    overflow: hidden;
   }
 
   .header-bg {
