@@ -3,6 +3,8 @@
   import Work from "./sections/work/Work.svelte";
   import Skills from "./sections/skills/Skills.svelte"
 
+  let bgImage = "./images/portfolio_bg.jpg";
+
   import { onMount } from "svelte";
 
   onMount(async () => {});
@@ -24,5 +26,4 @@
   <Header />
   <Skills />
   <Work />
-
 </div>

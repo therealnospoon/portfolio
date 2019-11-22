@@ -29,7 +29,7 @@
 
 <style>
   .section-wrapper {
-    background-color: rgb(44, 44, 44);
+    background-color: #142F3A;
   }
 
   .section-title {
@@ -40,7 +40,7 @@
 <section>
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
-      <h2 class="section-title text-center my-5">My Work</h2>
+      <h4 class="section-title text-center my-5">My Work</h4>
       <div class="row">
         {#each projects as card}
           <div class="col-12 col-md-6">

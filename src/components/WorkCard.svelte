@@ -73,7 +73,7 @@
     </div>
     <div class="row">
       <div class="col-12 mt-2">
-        <h3 class="title">{title}</h3>
+        <h5 class="title">{title}</h5>
       </div>
     </div>
     <div class="row">
