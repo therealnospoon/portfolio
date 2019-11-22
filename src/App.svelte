@@ -1,6 +1,7 @@
 <script>
   import Header from "./sections/header/Header.svelte";
-  import Work from "./sections/work/work.svelte";
+  import Work from "./sections/work/Work.svelte";
+  import Skills from "./sections/skills/Skills.svelte"
 
   import { onMount } from "svelte";
 
@@ -21,6 +22,7 @@
 
 <div>
   <Header />
+  <Skills />
   <Work />
 
 </div>

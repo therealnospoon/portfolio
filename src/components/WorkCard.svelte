@@ -19,9 +19,6 @@
     background-color: transparent;
     position: relative;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    .image-container {
-        overflow: hidden;
-    }
     img {
       width: 100%;
     }
@@ -40,11 +37,17 @@
         top: 99.9%;
         left: 0;
         transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        @media only screen and (max-width: 576px) {
+          width: 100%;
+        }
       }
     }
     .description {
       color: transparent;
       transition: color 500ms ease-in;
+      @media only screen and (max-width: 576px) {
+        color: #fff;
+      }
     }
     &:hover {
       transform: translateY(-10px);
