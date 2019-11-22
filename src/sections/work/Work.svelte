@@ -5,24 +5,26 @@
     {
       title: "Edmonds Segway Tours",
       description: "A retail website for Edmonds Segway",
-      imageUrl: `https://source.unsplash.com/random`
+      imageUrl: './images/EdmondsSegwayPic.jpg',
+      siteUrl: 'https://www.edmondssegwaytours.com'
     },
     {
       title: "Savannah Seattle",
       description: "Online store for exotic cats",
-      imageUrl: `https://source.unsplash.com/random`
+      imageUrl: './images/SavannahSeattlePic.jpg',
+      siteUrl: 'https://www.savannahseattle.com'
     },
     {
       title: "Red Twig Cafe",
       description: "Website for a local coffee store",
-      imageUrl: `https://source.unsplash.com/random`
+      imageUrl: './images/RedTwigPic.jpg',
+      siteUrl: 'https://www.redtwig.com'
     }
   ];
 </script>
 
 <style>
   .section-wrapper {
-    height: 100vh;
     background-color: rgb(44, 44, 44);
   }
 
@@ -34,7 +36,7 @@
 <section>
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
-      <h1 class="section-title">Recent Work</h1>
+      <h1 class="section-title text-center my-5">Recent Work</h1>
       <div class="row">
         {#each projects as card}
           <div class="col-12 col-md-6">
