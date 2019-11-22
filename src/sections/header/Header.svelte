@@ -86,8 +86,8 @@
               <div class="lines" />
             </div>
           </div>
-          <h2 class="mt-5">Tim Kim</h2>
-          <h4 class="mt-2">WEB DEVELOPER | DESIGNER</h4>
+          <h1 class="mt-5">Tim Kim</h1>
+          <h4 class="mt-2">DEVELOPER | DESIGNER</h4>
           <p class="profile-blurb text-center mt-2">
             Hi there! I'm a developer with a background in design. <br> Take a look at my work below and let's chat!
           </p>

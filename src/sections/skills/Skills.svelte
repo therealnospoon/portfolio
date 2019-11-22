@@ -12,8 +12,12 @@
 <section>
   <div class="section-wrapper">
     <div class="skills-container container">
-
-      <h1>Skills to pay the bills</h1>
+        <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-5">
+        
+            <h2>My Toolkit</h2>
+        </div>
+        </div>
     </div>
 
   </div>

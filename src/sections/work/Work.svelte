@@ -40,7 +40,7 @@
 <section>
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
-      <h1 class="section-title text-center my-5">Recent Work</h1>
+      <h2 class="section-title text-center my-5">My Work</h2>
       <div class="row">
         {#each projects as card}
           <div class="col-12 col-md-6">
