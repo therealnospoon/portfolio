@@ -21,6 +21,10 @@
       siteUrl: 'https://www.redtwig.com'
     }
   ];
+
+  function handleSiteClick(event) {
+    window.open(event.detail.url);
+  }
 </script>
 
 <style>
@@ -40,7 +44,7 @@
       <div class="row">
         {#each projects as card}
           <div class="col-12 col-md-6">
-            <WorkCard {...card} />
+            <WorkCard {...card} on:siteclick={handleSiteClick}/>
           </div>
         {/each}
       </div>
