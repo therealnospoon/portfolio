@@ -16,8 +16,7 @@
 
 <style type="text/scss">
   .card-container {
-    background-color: transparent;
-    position: relative;
+    width: 400px;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     img {
       width: 100%;
