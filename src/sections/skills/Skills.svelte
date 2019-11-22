@@ -9,10 +9,10 @@
     }
     .skills-box {
         height: 500px;
-        max-width: 800px;
-        background-color: rgba(255, 255, 255, 0.9);
-        color: rgb(80, 80, 80);
-        border-radius: 4px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .skill-row {
             height: 80%;
@@ -21,6 +21,7 @@
         .skill-column {
             justify-content: space-evenly;
             text-align: center;
+            max-width: 320px;
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -35,12 +36,7 @@
     <div class="skills-container container">
       
         <div class="row justify-content-center align-items-center">
-            <div class="skills-box col-12 d-flex align-items-center">
-                <!-- <div class="row">
-                    <div class="col-12 d-flex justify-content-center my-2">
-                            <h2>My Toolkit</h2>
-                    </div>
-                </div> -->
+            <div class="skills-box col-12">
                 <div class="row skill-row">
                     <div class="skill-column col-12 col-md-6 d-flex flex-column align-items-center">
                         <i class="fas fa-code fa-2x mb-4"></i>
