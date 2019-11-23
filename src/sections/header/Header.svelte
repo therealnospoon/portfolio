@@ -1,8 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  	import { quartOut } from 'svelte/easing';
-
+  import { quartOut } from "svelte/easing";
 
   let bgImage = "./images/portfolio_bg.jpg";
   let profilePic = "./images/profile_pic.jpg";
@@ -25,7 +24,6 @@
 </script>
 
 <style type="text/scss">
-
   .section-wrapper {
     height: 100vh;
     background: #fff;
@@ -66,32 +64,30 @@
     .contact-link {
       display: inline-block;
       border: none;
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
       margin: 2rem 0 0 0;
       text-decoration: none;
       background: #0069ed;
       color: #ffffff;
-      font-family: sans-serif;
       font-size: 1rem;
       cursor: pointer;
       text-align: center;
-      transition: background 250ms ease-in-out, 
-                  transform 150ms ease;
+      transition: background 250ms ease-in-out, transform 150ms ease;
 
-        &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: #0053ba;
-        }
-
-        // &:focus {
-        //     outline: 1px solid #fff;
-        //     outline-offset: -4px;
-        // }
-
-        &:active {
-            transform: scale(0.99);
-        }
       }
 
+      // &:focus {
+      //     outline: 1px solid #fff;
+      //     outline-offset: -4px;
+      // }
+
+      &:active {
+        transform: scale(0.99);
+      }
+    }
   }
 </style>
 
@@ -118,9 +114,13 @@
           <h1 class="mt-5">Tim Kim</h1>
           <h4 class="mt-2">DEVELOPER | DESIGNER</h4>
           <p class="profile-blurb text-center mt-2">
-            Hi there! I'm a developer with a background in design. <br> Take a look at my work below and let's chat!
+            Hi there! I'm a developer with a background in design.
+            <br />
+            Take a look at my work below and let's chat!
           </p>
-          <a href="" class="contact-link"><p class="m-0">Get in touch</p></a>
+          <a href="" class="contact-link">
+            <p class="m-0">Get in touch</p>
+          </a>
         </div>
       {/if}
     </div>

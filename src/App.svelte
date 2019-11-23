@@ -20,6 +20,9 @@
       font-family: 'Red Hat Display', sans-serif;
       font-weight: 400;
   }
+  :global(html, body) {
+    scroll-behavior: smooth;
+  }
  
 </style>
 
