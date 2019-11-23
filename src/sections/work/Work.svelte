@@ -29,7 +29,7 @@
 
 <style>
   .section-wrapper {
-    background-color: #142F3A;
+    background-color: #1f86ca;
   }
 
   .section-title {
@@ -41,9 +41,9 @@
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
       <h4 class="section-title text-center my-5">My Work</h4>
-      <div class="row">
+      <div class="row mb-3">
         {#each projects as card}
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 mb-3">
             <WorkCard {...card} on:siteclick={handleSiteClick}/>
           </div>
         {/each}

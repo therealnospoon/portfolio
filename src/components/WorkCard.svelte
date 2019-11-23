@@ -16,10 +16,10 @@
 
 <style type="text/scss">
   .card-container {
-    width: 400px;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     img {
       width: 100%;
+      border-radius: 4px;
     }
     .title {
       position: relative;
@@ -33,7 +33,7 @@
         height: 2px;
         background-color: #fff;
         position: absolute;
-        top: 99.9%;
+        top: 90%;
         left: 0;
         transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         @media only screen and (max-width: 576px) {
