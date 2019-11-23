@@ -5,11 +5,18 @@
 
   let bgImage = "./images/portfolio_bg.jpg";
   let profilePic = "./images/profile_pic.jpg";
-  let visible = false;
+  let bgLoaded = false;
 
+  // let headerBg = document.querySelector('header-bg');
+  // console.log(headerBg);
   onMount(async () => {
-    visible = true;
+  // headerBg.addEventListener('load', toggleBgLoaded);
+  toggleBgLoaded();
   });
+
+  function toggleBgLoaded() {
+    bgLoaded = true;
+  }
 
   function entrance(node, { duration }) {
     return {
@@ -103,7 +110,7 @@
     <div
       class="header-bg d-flex justify-content-center align-items-center"
       style="background-image: url('{bgImage}')">
-      {#if visible}
+      {#if bgLoaded}
         <div
           class="profile-card d-flex flex-column justify-content-center
           align-items-center"
