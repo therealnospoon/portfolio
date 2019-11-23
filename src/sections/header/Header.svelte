@@ -6,20 +6,28 @@
   let bgImage = "./images/portfolio_bg.jpg";
   let profilePic = "./images/profile_pic.jpg";
   let bgLoaded = false;
+  let isLoaded = false;
+  
 
-  // let headerBg = document.querySelector('header-bg');
-  // console.log(headerBg);
   onMount(async () => {
-  // headerBg.addEventListener('load', toggleBgLoaded);
-  toggleBgLoaded();
+    await checkBgStatus();
+    toggleBgLoaded();
   });
 
+  function checkBgStatus() {
+    const headerBg = document.querySelector('.header-bg');
+    bgLoaded = headerBg ? true : false;
+  };
+
   function toggleBgLoaded() {
-    bgLoaded = true;
+    if(bgLoaded) {
+      isLoaded = true;
+    }
   }
 
-  function entrance(node, { duration }) {
+  function entrance(node, { delay, duration }) {
     return {
+      delay,
       duration,
       css: t => {
         const eased = quartOut(t);
@@ -67,7 +75,8 @@
     .profile-blurb {
       max-width: 400px;
     }
-    .contact-link, .resume-link {
+    .contact-link,
+    .resume-link {
       display: inline-block;
       border: none;
       padding: 0.5rem 1rem;
@@ -81,25 +90,25 @@
       cursor: pointer;
       text-align: center;
       transition: background 250ms ease-in-out, transform 150ms ease;
-        &:hover,
-        &:focus {
-          background: #0053ba;
-        }
-        &:active {
-          transform: scale(0.99);
-        }
+      &:hover,
+      &:focus {
+        background: #0053ba;
+      }
+      &:active {
+        transform: scale(0.99);
+      }
       &.resume-link {
         background: #fff;
         color: #0069ed;
         border: 1px #0069ed solid;
-          &:hover,
-          &:focus {
-            background: #0069ed;
-            color: #fff;
-          }
-          &:active {
-            transform: scale(0.99);
-          }
+        &:hover,
+        &:focus {
+          background: #0069ed;
+          color: #fff;
+        }
+        &:active {
+          transform: scale(0.99);
+        }
       }
     }
   }
@@ -107,14 +116,16 @@
 
 <section>
   <div class="section-wrapper">
+  
     <div
       class="header-bg d-flex justify-content-center align-items-center"
-      style="background-image: url('{bgImage}')">
-      {#if bgLoaded}
+      style="background-image: url('{bgImage}')"
+    >
+      {#if isLoaded}
         <div
           class="profile-card d-flex flex-column justify-content-center
           align-items-center"
-          transition:entrance={{ duration: 1500 }}>
+          transition:entrance={{ delay: 1000, duration: 1500 }}>
           <div class="row pic-container">
             <div class="col-12 d-flex align-items-center">
               <div class="lines" />
@@ -132,17 +143,15 @@
             <br />
             Take a look at my work below and let's chat!
           </p>
-         
-              <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
-                <p class="m-0">Get in touch</p>
-              </a>
-            
-           
-              <a href="./images/TK_Dev_Resume.pdf" download class="resume-link">
-                <p class="m-0">Download Resume</p>
-              </a>
-            
-          
+
+          <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
+            <p class="m-0">Get in touch</p>
+          </a>
+
+          <a href="./images/TK_Dev_Resume.pdf" download class="resume-link">
+            <p class="m-0">Download Resume</p>
+          </a>
+
         </div>
       {/if}
     </div>
