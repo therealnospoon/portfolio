@@ -63,6 +63,35 @@
     .profile-blurb {
       max-width: 400px;
     }
+    .contact-link {
+      display: inline-block;
+      border: none;
+      padding: .5rem 2rem;
+      margin: 2rem 0 0 0;
+      text-decoration: none;
+      background: #0069ed;
+      color: #ffffff;
+      font-family: sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background 250ms ease-in-out, 
+                  transform 150ms ease;
+
+        &:hover, &:focus {
+        background: #0053ba;
+        }
+
+        // &:focus {
+        //     outline: 1px solid #fff;
+        //     outline-offset: -4px;
+        // }
+
+        &:active {
+            transform: scale(0.99);
+        }
+      }
+
   }
 </style>
 
@@ -91,6 +120,7 @@
           <p class="profile-blurb text-center mt-2">
             Hi there! I'm a developer with a background in design. <br> Take a look at my work below and let's chat!
           </p>
+          <a href="" class="contact-link"><p class="m-0">Get in touch</p></a>
         </div>
       {/if}
     </div>

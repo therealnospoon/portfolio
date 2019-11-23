@@ -17,7 +17,6 @@
         }
 
         .skill-column {
-            justify-content: space-evenly;
             text-align: center;
             max-width: 320px;
             margin: 3rem;
@@ -47,10 +46,11 @@
                             <h5>My developer tools:</h5>
                             <ul>
                                 <li>VS Code</li>
-                                <li>HTML, CSS, JS</li>
-                                <li>Vue JS</li>
-                                <li>Svelte JS (what this site is built in)</li>
-                                <li>React</li>
+                                <li>HTML, CSS/SCSS, JS, Node</li>
+                                <li></li>
+                                <li>Vue, Svelte, React, Redux</li>
+                                <li>Firebase, Stripe</li>
+                                <li>Gulp, Webpack, Rollup</li>
                             </ul>
                     </div>
                     <div class="skill-column col-12 col-md-6 d-flex flex-column align-items-center">
