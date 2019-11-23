@@ -16,10 +16,10 @@
 
 <style type="text/scss">
   .card-container {
-    width: 400px;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     img {
       width: 100%;
+      border-radius: 4px;
     }
     .title {
       position: relative;

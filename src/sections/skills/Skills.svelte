@@ -4,7 +4,7 @@
 
 <style type="text/scss">
     .section-wrapper {
-        background-color: #142F3A;
+        background-color: #1f86ca;
     }
     .skills-box {
         color: #fff;
