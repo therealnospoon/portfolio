@@ -41,7 +41,7 @@
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
       <h4 class="section-title text-center my-5">My Work</h4>
-      <div class="row">
+      <div class="row mb-3">
         {#each projects as card}
           <div class="col-12 col-md-6">
             <WorkCard {...card} on:siteclick={handleSiteClick}/>

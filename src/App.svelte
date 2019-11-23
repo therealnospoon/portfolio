@@ -2,6 +2,7 @@
   import Header from "./sections/header/Header.svelte";
   import Work from "./sections/work/Work.svelte";
   import Skills from "./sections/skills/Skills.svelte"
+  import Contact from "./sections/contact/Contact.svelte";
 
   let bgImage = "./images/portfolio_bg.jpg";
 
@@ -26,4 +27,5 @@
   <Header />
   <Skills />
   <Work />
+  <Contact />
 </div>
