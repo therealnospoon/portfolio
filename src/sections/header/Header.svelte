@@ -14,6 +14,9 @@
     toggleBgLoaded();
   });
 
+
+   
+
   function checkBgStatus() {
     const headerBg = document.querySelector('.header-bg');
     bgLoaded = headerBg ? true : false;
@@ -125,7 +128,7 @@
         <div
           class="profile-card d-flex flex-column justify-content-center
           align-items-center"
-          transition:entrance={{ delay: 1000, duration: 1500 }}>
+          transition:entrance={{ delay: 750, duration: 1500 }}>
           <div class="row pic-container">
             <div class="col-12 d-flex align-items-center">
               <div class="lines" />

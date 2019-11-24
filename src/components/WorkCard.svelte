@@ -21,6 +21,25 @@
       width: 100%;
       border-radius: 4px;
     }
+    .image-container {
+      position: relative;
+      padding: 0;
+      .content-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(17, 98, 219, 0.9);
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+      }
+    }
     .title {
       position: relative;
       display: inline;
@@ -59,12 +78,26 @@
       .description {
         color: #fff;
       }
+      .content-container {
+        opacity: 1;
+      }
     }
   }
 </style>
 
 <section>
   <div class="card-container container" on:click={siteOpening}>
+    <div class="row">
+      <div class="col-12 image-container">
+        <img src={imageUrl} alt="site image for {title}" />
+          <div class="content-container">
+              <h5 class="title">{title}</h5>
+              <p class="description">{description}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="card-container container" on:click={siteOpening}>
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
@@ -80,5 +113,5 @@
         <p class="description">{description}</p>
       </div>
     </div>
-  </div>
+  </div> -->
 </section>
