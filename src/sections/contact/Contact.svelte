@@ -1,4 +1,16 @@
 <script>
+  import smoothscroll from "smoothscroll-polyfill";
+
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+    smoothscroll.polyfill();
+  });
+
+  function scrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
+
 
 </script>
 
@@ -31,11 +43,11 @@
   }
 
   .email-row {
-      display: flex;
-      justify-content: flex-end;
-      @media only screen and (max-width: 576px) {
-        justify-content: center;
-      }
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: 576px) {
+      justify-content: center;
+    }
   }
 </style>
 
@@ -43,14 +55,16 @@
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center my-3">
-        <a href="#top" class="top-btn">
+        <a href="" class="top-btn" on:click={scrollToTop}>
           <h5 class="m-0">Back To Top</h5>
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-12 mb-3 email-row">
-        <a href="mailto:timkimdesigns@gmail.com" class="email-link d-flex align-items-center">
+        <a
+          href="mailto:timkimdesigns@gmail.com"
+          class="email-link d-flex align-items-center">
           <i class="far fa-envelope mr-2 mt-1" />
           <p class="m-0">timkimdesigns@gmail.com</p>
         </a>
