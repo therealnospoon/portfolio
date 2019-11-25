@@ -17,6 +17,7 @@
 <style type="text/scss">
   .card-container {
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    max-width: 300px;
     img {
       width: 100%;
       border-radius: 4px;
@@ -86,7 +87,7 @@
 </style>
 
 <section>
-  <div class="card-container container" on:click={siteOpening}>
+  <div class="card-container" on:click={siteOpening}>
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
