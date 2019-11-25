@@ -3,12 +3,24 @@
   import Work from "./sections/work/Work.svelte";
   import Skills from "./sections/skills/Skills.svelte"
   import Contact from "./sections/contact/Contact.svelte";
-
-  let bgImage = "./images/portfolio_bg.jpg";
+  import smoothscroll from "smoothscroll-polyfill";
 
   import { onMount } from "svelte";
 
-  onMount(async () => {});
+  onMount(async () => {
+    smoothscroll.polyfill();
+  });
+
+  let bgImage = "./images/portfolio_bg.jpg";
+
+
+
+  function scrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
+
+
+
 </script>
 
 <style type="text/scss">
@@ -30,5 +42,5 @@
   <Header />
   <Skills />
   <Work />
-  <Contact />
+  <Contact on:gototop={scrollToTop}/>
 </div>
