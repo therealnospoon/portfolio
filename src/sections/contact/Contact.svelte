@@ -49,7 +49,7 @@ function backToTop() {
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center my-3">
-        <a href="" class="top-btn" on:click={backToTop}>
+        <a href="#top" class="top-btn" on:click={backToTop}>
           <h5 class="m-0">Back To Top</h5>
         </a>
       </div>
