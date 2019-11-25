@@ -16,7 +16,6 @@
   "dependencies": {
     "scroll-behavior-polyfill": "^2.0.13",
     "sirv-cli": "^0.4.4",
-    "smoothscroll-polyfill": "^0.4.4",
     "splitting": "^1.0.6"
   },
   "scripts": {
