@@ -61,7 +61,7 @@
             data-sal-duration="500">
         {#each projects as card, cardIndex}
           <div
-            class="col-12 col-md-6 mb-3 d-flex justify-content-center"
+            class="col-12 col-lg-6 mb-3 d-flex justify-content-center"
             data-sal="slide-right"
             data-sal-easing="ease-in-out-sine"
             data-sal-duration="250"
