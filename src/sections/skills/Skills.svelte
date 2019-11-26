@@ -6,7 +6,7 @@
   onMount(async () => {
     sal({
       threshold: 1,
-      once: false
+      once: true
     });
   });
 
@@ -65,29 +65,32 @@
           <div class="row skill-row w-100">
             <div
               class="skill-column col-12 col-md-6 d-flex flex-column
-              align-items-center">
+              align-items-center"
+              data-sal="fade"
+              data-sal-easing="ease-in-out-quad"
+              data-sal-duration="500"
+            >
               <i
                 class="fas fa-code fa-2x mb-4"
-                data-sal="slide-up"
-                data-sal-easing="ease-out-back" />
+              />
               <h4
                 class="mb-3"
-                data-sal="slide-up"
-                data-sal-easing="ease-out-back">
+              >
                 Developer
               </h4>
-              <p data-sal="slide-up" data-sal-easing="ease-out-back">
+              <p>
                 Clean | Performant | Reusable
               </p>
-              <h5 data-sal="slide-up" data-sal-easing="ease-out-back">
+              <h5>
                 My developer tools:
               </h5>
               <ul>
                 {#each developerTools as tool, devToolIndex}
                   <li
                     class="mt-3"
-                    data-sal="slide-up"
-                    data-sal-easing="ease-out-back"
+                    data-sal="fade"
+                    data-sal-easing="ease-in-out-quad"
+                    data-sal-duration="500"
                     data-sal-delay={100 * devToolIndex}>
                     {tool}
                   </li>
@@ -96,29 +99,32 @@
             </div>
             <div
               class="skill-column col-12 col-md-6 d-flex flex-column
-              align-items-center">
+              align-items-center"
+              data-sal="fade"
+              data-sal-easing="ease-in-out-quad"
+              data-sal-duration="500"
+            >
               <i
                 class="fas fa-pencil-ruler fa-2x mb-4"
-                data-sal="slide-up"
-                data-sal-easing="ease-out-back" />
+              />
               <h4
                 class="mb-3"
-                data-sal="slide-up"
-                data-sal-easing="ease-out-back">
+              >
                 Designer
               </h4>
-              <p data-sal="slide-up" data-sal-easing="ease-out-back">
+              <p>
                 Beautiful | Friendly | Logical
               </p>
-              <h5 data-sal="slide-up" data-sal-easing="ease-out-back">
+              <h5>
                 My design tools:
               </h5>
               <ul>
                 {#each designerTools as tool, desToolIndex}
                   <li
                     class="mt-3"
-                    data-sal="slide-up"
-                    data-sal-easing="ease-out-back"
+                    data-sal="fade"
+                    data-sal-easing="ease-in-out-quad"
+                    data-sal-duration="500"
                     data-sal-delay={100 * desToolIndex}>
                     {tool}
                   </li>
