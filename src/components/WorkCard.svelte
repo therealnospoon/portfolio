@@ -17,14 +17,17 @@
 <style type="text/scss">
   .card-container {
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    max-width: 300px;
+    padding: 0 .5rem;
     img {
       width: 100%;
       border-radius: 4px;
+      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
     }
     .image-container {
       position: relative;
       padding: 0;
+      overflow: hidden;
+      border-radius: 4px;
       .content-container {
         position: absolute;
         top: 0;
@@ -35,7 +38,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(17, 98, 219, 0.9);
+        background-color: rgba(16, 59, 199, .7);
         border-radius: 4px;
         opacity: 0;
         transition: opacity 250ms ease-in-out;
@@ -47,19 +50,19 @@
       margin: 1rem 0;
       color: #fff;
 
-      &:after {
-        content: "";
-        width: 0;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        top: 90%;
-        left: 0;
-        transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        @media only screen and (max-width: 576px) {
-          width: 100%;
-        }
-      }
+      // &:after {
+      //   content: "";
+      //   width: 0;
+      //   height: 2px;
+      //   background-color: #fff;
+      //   position: absolute;
+      //   top: 90%;
+      //   left: 0;
+      //   transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      //   @media only screen and (max-width: 576px) {
+      //     width: 100%;
+      //   }
+      // }
     }
     .description {
       color: transparent;
@@ -71,10 +74,9 @@
     &:hover {
       transform: translateY(-10px);
       cursor: pointer;
-      .title {
-        &:after {
-          width: 100%;
-        }
+      img {
+        transform: scale(1.15);
+        opacity: 0;
       }
       .description {
         color: #fff;
@@ -92,7 +94,7 @@
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
           <div class="content-container">
-              <h5 class="title">{title}</h5>
+              <h4 class="title">{title}</h4>
               <p class="description">{description}</p>
           </div>
       </div>

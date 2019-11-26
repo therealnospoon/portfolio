@@ -8,9 +8,7 @@
   import { onMount } from "svelte";
 
   onMount(async () => {
-    // if (!("scrollBehavior" in document.documentElement.style)) {
-    //   await import("scroll-behavior-polyfill");
-    // }
+   
   });
 
   let bgImage = "./images/portfolio_bg.jpg";

@@ -43,7 +43,7 @@
       <h4 class="section-title text-center my-5">My Work</h4>
       <div class="row mb-3">
         {#each projects as card}
-          <div class="col-12 col-md-4 mb-3 d-flex justify-content-center">
+          <div class="col-12 col-md-6 mb-3 d-flex justify-content-center">
             <WorkCard {...card} on:siteclick={handleSiteClick}/>
           </div>
         {/each}
