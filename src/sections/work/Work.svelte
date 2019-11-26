@@ -38,6 +38,8 @@
   function handleSiteClick(event) {
     window.open(event.detail.url);
   }
+
+  
 </script>
 
 <style>

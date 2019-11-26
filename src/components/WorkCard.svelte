@@ -16,9 +16,10 @@
 </script>
 
 <style type="text/scss">
-  .card-container {
+  .card-container-desktop {
+    display: none;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     img {
       width: 100%;
       border-radius: 4px;
@@ -39,7 +40,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(16, 59, 199, .6);
+        background-color: rgba(16, 59, 199, 0.6);
         border-radius: 4px;
         opacity: 0;
         transition: opacity 250ms ease-in-out;
@@ -59,9 +60,6 @@
     .description {
       color: transparent;
       transition: color 500ms ease-in;
-      @media only screen and (max-width: 576px) {
-        color: #fff;
-      }
     }
     .site-btn {
       display: inline-block;
@@ -102,42 +100,80 @@
         opacity: 1;
       }
     }
+    @media only screen and (min-width: 576px) {
+      display: block;
+    }
+  }
+  .card-container-mobile {
+    padding: 0 0.5rem;
+    color: #fff;
+    img {
+      width: 100%;
+      border-radius: 4px;
+      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
+    }
+    .image-container {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+  
+    .title {
+      position: relative;
+      display: inline;
+      margin: 1rem 0;
+    }
+    .description {
+    }
+    @media only screen and (min-width: 576px) {
+      display: none;
+    }
   }
 </style>
 
 <section>
-  <div class="card-container" on:click={siteOpening}>
+  <div class="card-container-desktop" on:click={siteOpening}>
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
-          <div class="content-container">
-              <h4 class="title">{title}</h4>
-              <p class="description">{description}</p>
-              <a href="{siteUrl}" target="_blank" class="site-btn"><p class="m-0">Visit Site</p></a>
-          </div>
+        <div class="content-container">
+          <h4 class="title">{title}</h4>
+          <p class="description">{description}</p>
+          <a href={siteUrl} target="_blank" class="site-btn">
+            <p class="m-0">Visit Site</p>
+          </a>
+        </div>
       </div>
     </div>
     <div class="row framework-label">
-        <div class="col-12 px-0 pt-1">
-          <h5>Built with {framework}</h5>
-        </div>
+      <div class="col-12 px-0 pt-1">
+        <h5>Built with {framework}</h5>
       </div>
+    </div>
   </div>
-  <!-- <div class="card-container container" on:click={siteOpening}>
+
+
+  <div class="card-container-mobile" on:click={siteOpening}>
     <div class="row">
+    <div class="row framework-label">
+      <div class="col-12">
+        <h4>{title}</h4>
+      </div>
+    </div>
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
       </div>
     </div>
     <div class="row">
-      <div class="col-12 mt-2">
-        <h5 class="title">{title}</h5>
+      <div class="col-12 mt-2 px-0">
+        <p class="title">{description}</p>
       </div>
     </div>
     <div class="row">
-      <div class="col mt-2">
-        <p class="description">{description}</p>
+      <div class="col px-0">
+        <p class="description"> (Built with {framework})</p>
       </div>
     </div>
-  </div> -->
+  </div>
 </section>
