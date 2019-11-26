@@ -6,7 +6,7 @@
 
   onMount(async () => {
     sal({
-      threshold: 0.25,
+      threshold: 0.2,
       once: true
     });
   });
@@ -59,9 +59,13 @@
       <div class="row mb-3" data-sal="slide-right"
             data-sal-easing="ease-in-out-sine"
             data-sal-duration="500">
-        {#each projects as card}
+        {#each projects as card, cardIndex}
           <div
             class="col-12 col-md-6 mb-3 d-flex justify-content-center"
+            data-sal="slide-right"
+            data-sal-easing="ease-in-out-sine"
+            data-sal-duration="250"
+            data-sal-delay={100 * cardIndex}
           >
             <WorkCard {...card} on:siteclick={handleSiteClick} />
           </div>
