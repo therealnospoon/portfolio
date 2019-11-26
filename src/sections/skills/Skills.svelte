@@ -59,8 +59,8 @@
 <section>
   <div class="section-wrapper">
     <div class="skills-container container">
-
       <div class="row justify-content-center align-items-center">
+        <h4 class="text-white pt-5">Skills</h4>
         <div class="skills-box col-12">
           <div class="row skill-row w-100">
             <div

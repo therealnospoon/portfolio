@@ -55,7 +55,7 @@
 <section>
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
-      <h4 class="section-title text-center my-5">My Work</h4>
+      <h4 class="section-title text-center my-5">Work</h4>
       <div class="row mb-3" data-sal="slide-right"
             data-sal-easing="ease-in-out-sine"
             data-sal-duration="500">

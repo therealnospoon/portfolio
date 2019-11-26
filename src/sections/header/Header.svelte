@@ -177,10 +177,8 @@
           </div>
           <h1 class="mt-5">Tim Kim</h1>
           <h4 class="mt-2">DEVELOPER | DESIGNER</h4>
-          <p class="profile-blurb text-center mt-2">
-            Hi there! I'm a developer with a background in design.
-            <br />
-            Take a look at my work below and let's chat!
+          <p class="profile-blurb text-center mt-2 px-3">
+            Hi, I'm a developer from Seattle, WA. My interests include (but are not limited to): Playing/listening to music, cooking and discovering new foods, building things with my hands, going on adventures with my wife, snowboarding...etc. <br/><br/> Let's build something wonderful together!
           </p>
 
           <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
