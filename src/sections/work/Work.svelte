@@ -56,7 +56,7 @@
       <h4 class="section-title text-center my-5">My Work</h4>
       <div class="row mb-3" data-sal="slide-right"
             data-sal-easing="ease-in-out-sine"
-            data-sal-duration="300">
+            data-sal-duration="500">
         {#each projects as card}
           <div
             class="col-12 col-md-6 mb-3 d-flex justify-content-center"
