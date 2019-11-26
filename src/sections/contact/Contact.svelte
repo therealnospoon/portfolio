@@ -59,7 +59,7 @@ function backToTop() {
         <a
           href="mailto:timkimdesigns@gmail.com"
           class="email-link d-flex align-items-center">
-          <i class="far fa-envelope mr-2 mt-1" />
+          <i class="far fa-envelope mr-2" />
           <p class="m-0">timkimdesigns@gmail.com</p>
         </a>
       </div>

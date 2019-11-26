@@ -11,7 +11,23 @@
   onMount(async () => {
     await checkBgStatus();
     toggleBgLoaded();
+    castParallax();
   });
+  function castParallax() {
+    window.addEventListener("scroll", event => {
+      let top = window.pageYOffset;
+
+      const layers = document.getElementsByClassName("parallax");
+      let layer, speed, yPos;
+      for (let i = 0; i < layers.length; i++) {
+        layer = layers[i];
+        speed = layer.getAttribute('data-speed');
+        yPos = -(top * speed / 100);
+        layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+
+      }
+    });
+  }
 
   function checkBgStatus() {
     const headerBg = document.querySelector(".header-bg");
@@ -39,16 +55,23 @@
 
 <style type="text/scss">
   .section-wrapper {
-    height: 100vh;
-    background: #fff;
+    height: 110vh;
+    background: #1f86ca;
+    position: relative;
+    z-index: 10;
     overflow: hidden;
   }
 
   .header-bg {
     background-size: cover;
     background-position: center center;
+    position: absolute;
     height: 100vh;
+    background-image: url("./images/portfolio_bg.jpg");
   }
+  .parallax {
+      position: sticky;
+    }
 
   .profile-card {
     background-color: rgba(255, 255, 255, 1);
@@ -57,6 +80,7 @@
     max-width: 500px;
     overflow-x: hidden;
     color: rgb(80, 80, 80);
+    
     .pic-container {
       .lines {
         height: 1px;
@@ -129,12 +153,17 @@
   <div class="section-wrapper">
 
     <div
-      class="header-bg d-flex justify-content-center align-items-center"
-      style="background-image: url('{bgImage}')">
+      class="header-bg d-flex justify-content-center align-items-center parallax"
+      id="keyart-0"
+      data-speed="-50"
+     
+    >
       {#if isLoaded}
         <div
           class="profile-card d-flex flex-column justify-content-center
-          align-items-center"
+          align-items-center parallax"
+          id="keyart-1"
+          data-speed="30"
           transition:entrance={{ delay: 750, duration: 1500 }}>
           <div class="row pic-container">
             <div class="col-12 d-flex align-items-center">
