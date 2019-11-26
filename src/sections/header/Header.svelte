@@ -7,23 +7,19 @@
   let profilePic = "./images/profile_pic.jpg";
   let bgLoaded = false;
   let isLoaded = false;
-  
 
   onMount(async () => {
     await checkBgStatus();
     toggleBgLoaded();
   });
 
-
-   
-
   function checkBgStatus() {
-    const headerBg = document.querySelector('.header-bg');
+    const headerBg = document.querySelector(".header-bg");
     bgLoaded = headerBg ? true : false;
-  };
+  }
 
   function toggleBgLoaded() {
-    if(bgLoaded) {
+    if (bgLoaded) {
       isLoaded = true;
     }
   }
@@ -93,24 +89,36 @@
       cursor: pointer;
       text-align: center;
       transition: background 250ms ease-in-out, transform 150ms ease;
+
       &:hover,
       &:focus {
         background: #0053ba;
       }
-      &:active {
-        transform: scale(0.99);
-      }
       &.resume-link {
         background: #fff;
         color: #0069ed;
-        border: 1px #0069ed solid;
+
+        p {
+          position: relative;
+          &:after {
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: #0069ed;
+            position: absolute;
+            top: 90%;
+            left: 0;
+            transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          }
+        }
+
         &:hover,
         &:focus {
-          background: #0069ed;
-          color: #fff;
-        }
-        &:active {
-          transform: scale(0.99);
+          p {
+            &:after {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -119,11 +127,10 @@
 
 <section>
   <div class="section-wrapper">
-  
+
     <div
       class="header-bg d-flex justify-content-center align-items-center"
-      style="background-image: url('{bgImage}')"
-    >
+      style="background-image: url('{bgImage}')">
       {#if isLoaded}
         <div
           class="profile-card d-flex flex-column justify-content-center

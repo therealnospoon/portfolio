@@ -1,74 +1,139 @@
 <script>
+  import { onMount } from "svelte";
+  import sal from "sal.js";
+  import "sal.js/dist/sal.css";
 
+  onMount(async () => {
+    sal({
+      threshold: 1,
+      once: true
+    });
+  });
+
+  const developerTools = [
+    "HTML, CSS/SCSS, JS",
+    "Vue, React, Redux, Svelte",
+    "Node, VS Code",
+    "Firebase, Stripe",
+    "Gulp, Webpack, Rollup"
+  ];
+  const designerTools = [
+    "Figma",
+    "Adobe Illustrator",
+    "Sketch",
+    "Invision",
+    "Adobe Photoshop"
+  ];
 </script>
 
 <style type="text/scss">
-    .section-wrapper {
-        background-color: #1f86ca;
-    }
-    .skills-box {
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .section-wrapper {
+    background-color: #1f86ca;
+  }
+  .skills-box {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .skill-row {
-            justify-content: center;
-        }
-
-        .skill-column {
-            text-align: center;
-            max-width: 320px;
-            margin: 3rem;
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                li {
-                    margin-top: 1rem;
-                }
-            }
-        }
+    .skill-row {
+      justify-content: center;
     }
+
+    .skill-column {
+      text-align: center;
+      max-width: 320px;
+      margin: 3rem;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
 </style>
 
 <section>
   <div class="section-wrapper">
     <div class="skills-container container">
-      
-        <div class="row justify-content-center align-items-center">
-            <div class="skills-box col-12">
-                <div class="row skill-row">
-                    <div class="skill-column col-12 col-md-6 d-flex flex-column align-items-center">
-                        <i class="fas fa-code fa-2x mb-4"></i>
-                            <h4 class="mb-3">Developer</h4>
-                            <p>I love to build products with careful attention to detail and a high-quality bar</p>
-                            <h5>My developer tools:</h5>
-                            <ul>
-                                <li>VS Code</li>
-                                <li>HTML, CSS/SCSS, JS, Node</li>
-                                <li></li>
-                                <li>Vue, Svelte, React, Redux</li>
-                                <li>Firebase, Stripe</li>
-                                <li>Gulp, Webpack, Rollup</li>
-                            </ul>
-                    </div>
-                    <div class="skill-column col-12 col-md-6 d-flex flex-column align-items-center">
-                        <i class="fas fa-pencil-ruler fa-2x mb-4"></i>
-                        <h4 class="mb-3">Designer</h4>
-                        <p>I love to make simple designs with a sheen of complexity and wonder</p>
-                        <h5>My design tools:</h5>
-                        <ul>
-                            <li>Figma</li>
-                            <li>Adobe Illustrator</li>
-                            <li>Sketch</li>
-                            <li>Invision</li>
-                            <li>Adobe Photoshop</li>
-                        </ul>
-                    </div>
-                </div>
+
+      <div class="row justify-content-center align-items-center">
+        <div class="skills-box col-12">
+          <div class="row skill-row w-100">
+            <div
+              class="skill-column col-12 col-md-6 d-flex flex-column
+              align-items-center"
+              data-sal="fade"
+              data-sal-easing="ease-in-out-quad"
+              data-sal-duration="500"
+            >
+              <i
+                class="fas fa-code fa-2x mb-4"
+              />
+              <h4
+                class="mb-3"
+              >
+                Developer
+              </h4>
+              <p>
+                Clean | Performant | Reusable
+              </p>
+              <h5>
+                My developer tools:
+              </h5>
+              <ul>
+                {#each developerTools as tool, devToolIndex}
+                  <li
+                    class="mt-3"
+                    data-sal="fade"
+                    data-sal-easing="ease-in-out-quad"
+                    data-sal-duration="500"
+                    data-sal-delay={100 * devToolIndex}>
+                    {tool}
+                  </li>
+                {/each}
+              </ul>
             </div>
+            <div
+              class="skill-column col-12 col-md-6 d-flex flex-column
+              align-items-center"
+              data-sal="fade"
+              data-sal-easing="ease-in-out-quad"
+              data-sal-duration="500"
+            >
+              <i
+                class="fas fa-pencil-ruler fa-2x mb-4"
+              />
+              <h4
+                class="mb-3"
+              >
+                Designer
+              </h4>
+              <p>
+                Beautiful | Friendly | Logical
+              </p>
+              <h5>
+                My design tools:
+              </h5>
+              <ul>
+                {#each designerTools as tool, desToolIndex}
+                  <li
+                    class="mt-3"
+                    data-sal="fade"
+                    data-sal-easing="ease-in-out-quad"
+                    data-sal-duration="500"
+                    data-sal-delay={100 * desToolIndex}>
+                    {tool}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
   </div>
