@@ -6,6 +6,7 @@
   export let description;
   export let imageUrl;
   export let siteUrl;
+  export let framework;
 
   function siteOpening() {
     dispatch("siteclick", {
@@ -38,31 +39,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(16, 59, 199, .7);
+        background-color: rgba(16, 59, 199, .6);
         border-radius: 4px;
         opacity: 0;
         transition: opacity 250ms ease-in-out;
       }
+    }
+    .framework-label {
+      color: #fff;
+      opacity: 0;
+      transition: opacity 250ms ease-in-out;
     }
     .title {
       position: relative;
       display: inline;
       margin: 1rem 0;
       color: #fff;
-
-      // &:after {
-      //   content: "";
-      //   width: 0;
-      //   height: 2px;
-      //   background-color: #fff;
-      //   position: absolute;
-      //   top: 90%;
-      //   left: 0;
-      //   transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      //   @media only screen and (max-width: 576px) {
-      //     width: 100%;
-      //   }
-      // }
     }
     .description {
       color: transparent;
@@ -71,12 +63,37 @@
         color: #fff;
       }
     }
+    .site-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0 0 0;
+      width: 170px;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: 1rem;
+      background: #fff;
+      color: #0069ed;
+      border: 1px #0069ed solid;
+      text-align: center;
+      transition: background 250ms ease-in-out, transform 150ms ease;
+      &:hover,
+      &:focus {
+        background: #0069ed;
+        color: #fff;
+      }
+      &:active {
+        transform: scale(0.99);
+      }
+    }
     &:hover {
       transform: translateY(-10px);
       cursor: pointer;
       img {
         transform: scale(1.15);
         opacity: 0;
+      }
+      .framework-label {
+        opacity: 1;
       }
       .description {
         color: #fff;
@@ -90,12 +107,18 @@
 
 <section>
   <div class="card-container" on:click={siteOpening}>
+      <div class="row framework-label">
+        <div class="col-12">
+          <h5>Built with {framework}</h5>
+        </div>
+      </div>
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
           <div class="content-container">
               <h4 class="title">{title}</h4>
               <p class="description">{description}</p>
+              <a href="{siteUrl}" target="_blank" class="site-btn"><p class="m-0">Visit Site</p></a>
           </div>
       </div>
     </div>

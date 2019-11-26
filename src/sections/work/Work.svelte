@@ -6,19 +6,22 @@
       title: "Edmonds Segway Tours",
       description: "A retail website for Edmonds Segway",
       imageUrl: './images/EdmondsSegwayPic.jpg',
-      siteUrl: 'https://www.edmondssegwaytours.com'
+      siteUrl: 'https://www.edmondssegwaytours.com',
+      framework: "Svelte JS"
     },
     {
       title: "Savannah Seattle",
       description: "Online store for exotic cats",
       imageUrl: './images/SavannahSeattlePic.jpg',
-      siteUrl: 'https://www.savannahseattle.com'
+      siteUrl: 'https://www.savannahseattle.com',
+      framework: "HTML,CSS, Rivets JS"
     },
     {
       title: "Red Twig Cafe",
       description: "Website for a local coffee store",
       imageUrl: './images/RedTwigPic.jpg',
-      siteUrl: 'https://www.redtwig.com'
+      siteUrl: 'https://www.redtwig.com',
+      framework: "Vue JS"
     }
   ];
 
