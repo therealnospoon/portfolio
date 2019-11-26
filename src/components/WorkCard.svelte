@@ -105,10 +105,10 @@
     }
   }
   .card-container-mobile {
-    background-color: #353535;
+    background-color: #fff;
     border-radius: 4px;
     padding: 1rem 0.5rem;
-    color: #fff;
+    color: #353535;
     box-shadow: 1px 3px 5px 2px #05336b9d;
     img {
       width: 100%;
