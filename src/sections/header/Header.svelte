@@ -11,24 +11,29 @@
   onMount(async () => {
     await checkBgStatus();
     toggleBgLoaded();
-    castParallax();
+    initParallax();
   });
-  function castParallax() {
-    window.addEventListener("scroll", event => {
-      let top = window.pageYOffset;
 
-      const layers = document.getElementsByClassName("parallax");
-      let layer, speed, yPos;
-      for (let i = 0; i < layers.length; i++) {
-        layer = layers[i];
-        speed = layer.getAttribute("data-speed");
-        yPos = -((top * speed) / 100);
-        layer.setAttribute(
-          "style",
-          "transform: translate3d(0px, " + yPos + "px, 0px)"
-        );
-      }
-    });
+  function initParallax() {
+    if (window.screen.width >= 768) {
+      window.addEventListener("scroll", event => {
+        let top = window.pageYOffset;
+
+        const layers = document.getElementsByClassName("parallax");
+        let layer, speed, yPos;
+        for (let i = 0; i < layers.length; i++) {
+          layer = layers[i];
+          speed = layer.getAttribute("data-speed");
+          yPos = -((top * speed) / 100);
+          layer.setAttribute(
+            "style",
+            "transform: translate3d(0px, " + yPos + "px, 0px)"
+          );
+        }
+      });
+    } else {
+      return;
+    }
   }
 
   function checkBgStatus() {
@@ -53,6 +58,7 @@
       }
     };
   }
+
 </script>
 
 <style type="text/scss">
@@ -62,12 +68,11 @@
     position: relative;
     z-index: 10;
     overflow: hidden;
-     @media only screen and (max-width: 576px) {    
-       height: 150vh;
-       .header-bg {
-         height: 150vh;
-         background: #fff;
-       }
+    @media only screen and (max-width: 576px) {
+      height: 120vh;
+      .header-bg {
+        height: 120vh;
+      }
     }
   }
 
@@ -89,7 +94,6 @@
     max-width: 500px;
     overflow-x: hidden;
     color: rgb(80, 80, 80);
-    
 
     .pic-container {
       .lines {
@@ -158,6 +162,7 @@
     }
   }
 </style>
+
 
 <section>
   <div class="section-wrapper">
