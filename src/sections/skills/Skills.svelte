@@ -79,10 +79,10 @@
                 Developer
               </h4>
               <p>
-                Clean | Performant | Reusable
+                As a developer, I write clean, organized and performant code
               </p>
-              <h5>
-                My developer tools:
+              <h5 class="mt-4">
+                Development tools:
               </h5>
               <ul>
                 {#each developerTools as tool, devToolIndex}
@@ -113,10 +113,10 @@
                 Designer
               </h4>
               <p>
-                Beautiful | Friendly | Logical
+                As a designer, I create simple, beautiful, and powerful designs
               </p>
-              <h5>
-                My design tools:
+              <h5 class="mt-4">
+                Design tools:
               </h5>
               <ul>
                 {#each designerTools as tool, desToolIndex}
