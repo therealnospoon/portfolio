@@ -105,18 +105,19 @@
     }
   }
   .card-container-mobile {
-    padding: 0 0.5rem;
-    color: #fff;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+    color: #505050;
+    box-shadow: 1px 3px 5px 2px #05336b9d;
     img {
       width: 100%;
-      border-radius: 4px;
-      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
     }
     .image-container {
       position: relative;
       padding: 0;
       overflow: hidden;
-      border-radius: 4px;
+      
     }
   
     .title {
@@ -124,8 +125,7 @@
       display: inline;
       margin: 1rem 0;
     }
-    .description {
-    }
+   
     @media only screen and (min-width: 576px) {
       display: none;
     }
@@ -139,7 +139,7 @@
         <img src={imageUrl} alt="site image for {title}" />
         <div class="content-container">
           <h4 class="title">{title}</h4>
-          <p class="description">{description}</p>
+          <p class="description px-5">{description}</p>
           <a href={siteUrl} target="_blank" class="site-btn">
             <p class="m-0">Visit Site</p>
           </a>
@@ -155,7 +155,7 @@
 
 
   <div class="card-container-mobile" on:click={siteOpening}>
-    <div class="row">
+    <div class="row px-3">
     <div class="row framework-label">
       <div class="col-12">
         <h4>{title}</h4>
@@ -165,12 +165,12 @@
         <img src={imageUrl} alt="site image for {title}" />
       </div>
     </div>
-    <div class="row">
+    <div class="row px-3">
       <div class="col-12 mt-2 px-0">
         <p class="title">{description}</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row px-3">
       <div class="col px-0">
         <p class="description"> (Built with {framework})</p>
       </div>
