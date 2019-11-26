@@ -21,10 +21,12 @@
       let layer, speed, yPos;
       for (let i = 0; i < layers.length; i++) {
         layer = layers[i];
-        speed = layer.getAttribute('data-speed');
-        yPos = -(top * speed / 100);
-        layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
-
+        speed = layer.getAttribute("data-speed");
+        yPos = -((top * speed) / 100);
+        layer.setAttribute(
+          "style",
+          "transform: translate3d(0px, " + yPos + "px, 0px)"
+        );
       }
     });
   }
@@ -60,18 +62,24 @@
     position: relative;
     z-index: 10;
     overflow: hidden;
+     @media only screen and (max-width: 576px) {    
+      height: 160vh;
+      .header-bg {
+        height: 150vh;
+      }
+    }
   }
 
   .header-bg {
     background-size: cover;
     background-position: center center;
-    position: absolute;
-    height: 100vh;
+    // position: absolute;
+    height: 110vh;
     background-image: url("./images/portfolio_bg.jpg");
   }
   .parallax {
-      position: sticky;
-    }
+    position: sticky;
+  }
 
   .profile-card {
     background-color: rgba(255, 255, 255, 1);
@@ -81,6 +89,7 @@
     overflow-x: hidden;
     color: rgb(80, 80, 80);
     
+
     .pic-container {
       .lines {
         height: 1px;
@@ -155,9 +164,7 @@
     <div
       class="header-bg d-flex justify-content-center align-items-center parallax"
       id="keyart-0"
-      data-speed="-50"
-     
-    >
+      data-speed="-50">
       {#if isLoaded}
         <div
           class="profile-card d-flex flex-column justify-content-center
@@ -178,7 +185,13 @@
           <h1 class="mt-5">Tim Kim</h1>
           <h4 class="mt-2">DEVELOPER | DESIGNER</h4>
           <p class="profile-blurb text-center mt-2 px-3">
-            Hi, I'm a developer from Seattle, WA. My interests include (but are not limited to): Playing/listening to music, cooking and discovering new foods, building things with my hands, going on adventures with my wife, snowboarding...etc. <br/><br/> Let's build something wonderful together!
+            Hi, I'm a developer from Seattle, WA. My interests include (but are
+            not limited to): Playing/listening to music, cooking and discovering
+            new foods, building things with my hands, going on adventures with
+            my wife, snowboarding...etc.
+            <br />
+            <br />
+            Let's build something wonderful together!
           </p>
 
           <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
