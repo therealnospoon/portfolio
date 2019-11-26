@@ -107,11 +107,6 @@
 
 <section>
   <div class="card-container" on:click={siteOpening}>
-      <div class="row framework-label">
-        <div class="col-12">
-          <h5>Built with {framework}</h5>
-        </div>
-      </div>
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
@@ -122,6 +117,11 @@
           </div>
       </div>
     </div>
+    <div class="row framework-label">
+        <div class="col-12 px-0 pt-1">
+          <h5>Built with {framework}</h5>
+        </div>
+      </div>
   </div>
   <!-- <div class="card-container container" on:click={siteOpening}>
     <div class="row">
