@@ -63,10 +63,11 @@
     z-index: 10;
     overflow: hidden;
      @media only screen and (max-width: 576px) {    
-      height: 160vh;
-      .header-bg {
-        height: 150vh;
-      }
+       height: 150vh;
+       .header-bg {
+         height: 150vh;
+         background: #fff;
+       }
     }
   }
 
