@@ -79,9 +79,6 @@
         background: #0069ed;
         color: #fff;
       }
-      &:active {
-        transform: scale(0.99);
-      }
     }
     &:hover {
       transform: translateY(-10px);
@@ -107,25 +104,34 @@
   .card-container-mobile {
     background-color: #fff;
     border-radius: 4px;
-    padding: 1rem 0.5rem;
     color: #353535;
-    box-shadow: 1px 3px 5px 2px #05336b9d;
+    box-shadow: 1px 2px 5px 2px #05336b9d;
     img {
       width: 100%;
+      border-radius: 4px;
     }
     .image-container {
-      position: relative;
-      padding: 0;
-      overflow: hidden;
-      
+      border-radius: 4px;
     }
-  
+    .site-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0 0 0;
+      width: 170px;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: 1rem;
+      background: #0069ed;
+      color: #fff;
+      text-align: center;
+    }
+
     .title {
       position: relative;
       display: inline;
       margin: 1rem 0;
     }
-   
+
     @media only screen and (min-width: 576px) {
       display: none;
     }
@@ -133,7 +139,7 @@
 </style>
 
 <section>
-  <div class="card-container-desktop" on:click={siteOpening}>
+  <div class="card-container-desktop">
     <div class="row">
       <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
@@ -153,26 +159,27 @@
     </div>
   </div>
 
-
-  <div class="card-container-mobile" on:click={siteOpening}>
-    <div class="row px-3">
-    <div class="row framework-label">
+  <!-- mobile version of the card-->
+  <div class="card-container-mobile">
+    <div class="row image-container">
       <div class="col-12">
-        <h4>{title}</h4>
-      </div>
-    </div>
-      <div class="col-12 image-container">
         <img src={imageUrl} alt="site image for {title}" />
       </div>
     </div>
-    <div class="row px-3">
-      <div class="col-12 mt-2 px-0">
+    <div class="row px-4 pt-3">
+      <div class="col-12 mt-2">
+        <h4>{title}</h4>
         <p class="title">{description}</p>
       </div>
     </div>
-    <div class="row px-3">
-      <div class="col px-0">
-        <p class="description"> (Built with {framework})</p>
+    <div class="row mt-2 framework-label px-4">
+      <div class="col-12">
+        <p class="description">(Built with {framework})</p>
+      </div>
+      <div class="col-12 pb-4 d-flex justify-content-center">
+        <a href={siteUrl} target="_blank" class="site-btn">
+          <p class="m-0">Visit Site</p>
+        </a>
       </div>
     </div>
   </div>
