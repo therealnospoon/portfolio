@@ -108,10 +108,7 @@
     box-shadow: 1px 2px 5px 2px #05336b9d;
     img {
       width: 100%;
-      border-radius: 4px;
-    }
-    .image-container {
-      border-radius: 4px;
+      border-radius: 4px 4px 0 0;
     }
     .site-btn {
       display: inline-block;
