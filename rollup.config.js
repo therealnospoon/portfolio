@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import rollup_start_dev from './rollup_start_dev';
 import autoPreprocess from 'svelte-preprocess';
 import scss from 'rollup-plugin-scss';
-import alias from 'rollup-plugin-alias';
+// import alias from 'rollup-plugin-alias';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -19,12 +19,12 @@ export default {
 		file: 'public/bundle.js'
 	},
 	plugins: [
-		alias({
-			resolve: ['.js', '.scss'],
-			entries: {
-				variables: 'src/assets/styles/base/_variables.scss',
-			}
-		}),
+		// alias({
+		// 	resolve: ['.js', '.scss'],
+		// 	entries: {
+		// 		variables: 'src/assets/styles/base/_variables.scss',
+		// 	}
+		// }),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,

@@ -1,23 +1,39 @@
 <script>
-	let name = 'Lucas';
+  import Header from "./sections/header/Header.svelte";
+  import Work from "./sections/work/Work.svelte";
+  import Skills from "./sections/skills/Skills.svelte";
+  import Contact from "./sections/contact/Contact.svelte";
+  import "scroll-behavior-polyfill";
+
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+   
+  });
+
+  let bgImage = "./images/portfolio_bg.jpg";
+
+  function scrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
 </script>
 
-<style type="text/scss" scoped>
-	@import './assets/styles/base/variables';
-	@import './assets/styles/base/mixins';
-	
-		h1 {
-			&.testing {
+<style type="text/scss">
+  @import "assets/styles/base/variables";
+  @import "assets/styles/base/mixins";
 
-				color: $primary;
-				@include media-breakpoint-up (md) {
-					color: green;
-				}
-			}
-		}
-	
-		
+  :global(h1, h2, h3, h4, h5, p) {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+  }
+  :global(html, body) {
+    scroll-behavior: smooth;
+  }
 </style>
-<section>
-	<h1 class="testing">Hello {name}!</h1>
-</section>
+
+<div>
+  <Header />
+  <Skills />
+  <Work />
+  <Contact on:gototop={scrollToTop} />
+</div>
