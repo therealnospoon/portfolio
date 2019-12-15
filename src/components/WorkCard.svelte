@@ -17,7 +17,7 @@
 
 <style type="text/scss">
   .card-container-desktop {
-    display: none;
+    display: block;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     padding: 0 0.5rem;
     img {
@@ -42,13 +42,13 @@
         align-items: center;
         background-color: rgba(16, 59, 199, 0.6);
         border-radius: 4px;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 250ms ease-in-out;
       }
     }
     .framework-label {
       color: #fff;
-      opacity: 0;
+      opacity: 1;
       transition: opacity 250ms ease-in-out;
     }
     .title {
@@ -58,7 +58,7 @@
       color: #fff;
     }
     .description {
-      color: transparent;
+      color: #fff;
       transition: color 500ms ease-in;
     }
     .site-btn {
@@ -80,23 +80,23 @@
         color: #fff;
       }
     }
-    &:hover {
-      transform: translateY(-10px);
-      cursor: pointer;
-      img {
-        transform: scale(1.15);
-        opacity: 0;
-      }
-      .framework-label {
-        opacity: 1;
-      }
-      .description {
-        color: #fff;
-      }
-      .content-container {
-        opacity: 1;
-      }
-    }
+    // &:hover {
+    //   transform: translateY(-10px);
+    //   cursor: pointer;
+    //   img {
+    //     transform: scale(1.15);
+    //     opacity: 0;
+    //   }
+    //   .framework-label {
+    //     opacity: 1;
+    //   }
+    //   .description {
+    //     color: #fff;
+    //   }
+    //   .content-container {
+    //     opacity: 1;
+    //   }
+    // }
     @media only screen and (min-width: 576px) {
       display: block;
     }
@@ -138,20 +138,21 @@
 <section>
   <div class="card-container-desktop">
     <div class="row">
-      <div class="col-12 image-container">
+      <div class="col-12 col-md-6 image-container">
         <img src={imageUrl} alt="site image for {title}" />
-        <div class="content-container">
-          <h4 class="title">{title}</h4>
-          <p class="description px-5">{description}</p>
-          <a href={siteUrl} target="_blank" class="site-btn">
-            <p class="m-0">Visit Site</p>
-          </a>
-        </div>
       </div>
-    </div>
-    <div class="row framework-label">
-      <div class="col-12 px-0 pt-1">
-        <h5>Built with {framework}</h5>
+      <div class="col-12 col-md-6">
+        <div class="framework-label">
+          <div class="content-container">
+            <h4 class="title">{title}</h4>
+            <h5>Built with {framework}</h5>
+            <p class="description">{description}</p>
+            <a href={siteUrl} target="_blank" class="site-btn">
+              <p class="m-0">Visit Site</p>
+            </a>
+          </div>
+         
+        </div>
       </div>
     </div>
   </div>
