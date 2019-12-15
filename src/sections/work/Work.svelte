@@ -13,6 +13,13 @@
 
   const projects = [
     {
+      title: "Red Twig Cafe",
+      description: "I helped to build a redesigned retail/brochure website for a local cafe roastery in Edmonds, WA using Vue Js, a component driven Javascript framework",
+      imageUrl: "./images/RedTwigPic.jpg",
+      siteUrl: "https://www.redtwig.com",
+      framework: "Vue JS"
+    },
+    {
       title: "Edmonds Segway Tours",
       description: "I built a single page scrolling website for a Segway tour company using Svelte, a lightweight JS library.",
       imageUrl: "./images/EdmondsSegwayPic.jpg",
@@ -25,13 +32,6 @@
       imageUrl: "./images/SavannahSeattlePic.jpg",
       siteUrl: "https://www.savannahseattle.com",
       framework: "HTML,CSS, Rivets JS"
-    },
-    {
-      title: "Red Twig Cafe",
-      description: "I helped to build a redesigned retail/brochure website for a local cafe roastery in Edmonds, WA using Vue Js, a component driven Javascript framework",
-      imageUrl: "./images/RedTwigPic.jpg",
-      siteUrl: "https://www.redtwig.com",
-      framework: "Vue JS"
     }
   ];
 
@@ -61,7 +61,7 @@
             data-sal-duration="500">
         {#each projects as card, cardIndex}
           <div
-            class="col-12 col-lg-6 mb-3 d-flex justify-content-center"
+            class="col-12 mb-3 d-flex justify-content-center"
             data-sal="slide-right"
             data-sal-easing="ease-in-out-sine"
             data-sal-duration="250"
