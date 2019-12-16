@@ -4,6 +4,8 @@
 
   export let title;
   export let description;
+  export let challenge;
+  export let technologies;
   export let imageUrl;
   export let siteUrl;
   export let framework;
@@ -19,6 +21,7 @@
   .card-container-desktop {
     display: block;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    color: #fff;
     padding: 0 0.5rem;
     img {
       width: 100%;
@@ -47,7 +50,6 @@
       }
     }
     .framework-label {
-      color: #fff;
       opacity: 1;
       transition: opacity 250ms ease-in-out;
     }
@@ -55,12 +57,10 @@
       position: relative;
       display: inline;
       margin: 1rem 0;
-      color: #fff;
     }
-    .description {
-      color: #fff;
-      transition: color 500ms ease-in;
-    }
+    // .description {
+    //   transition: color 500ms ease-in;
+    // }
     .site-btn {
       display: inline-block;
       padding: 0.5rem 1rem;
@@ -71,7 +71,6 @@
       font-size: 1rem;
       background: #fff;
       color: #0069ed;
-      border: 1px #0069ed solid;
       text-align: center;
       transition: background 250ms ease-in-out, transform 150ms ease;
       &:hover,
@@ -140,19 +139,19 @@
     <div class="row">
       <div class="col-12 col-md-6 image-container">
         <img src={imageUrl} alt="site image for {title}" />
+        <h5 class="framework-label mt-1">Built with {framework}</h5>
       </div>
       <div class="col-12 col-md-6">
-        <div class="framework-label">
+      
           <div class="content-container">
             <h4 class="title">{title}</h4>
-            <h5>Built with {framework}</h5>
-            <p class="description">{description}</p>
+            <p class="description mt-2">OVERVIEW: {description}</p>
+            <p class="challenge">CHALLENGE: {challenge}</p>
+            <p class="technologies">TECHNOLOGIES: {technologies}</p>
             <a href={siteUrl} target="_blank" class="site-btn">
               <p class="m-0">Visit Site</p>
             </a>
           </div>
-         
-        </div>
       </div>
     </div>
   </div>
