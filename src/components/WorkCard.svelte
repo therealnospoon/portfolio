@@ -19,7 +19,7 @@
 
 <style type="text/scss">
   .card-container-desktop {
-    display: block;
+    display: none;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     color: #fff;
     padding: 0 0.5rem;
@@ -55,8 +55,6 @@
     }
     .title {
       position: relative;
-      display: inline;
-      margin: 1rem 0;
     }
     // .description {
     //   transition: color 500ms ease-in;
@@ -145,9 +143,9 @@
       
           <div class="content-container">
             <h4 class="title">{title}</h4>
-            <p class="description mt-2">OVERVIEW: {description}</p>
-            <p class="challenge">CHALLENGE: {challenge}</p>
-            <p class="technologies">TECHNOLOGIES: {technologies}</p>
+            <p class="description">OVERVIEW<br> {description}</p>
+            <p class="challenge">CHALLENGE<br> {challenge}</p>
+            <p class="technologies">TECHNOLOGIES<br> {technologies}</p>
             <a href={siteUrl} target="_blank" class="site-btn">
               <p class="m-0">Visit Site</p>
             </a>

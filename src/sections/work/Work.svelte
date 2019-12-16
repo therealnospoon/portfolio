@@ -28,8 +28,8 @@
       description:
         "I built a website to help explain and explore the basic benefits and DevOps functionality of Microsoft Azure",
       challenge:
-        "This was a particularly interesting project that embedded media from a third-party host which required a little bit more nuance then just dropping in a video tag. Also, in particula",
-      technologies: "Vue, Scrollmagic, Wordpress",
+        "This was a relatively straightforward production that site save for the fact that the client wanted to embed media from a third-party host hence it required some thinking around how to implement it as well as the architecture of the entire site. The site helped teach me the importance of structuring in an effective way to keep code neat, performant and functional.",
+      technologies: "Vue, Wordpress",
       imageUrl: "./images/devops-fundamentals-site.png",
       siteUrl: "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
       framework: "Vue JS"
