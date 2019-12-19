@@ -19,93 +19,24 @@
 
 <style type="text/scss">
   .card-container-desktop {
-    display: none;
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    color: #fff;
+    display: flex;
+    align-items: center;
+    min-height: 700px;
+    color: #454f5b;
     padding: 0 0.5rem;
     img {
       width: 100%;
       border-radius: 4px;
-      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
     }
     .image-container {
-      position: relative;
-      padding: 0;
       overflow: hidden;
       border-radius: 4px;
-      .content-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(16, 59, 199, 0.6);
-        border-radius: 4px;
-        opacity: 1;
-        transition: opacity 250ms ease-in-out;
-      }
     }
     .framework-label {
       opacity: 1;
-      transition: opacity 250ms ease-in-out;
     }
     .title {
       position: relative;
-    }
-    // .description {
-    //   transition: color 500ms ease-in;
-    // }
-    .site-btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
-      text-decoration: none;
-      border-radius: 2px;
-      font-size: 1rem;
-      background: #fff;
-      color: #0069ed;
-      text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
-      &:hover,
-      &:focus {
-        background: #0069ed;
-        color: #fff;
-      }
-    }
-    // &:hover {
-    //   transform: translateY(-10px);
-    //   cursor: pointer;
-    //   img {
-    //     transform: scale(1.15);
-    //     opacity: 0;
-    //   }
-    //   .framework-label {
-    //     opacity: 1;
-    //   }
-    //   .description {
-    //     color: #fff;
-    //   }
-    //   .content-container {
-    //     opacity: 1;
-    //   }
-    // }
-    @media only screen and (min-width: 576px) {
-      display: block;
-    }
-  }
-  .card-container-mobile {
-    background-color: #fff;
-    border-radius: 4px;
-    color: #353535;
-    box-shadow: 1px 2px 5px 2px #05336b9d;
-    img {
-      width: 100%;
-      border-radius: 4px 4px 0 0;
     }
     .site-btn {
       display: inline-block;
@@ -116,46 +47,89 @@
       border-radius: 2px;
       font-size: 1rem;
       background: #0069ed;
-      color: #fff;
+      color: #f8fafc;
       text-align: center;
+      transition: background 250ms ease-in-out;
+      &:hover,
+      &:focus {
+        background: #0053ba;
+      }
     }
-
-    .title {
-      position: relative;
-      display: inline;
-      margin: 1rem 0;
-    }
-
-    @media only screen and (min-width: 576px) {
-      display: none;
-    }
+    // @media only screen and (min-width: 576px) {
+    //   display: flex;
+    // }
   }
+  // .card-container-mobile {
+  //   background-color: #fff;
+  //   border-radius: 4px;
+  //   color: #353535;
+  //   box-shadow: 1px 2px 5px 2px #05336b9d;
+  //   img {
+  //     width: 100%;
+  //     border-radius: 4px 4px 0 0;
+  //   }
+  //   .site-btn {
+  //     display: inline-block;
+  //     padding: 0.5rem 1rem;
+  //     margin: 1rem 0 0 0;
+  //     width: 170px;
+  //     text-decoration: none;
+  //     border-radius: 2px;
+  //     font-size: 1rem;
+  //     background: #0069ed;
+  //     color: #fff;
+  //     text-align: center;
+  //   }
+
+  //   .title {
+  //     position: relative;
+  //     display: inline;
+  //     margin: 1rem 0;
+  //   }
+
+  //   @media only screen and (min-width: 576px) {
+  //     display: none;
+  //   }
+  // }
 </style>
 
 <section>
   <div class="card-container-desktop">
     <div class="row">
+     
       <div class="col-12 col-md-6 image-container">
         <img src={imageUrl} alt="site image for {title}" />
         <h5 class="framework-label mt-1">Built with {framework}</h5>
       </div>
       <div class="col-12 col-md-6">
-      
-          <div class="content-container">
-            <h4 class="title">{title}</h4>
-            <p class="description">OVERVIEW<br> {description}</p>
-            <p class="challenge">CHALLENGE<br> {challenge}</p>
-            <p class="technologies">TECHNOLOGIES<br> {technologies}</p>
-            <a href={siteUrl} target="_blank" class="site-btn">
-              <p class="m-0">Visit Site</p>
-            </a>
-          </div>
+
+        <div class="content-container">
+        <h4 class="title">{title}</h4>
+          <p class="description">
+            OVERVIEW
+            <br />
+            {description}
+          </p>
+          <p class="challenge">
+            CHALLENGE
+            <br />
+            {challenge}
+          </p>
+          <p class="technologies">
+            TECHNOLOGIES
+            <br />
+            {technologies}
+          </p>
+          <a href={siteUrl} target="_blank" class="site-btn">
+            <p class="m-0">Visit Site</p>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- mobile version of the card-->
-  <div class="card-container-mobile">
+  <!-- <div class="card-container-mobile">
     <div class="row image-container">
       <div class="col-12">
         <img src={imageUrl} alt="site image for {title}" />
@@ -177,5 +151,5 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 </section>

@@ -11,7 +11,7 @@
   });
 
   const developerTools = [
-    "HTML, CSS/SCSS, JS",
+    "HTML, CSS, JS",
     "Vue, React, Redux, Svelte",
     "Node, VS Code",
     "Firebase, Stripe",
@@ -28,10 +28,10 @@
 
 <style type="text/scss">
   .section-wrapper {
-    background-color: #1f86ca;
+    background-color: #f8fafc;
   }
   .skills-box {
-    color: #fff;
+    color: #454f5b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +60,7 @@
   <div class="section-wrapper">
     <div class="skills-container container">
       <div class="row justify-content-center align-items-center">
-        <h4 class="text-white pt-5">Skills</h4>
+        <h4 class="pt-5">Skills</h4>
         <div class="skills-box col-12">
           <div class="row skill-row w-100">
             <div
@@ -68,22 +68,13 @@
               align-items-center"
               data-sal="fade"
               data-sal-easing="ease-in-out-quad"
-              data-sal-duration="500"
-            >
-              <i
-                class="fas fa-code fa-2x mb-4"
-              />
-              <h4
-                class="mb-3"
-              >
-                Developer
-              </h4>
+              data-sal-duration="500">
+              <i class="fas fa-code fa-2x mb-4" />
+              <h4 class="mb-3">Developer</h4>
               <p>
                 As a developer, I write clean, organized and performant code
               </p>
-              <h5 class="mt-4">
-                Development tools:
-              </h5>
+              <h5 class="mt-4">Development tools:</h5>
               <ul>
                 {#each developerTools as tool, devToolIndex}
                   <li
@@ -92,7 +83,7 @@
                     data-sal-easing="ease-in-out-quad"
                     data-sal-duration="500"
                     data-sal-delay={100 * devToolIndex}>
-                    {tool}
+                    <p>{tool}</p>
                   </li>
                 {/each}
               </ul>
@@ -102,22 +93,13 @@
               align-items-center"
               data-sal="fade"
               data-sal-easing="ease-in-out-quad"
-              data-sal-duration="500"
-            >
-              <i
-                class="fas fa-pencil-ruler fa-2x mb-4"
-              />
-              <h4
-                class="mb-3"
-              >
-                Designer
-              </h4>
+              data-sal-duration="500">
+              <i class="fas fa-pencil-ruler fa-2x mb-4" />
+              <h4 class="mb-3">Designer</h4>
               <p>
                 As a designer, I create simple, beautiful, and powerful designs
               </p>
-              <h5 class="mt-4">
-                Design tools:
-              </h5>
+              <h5 class="mt-4">Design tools:</h5>
               <ul>
                 {#each designerTools as tool, desToolIndex}
                   <li
@@ -126,7 +108,7 @@
                     data-sal-easing="ease-in-out-quad"
                     data-sal-duration="500"
                     data-sal-delay={100 * desToolIndex}>
-                    {tool}
+                    <p>{tool}</p>
                   </li>
                 {/each}
               </ul>

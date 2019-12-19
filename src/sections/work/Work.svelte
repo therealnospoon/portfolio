@@ -15,59 +15,53 @@
     {
       title: "Microsoft - Growing SQL Server",
       description:
-        "Creating a production site for Microsoft to beautifully illustrate SQL Server's evolution through the years",
+        "I helped create a production site for Microsoft that beautifully illustrates SQL Server's evolution through the years",
       challenge:
-        "This was a beautifully designed experience that leveraged SVG capabilities to bring it to life. The challenge piece was choosing the best implemententation of the SVG drawing and the background animations while maintaining cross-browser compatibility and responsiveness. We used the Scrollmagic library paired with Greensock and tested vigorously across IE, Edge and multiple mobile/tablet devices.",
-      technologies: "Vue, Scrollmagic, Wordpress",
+        "This was a wonderfully designed experience that leveraged SVG capabilities and animation libraries to bring it to life. The challenging part of this project was choosing the best implemententation of the SVG drawing and the background animations while maintaining cross-browser compatibility and responsiveness. The primary developers on this site used the Scrollmagic library paired with Greensock animations to achieve this unique functionality. My role on this site was making sure the site was tested vigorously across IE, Edge and multiple mobile/tablet. Due to the nature of SVGs and animation libraries, testing for cross-browser compatibility and reponsiveness is extremely important. I was able to complete testing using various browsers as well as multiple testing devices that I had available to me.",
+      technologies: "Vue, Scrollmagic, Greensock, Wordpress, Browserstack, Mobile/Tablet test devices",
       imageUrl: "./images/growing-sql-site.png",
       siteUrl: "https://discover.microsoft.com/growing-sql-server/#/",
-      framework: "Vue JS"
+      framework: "Vue.js"
     },
     {
       title: "Microsoft - DevOps Fundamentals",
       description:
-        "I built a website to help explain and explore the basic benefits and DevOps functionality of Microsoft Azure",
+        "I created a website for potential decision makers to explore the basic benefits and DevOps functionality of Microsoft Azure",
       challenge:
-        "This was a relatively straightforward production that site save for the fact that the client wanted to embed media from a third-party host hence it required some thinking around how to implement it as well as the architecture of the entire site. The site helped teach me the importance of structuring in an effective way to keep code neat, performant and functional.",
-      technologies: "Vue, Wordpress",
+        "This was a fairly straightforward site save for the fact that the client wanted to embed media from a third-party host hence requiring some thinking around how to implement it as well as the architecture of the entire site. Building this site helped me to really understand the importance of structuring in an effective way to keep code performant and functional but also to have the ability to integrate with other technologies.",
+      technologies: "Vue, Wordpress, Bootstrap, Vidyard",
       imageUrl: "./images/devops-fundamentals-site.png",
-      siteUrl: "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
-      framework: "Vue JS"
+      siteUrl:
+        "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
+      framework: "Vue.js"
     },
     {
       title: "Microsoft - Education Interactive Demos",
       description:
         "I worked on cross-browser compatibility, responsiveness and general polish on Microsoft 365 interactable demos that showcased it's apps in real world applications",
       challenge:
-        "This was a particularly interesting project that embedded media from a third-party host which required a little bit more nuance then just dropping in a video tag. Also, in particula",
-      technologies: "Vue, Scrollmagic, Wordpress",
+        "This project was primarily developed by another team and was handed off to my team to take across the finish line. The project was foundationally built in the Vue.js framework and is an interactive demo that showcases Microsoft 365 applications in specific contexts such as the classroom and displays how impactful it can be for teachers and students. My task was to fix the broken UI elements through testing across browsers, optimize assets as much as I can and to make sure the experience was ready to ship for our client. I accomplished this through testing via different browsers and devices of varying screen size, communicating with our design team to obtain higher quality/optimized assets and vigorous testing.",
+      technologies: "Vue, Wordpress, Vuex, Browserstack, Mobile/Tablet test devices",
       imageUrl: "./images/teams-education-site.png",
-      siteUrl: "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
-      framework: "Vue JS"
+      siteUrl:
+        "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
+      framework: "Vue.js"
     },
     {
       title: "Red Twig Cafe",
       description:
-        "I helped to build a redesigned retail/brochure website for a local cafe roastery in Edmonds, WA using Vue Js, a component driven Javascript framework",
+        "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
       imageUrl: "./images/RedTwigPic.jpg",
       siteUrl: "https://www.redtwig.com",
-      framework: "Vue JS"
+      framework: "Vue.js"
     },
     {
       title: "Edmonds Segway Tours",
       description:
-        "I built a single page scrolling website for a Segway tour company using Svelte, a lightweight JS library.",
+        "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
       imageUrl: "./images/EdmondsSegwayPic.jpg",
       siteUrl: "https://www.edmondssegwaytours.com",
-      framework: "Svelte JS"
-    },
-    {
-      title: "Savannah Seattle",
-      description:
-        "I built a website for an exotic cat seller with forms functionality and a content management system for easy owner maintenance using HTML, SCSS and a templating library called Rivets.",
-      imageUrl: "./images/SavannahSeattlePic.jpg",
-      siteUrl: "https://www.savannahseattle.com",
-      framework: "HTML,CSS, Rivets JS"
+      framework: "Svelte.js"
     }
   ];
 
@@ -78,11 +72,11 @@
 
 <style>
   .section-wrapper {
-    background-color: #1f86ca;
+    background-color: #f8fafc;
   }
 
   .section-title {
-    color: white;
+    color: #454f5b;
   }
 </style>
 
