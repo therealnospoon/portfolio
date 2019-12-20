@@ -2,6 +2,7 @@
   import WorkCard from "../../components/WorkCard.svelte";
   import { onMount } from "svelte";
   import sal from "sal.js";
+  import skills from "../skills/skills";
   import "sal.js/dist/sal.css";
 
   onMount(async () => {
@@ -21,7 +22,7 @@
       technologies: "Vue, Scrollmagic, Greensock, Wordpress, Browserstack, Mobile/Tablet test devices",
       imageUrl: "./images/growing-sql-site.png",
       siteUrl: "https://discover.microsoft.com/growing-sql-server/#/",
-      framework: "Vue.js"
+      stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
       title: "Microsoft - DevOps Fundamentals",
@@ -33,19 +34,19 @@
       imageUrl: "./images/devops-fundamentals-site.png",
       siteUrl:
         "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
-      framework: "Vue.js"
+      stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
       title: "Microsoft - Education Interactive Demos",
       description:
-        "I worked on cross-browser compatibility, responsiveness and general polish on Microsoft 365 interactable demos that showcased it's apps in real world applications",
+        "I worked on cross-browser compatibility, responsiveness and general polish on Microsoft 365 interactable demos that showcased it's powerful impact in the realm of education",
       challenge:
         "This project was primarily developed by another team and was handed off to my team to take across the finish line. The project was foundationally built in the Vue.js framework and is an interactive demo that showcases Microsoft 365 applications in specific contexts such as the classroom and displays how impactful it can be for teachers and students. My task was to fix the broken UI elements through testing across browsers, optimize assets as much as I can and to make sure the experience was ready to ship for our client. I accomplished this through testing via different browsers and devices of varying screen size, communicating with our design team to obtain higher quality/optimized assets and vigorous testing.",
       technologies: "Vue, Wordpress, Vuex, Browserstack, Mobile/Tablet test devices",
       imageUrl: "./images/teams-education-site.png",
       siteUrl:
         "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
-      framework: "Vue.js"
+      stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
       title: "Red Twig Cafe",
@@ -53,7 +54,7 @@
         "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
       imageUrl: "./images/RedTwigPic.jpg",
       siteUrl: "https://www.redtwig.com",
-      framework: "Vue.js"
+      stack: [skills.vue, skills.sass]
     },
     {
       title: "Edmonds Segway Tours",
@@ -61,7 +62,7 @@
         "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
       imageUrl: "./images/EdmondsSegwayPic.jpg",
       siteUrl: "https://www.edmondssegwaytours.com",
-      framework: "Svelte.js"
+      stack: [skills.svelte, skills.sass]
     }
   ];
 
@@ -88,9 +89,7 @@
         {#each projects as card, cardIndex}
           <div
             class="col-12 mb-5 d-flex justify-content-center"
-            data-sal="slide-right"
-            data-sal-easing="ease-out-sine"
-            data-sal-duration="500">
+          >
             <WorkCard {...card} on:siteclick={handleSiteClick} />
           </div>
         {/each}

@@ -1,5 +1,15 @@
 <script>
+  import { onMount } from "svelte";
   import { createEventDispatcher } from "svelte";
+  import sal from "sal.js";
+  import "sal.js/dist/sal.css";
+
+  onMount(async () => {
+    sal({
+      threshold: 0.2,
+      once: true
+    });
+  });
   const dispatch = createEventDispatcher();
 
   export let title;
@@ -8,7 +18,7 @@
   export let technologies;
   export let imageUrl;
   export let siteUrl;
-  export let framework;
+  export let stack;
 
   function siteOpening() {
     dispatch("siteclick", {
@@ -55,56 +65,41 @@
         background: #0053ba;
       }
     }
+    .stack-icon {
+      width: 24px;
+    }
     // @media only screen and (min-width: 576px) {
     //   display: flex;
     // }
   }
-  // .card-container-mobile {
-  //   background-color: #fff;
-  //   border-radius: 4px;
-  //   color: #353535;
-  //   box-shadow: 1px 2px 5px 2px #05336b9d;
-  //   img {
-  //     width: 100%;
-  //     border-radius: 4px 4px 0 0;
-  //   }
-  //   .site-btn {
-  //     display: inline-block;
-  //     padding: 0.5rem 1rem;
-  //     margin: 1rem 0 0 0;
-  //     width: 170px;
-  //     text-decoration: none;
-  //     border-radius: 2px;
-  //     font-size: 1rem;
-  //     background: #0069ed;
-  //     color: #fff;
-  //     text-align: center;
-  //   }
-
-  //   .title {
-  //     position: relative;
-  //     display: inline;
-  //     margin: 1rem 0;
-  //   }
-
-  //   @media only screen and (min-width: 576px) {
-  //     display: none;
-  //   }
-  // }
 </style>
 
 <section>
   <div class="card-container-desktop">
     <div class="row">
-     
+
       <div class="col-12 col-md-6 image-container">
-        <img src={imageUrl} alt="site image for {title}" />
-        <h5 class="framework-label mt-1">Built with {framework}</h5>
+        <img
+          src={imageUrl}
+          alt="site image for {title}"
+          data-sal="slide-up"
+          data-sal-easing="ease-out-sine"
+          data-sal-duration="250" />
+        <!-- <h5 class="framework-label mt-1 d-inline">Built with</h5> -->
+        {#each stack as icon, iconIndex}
+          <img
+            src={icon.image}
+            class="stack-icon mx-1"
+            data-sal="slide-right"
+            data-sal-easing="ease-in-out-quad"
+            data-sal-duration="750"
+            data-sal-delay={200 * iconIndex} />
+        {/each}
       </div>
       <div class="col-12 col-md-6">
 
         <div class="content-container">
-        <h4 class="title">{title}</h4>
+          <h4 class="title">{title}</h4>
           <p class="description">
             OVERVIEW
             <br />
