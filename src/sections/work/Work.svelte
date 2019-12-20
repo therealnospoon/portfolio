@@ -80,7 +80,7 @@
   }
 </style>
 
-<section>
+<section id="work">
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
       <h4 class="section-title text-center my-5">Featured Work</h4>

@@ -46,22 +46,14 @@
       isLoaded = true;
     }
   }
-
 </script>
 
 <style type="text/scss">
   .section-wrapper {
     height: 110vh;
     background: #1f86ca;
-    position: relative;
     z-index: 10;
     overflow: hidden;
-    @media only screen and (max-width: 576px) {
-      height: 120vh;
-      .header-bg {
-        height: 120vh;
-      }
-    }
   }
 
   .header-bg {
@@ -77,22 +69,22 @@
   // }
 
   .profile-card {
-    background-color:#f8fafc;
+    background-color: #f8fafc;
     border-radius: 3px;
     padding: 4rem 0;
     max-width: 600px;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     overflow-x: hidden;
     color: rgb(80, 80, 80);
 
-    .pic-container {
-      .lines {
-        height: 1px;
-        width: 200px;
-        background: rgb(80, 80, 80);
-        padding: 0;
-      }
-    }
+    // .pic-container {
+    //   .lines {
+    //     height: 1px;
+    //     width: 200px;
+    //     background: rgb(80, 80, 80);
+    //     padding: 0;
+    //   }
+    // }
     .profile-pic {
       height: 100px;
       width: 100px;
@@ -102,32 +94,13 @@
     .profile-blurb {
       max-width: 400px;
     }
-    .contact-link,
-    .resume-link {
-      display: inline-block;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
+
+    .work-link {
       text-decoration: none;
-      background: #0069ed;
-      color: #f8fafc;
-      border-radius: 2px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
-
-      &:hover,
-      &:focus {
-        background: #0053ba;
-      }
-      &.resume-link {
-        background: #f8fafc;
-        color: #0069ed;
-
-        p {
+      appearance: none;
+        h4 {
           position: relative;
+          color: #0069ed;
           &:after {
             content: "";
             width: 0;
@@ -142,56 +115,40 @@
 
         &:hover,
         &:focus {
-          p {
+          h4 {
             &:after {
               width: 100%;
             }
           }
         }
       }
-    }
   }
 </style>
-
 
 <section>
   <div class="section-wrapper">
 
     <div
-      class="header-bg d-flex justify-content-center align-items-center parallax"
+      class="header-bg d-flex justify-content-center align-items-center"
       id="keyart-0"
       data-speed="-50">
       {#if isLoaded}
         <div
-          class="profile-card d-flex 
-          align-items-center"
+          class="profile-card d-flex align-items-center container"
           id="keyart-1"
           data-speed="30"
           transition:fade={{ delay: 250, duration: 1500 }}>
-          <div class="row pic-container">
-            <div class="col-12 d-flex align-items-center">
-              <div class="lines" />
-              <img
-                class="profile-pic"
-                src={profilePic}
-                alt="timkim-profile-picture" />
-              <div class="lines" />
-            </div>
-          </div>
           <h1 class="mt-5">Hi, my name is Tim.</h1>
-          <h4 class="mt-2">I am a UI developer from Seattle, WA. I strive to build clean and refreshing digital experiences.</h4>
-          <!-- <p class="profile-blurb mt-2 px-3">
-            Hello, 
-          </p> -->
-
-          <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
-            <p class="m-0">Get in touch</p>
+          <h4 class="mt-2">
+            I am a UI developer from Seattle, WA. I strive to build clean and
+            refreshing digital experiences.
+            <br />
+            <br />
+            Check out some of my
+          <a href="#work" class="work-link">
+            <h4 class="m-0 d-inline">Recent Work</h4>
           </a>
-
-          <a href="./images/TK_Dev_Resume.pdf" download class="resume-link">
-            <p class="m-0">Download Resume</p>
-          </a>
-
+          </h4>
         </div>
       {/if}
     </div>

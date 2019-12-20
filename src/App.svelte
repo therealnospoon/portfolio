@@ -3,6 +3,7 @@
   import Work from "./sections/work/Work.svelte";
   import Skills from "./sections/skills/Skills.svelte";
   import Contact from "./sections/contact/Contact.svelte";
+  import MainNav from "./components/MainNav.svelte";
   import "scroll-behavior-polyfill";
 
   import { onMount } from "svelte";
@@ -30,12 +31,17 @@
   }
   :global(html, body) {
     scroll-behavior: smooth;
+    position: relative;
   }
+
 </style>
 
 <div>
-  <Header />
-  <Skills />
-  <Work />
-  <Contact on:gototop={scrollToTop} />
+  
+    <MainNav />
+    <Header />
+    <Skills />
+    <Work />
+    <Contact on:gototop={scrollToTop} />
+
 </div>
