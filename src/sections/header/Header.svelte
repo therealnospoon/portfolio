@@ -11,7 +11,7 @@
   onMount(async () => {
     await checkBgStatus();
     toggleBgLoaded();
-    initParallax();
+    // initParallax();
   });
 
   function initParallax() {
@@ -47,18 +47,6 @@
     }
   }
 
-  function entrance(node, { delay, duration }) {
-    return {
-      delay,
-      duration,
-      css: t => {
-        const eased = quartOut(t);
-        return `transform: scale(${9 - eased * 8});
-						opacity: ${t * 0.9};`;
-      }
-    };
-  }
-
 </script>
 
 <style type="text/scss">
@@ -81,17 +69,19 @@
     background-position: center center;
     // position: absolute;
     height: 110vh;
-    background-image: url("./images/portfolio_bg.jpg");
+    // background-image: url("./images/portfolio_bg.jpg");
+    background-color: #f8fafc;
   }
-  .parallax {
-    position: sticky;
-  }
+  // .parallax {
+  //   position: sticky;
+  // }
 
   .profile-card {
-    background-color: rgba(255, 255, 255, 1);
+    background-color:#f8fafc;
     border-radius: 3px;
     padding: 4rem 0;
-    max-width: 500px;
+    max-width: 600px;
+    flex-wrap:wrap;
     overflow-x: hidden;
     color: rgb(80, 80, 80);
 
@@ -121,7 +111,7 @@
       width: 170px;
       text-decoration: none;
       background: #0069ed;
-      color: #ffffff;
+      color: #f8fafc;
       border-radius: 2px;
       font-size: 1rem;
       cursor: pointer;
@@ -133,7 +123,7 @@
         background: #0053ba;
       }
       &.resume-link {
-        background: #fff;
+        background: #f8fafc;
         color: #0069ed;
 
         p {
@@ -173,11 +163,11 @@
       data-speed="-50">
       {#if isLoaded}
         <div
-          class="profile-card d-flex flex-column justify-content-center
-          align-items-center parallax"
+          class="profile-card d-flex 
+          align-items-center"
           id="keyart-1"
           data-speed="30"
-          transition:entrance={{ delay: 750, duration: 1500 }}>
+          transition:fade={{ delay: 250, duration: 1500 }}>
           <div class="row pic-container">
             <div class="col-12 d-flex align-items-center">
               <div class="lines" />
@@ -188,17 +178,11 @@
               <div class="lines" />
             </div>
           </div>
-          <h1 class="mt-5">Tim Kim</h1>
-          <h4 class="mt-2">WEB DEVELOPER</h4>
-          <p class="profile-blurb text-center mt-2 px-3">
-            Hi, I'm a developer from Seattle, WA. My interests include (but are
-            not limited to): playing/listening to music, cooking and discovering
-            new foods, building things with my hands, going on adventures with
-            my wife, snowboarding...etc.
-            <br />
-            <br />
-            Let's build something wonderful together!
-          </p>
+          <h1 class="mt-5">Hi, my name is Tim.</h1>
+          <h4 class="mt-2">I am a UI developer from Seattle, WA. I strive to build clean and refreshing digital experiences.</h4>
+          <!-- <p class="profile-blurb mt-2 px-3">
+            Hello, 
+          </p> -->
 
           <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
             <p class="m-0">Get in touch</p>
@@ -211,5 +195,9 @@
         </div>
       {/if}
     </div>
+    <!-- My interests include (but are
+            not limited to): playing/listening to music, cooking and discovering
+            new foods, building things with my hands, going on adventures with
+            my wife, snowboarding...etc. -->
   </div>
 </section>
