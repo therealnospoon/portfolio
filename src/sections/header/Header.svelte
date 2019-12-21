@@ -59,14 +59,9 @@
   .header-bg {
     background-size: cover;
     background-position: center center;
-    // position: absolute;
     height: 110vh;
-    // background-image: url("./images/portfolio_bg.jpg");
     background-color: #f8fafc;
   }
-  // .parallax {
-  //   position: sticky;
-  // }
 
   .profile-card {
     background-color: #f8fafc;
@@ -98,30 +93,30 @@
     .work-link {
       text-decoration: none;
       appearance: none;
-        h4 {
-          position: relative;
-          color: #0069ed;
-          &:after {
-            content: "";
-            width: 0;
-            height: 2px;
-            background-color: #0069ed;
-            position: absolute;
-            top: 90%;
-            left: 0;
-            transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          }
+      h4 {
+        position: relative;
+        color: #0069ed;
+        &:after {
+          content: "";
+          width: 0;
+          height: 2px;
+          background-color: #0069ed;
+          position: absolute;
+          top: 90%;
+          left: 0;
+          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
+      }
 
-        &:hover,
-        &:focus {
-          h4 {
-            &:after {
-              width: 100%;
-            }
+      &:hover,
+      &:focus {
+        h4 {
+          &:after {
+            width: 100%;
           }
         }
       }
+    }
   }
 </style>
 
@@ -138,6 +133,11 @@
           id="keyart-1"
           data-speed="30"
           transition:fade={{ delay: 250, duration: 1500 }}>
+          <div class="row w-100">
+            <div class="col-12 d-flex justify-content-center">
+              <img class="profile-pic" src={profilePic} />
+            </div>
+          </div>
           <h1 class="mt-5">Hi, my name is Tim.</h1>
           <h4 class="mt-2">
             I am a UI developer from Seattle, WA. I strive to build clean and
@@ -145,9 +145,9 @@
             <br />
             <br />
             Check out some of my
-          <a href="#work" class="work-link">
-            <h4 class="m-0 d-inline">Recent Work</h4>
-          </a>
+            <a href="#work" class="work-link">
+              <h4 class="m-0 d-inline">Recent Work</h4>
+            </a>
           </h4>
         </div>
       {/if}

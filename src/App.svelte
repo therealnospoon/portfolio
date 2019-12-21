@@ -24,6 +24,7 @@
   @import "assets/styles/base/mixins";
   @import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Playfair+Display:400,700,900&display=swap');
 
+
   :global(h1, h2, h3, h4, h5, p) {
     font-family: 'DM Serif Display', serif;
     font-weight: 400;

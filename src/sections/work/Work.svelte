@@ -31,7 +31,7 @@
       description:
         "I created a website for potential decision makers to explore the basic benefits and DevOps functionality of Microsoft Azure",
       challenge:
-        "This was a fairly straightforward site save for the fact that the client wanted to embed media from a third-party host hence requiring some thinking around how to implement it as well as the architecture of the entire site. Building this site helped me to really understand the importance of structuring in an effective way to keep code performant and functional but also to have the ability to integrate with other technologies.",
+        "This was a fairly straightforward site save for the fact that the client wanted to embed media from a third-party host hence requiring some thinking around how to implement it as well as the architecture of the entire site. Building this site helped me to grasp the importance of structuring in an effective way to keep code performant and functional but also to have the ability to integrate with other technologies.",
       technologies: "Vue, Wordpress, Bootstrap, Vidyard",
       image1: "./images/devops-fundamentals-site.png",
       siteUrl:
