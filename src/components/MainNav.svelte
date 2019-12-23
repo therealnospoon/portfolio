@@ -49,7 +49,10 @@
 <svelte:window bind:scrollY={y}/>
 
 <style type="text/scss">
-  .nav-container {
+  .top-nav {
+
+  }
+  .hamburger-container {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -134,7 +137,7 @@
       cursor: pointer;
       text-align: center;
       transition: background 250ms ease-in-out, transform 150ms ease;
-      p {
+      h1 {
         position: relative;
         &:after {
           content: "";
@@ -150,7 +153,7 @@
 
       &:hover,
       &:focus {
-        p {
+        h1 {
           &:after {
             width: 100%;
           }
@@ -236,7 +239,7 @@
 </style>
 
 <section>
-  <div class="nav-container">
+  <div class="hamburger-container">
     <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
       <p class="m-0">Contact</p>
     </a>
@@ -255,10 +258,10 @@
     align-items-center"
     id="full-menu">
     <a href="mailto:timkimdesigns@gmail.com" class="menu-contact" on:click={handleHamburger}>
-      <p class="m-0">Contact</p>
+      <h1 class="m-0">Contact</h1>
     </a>
     <a href="./images/TK_Dev_Resume.pdf" download class="menu-resume" on:class:={handleHamburger}>
-      <p class="m-0">Download Resume</p>
+      <h1 class="m-0">Download Resume</h1>
     </a>
   </div>
   <div class="blue-circle" id="bluecircle" />
