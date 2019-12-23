@@ -77,7 +77,6 @@
     <div class="skills-container container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 d-flex flex-column align-items-center">
-          <i class="fas fa-code fa-2x mt-5 mb-3" />
           <h4>Skills</h4>
         </div>
         <div

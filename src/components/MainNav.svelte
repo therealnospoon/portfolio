@@ -1,7 +1,28 @@
 <script>
   import "sal.js/dist/sal.css";
 
+  let y = 0;
+  let lastY = 0;
+  let headerClass = 'show-main-nav';
+  let lastDirection = "up";
   let menuOpen = false;
+
+
+    function changeClass(y) {
+      let result = headerClass;
+      const scrolledPxs = lastY - y;
+      const scrollDirection = scrolledPxs < 0 ? "down" : "up";
+      const changedDirection = scrollDirection !== lastDirection;
+      if(changedDirection) {
+        result = scrollDirection === 'down' ? 'show-main-nav' : 'hide-main-nav';
+        lastDirection = scrollDirection;
+      }
+
+      lastY = y;
+      return result;
+    }
+
+  $: headerClass = changeClass(y);
 
   function handleHamburger() {
     const menu = document.getElementById("full-menu");
@@ -24,6 +45,8 @@
     console.log(menuOpen);
   }
 </script>
+
+<svelte:window bind:scrollY={y}/>
 
 <style type="text/scss">
   .nav-container {
@@ -231,10 +254,10 @@
     class="full-menu d-flex flex-column justify-content-center
     align-items-center"
     id="full-menu">
-    <a href="mailto:timkimdesigns@gmail.com" class="menu-contact">
+    <a href="mailto:timkimdesigns@gmail.com" class="menu-contact" on:click={handleHamburger}>
       <p class="m-0">Contact</p>
     </a>
-    <a href="./images/TK_Dev_Resume.pdf" download class="menu-resume">
+    <a href="./images/TK_Dev_Resume.pdf" download class="menu-resume" on:class:={handleHamburger}>
       <p class="m-0">Download Resume</p>
     </a>
   </div>
