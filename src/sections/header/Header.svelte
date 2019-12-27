@@ -66,7 +66,7 @@
   .profile-card {
     background-color: #f8fafc;
     border-radius: 3px;
-    padding: 4rem 0;
+    padding: 4rem 1rem;
     max-width: 600px;
     flex-wrap: wrap;
     overflow-x: hidden;
@@ -129,7 +129,7 @@
       data-speed="-50">
       {#if isLoaded}
         <div
-          class="profile-card d-flex align-items-center container"
+          class="profile-card d-flex align-items-center justify-content-center container"
           id="keyart-1"
           data-speed="30"
           transition:fade={{ delay: 250, duration: 1500 }}>
@@ -138,17 +138,21 @@
               <img class="profile-pic" src={profilePic} />
             </div>
           </div>
-          <h1 class="mt-5">Hi, my name is Tim.</h1>
-          <h4 class="mt-2">
-            I am a UI developer from Seattle, WA. I strive to build clean and
-            refreshing digital experiences.
-            <br />
-            <br />
-            Check out some of my
-            <a href="#work" class="work-link">
-              <h4 class="m-0 d-inline">Recent Work</h4>
-            </a>
-          </h4>
+          <div class="row">
+            <div class="col-12">
+              <h1 class="mt-5">Hi, my name is Tim.</h1>
+              <h4 class="mt-2">
+                I am a UI developer from Seattle, WA. I strive to build clean
+                and refreshing digital experiences.
+                <br />
+                <br />
+                Check out some of my
+                <a href="#work" class="work-link">
+                  <h4 class="m-0 d-inline">Recent Work</h4>
+                </a>
+              </h4>
+            </div>
+          </div>
         </div>
       {/if}
     </div>

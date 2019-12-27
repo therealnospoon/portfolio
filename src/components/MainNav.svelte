@@ -3,6 +3,7 @@
 
   let y = 0;
   let lastY = 0;
+  let headerHeight = 150;
   let headerClass = "";
   let lastDirection = "up";
   let menuOpen = false;
@@ -12,11 +13,17 @@
     const scrolledPxs = lastY - y;
     const scrollDirection = scrolledPxs < 0 ? "down" : "up";
     const changedDirection = scrollDirection !== lastDirection;
-    if (changedDirection) {
-      result = scrollDirection === "down" ? "rollup" : "";
+    if (scrollDirection === "down" && y > headerHeight) {
+      result = "rollup";
+      // result = scrollDirection === "down" ? "rollup" : "";
+      lastDirection = scrollDirection;
+    } else if (scrollDirection === "up" && y > headerHeight) {
+      result = "rollup";
+      lastDirection = scrollDirection;
+    } else {
+      result = "";
       lastDirection = scrollDirection;
     }
-
     lastY = y;
     return result;
   }
@@ -115,6 +122,9 @@
             }
           }
         }
+      }
+      @media only screen and (max-width: 768px) {
+        display: none;
       }
     }
   }
