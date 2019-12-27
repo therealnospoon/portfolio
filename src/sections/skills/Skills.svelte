@@ -31,7 +31,8 @@
     skills.photoshop,
     skills.figma,
     skills.illustrator,
-    skills.node
+    skills.node,
+    skills.three
   ];
   // const designerTools = [
   //   "Figma",

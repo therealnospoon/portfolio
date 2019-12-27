@@ -3,24 +3,23 @@
 
   let y = 0;
   let lastY = 0;
-  let headerClass = 'show-main-nav';
+  let headerClass = "";
   let lastDirection = "up";
   let menuOpen = false;
 
-
-    function changeClass(y) {
-      let result = headerClass;
-      const scrolledPxs = lastY - y;
-      const scrollDirection = scrolledPxs < 0 ? "down" : "up";
-      const changedDirection = scrollDirection !== lastDirection;
-      if(changedDirection) {
-        result = scrollDirection === 'down' ? 'show-main-nav' : 'hide-main-nav';
-        lastDirection = scrollDirection;
-      }
-
-      lastY = y;
-      return result;
+  function changeClass(y) {
+    let result = headerClass;
+    const scrolledPxs = lastY - y;
+    const scrollDirection = scrolledPxs < 0 ? "down" : "up";
+    const changedDirection = scrollDirection !== lastDirection;
+    if (changedDirection) {
+      result = scrollDirection === "down" ? "rollup" : "";
+      lastDirection = scrollDirection;
     }
+
+    lastY = y;
+    return result;
+  }
 
   $: headerClass = changeClass(y);
 
@@ -46,22 +45,29 @@
   }
 </script>
 
-<svelte:window bind:scrollY={y}/>
-
 <style type="text/scss">
-  .top-nav {
-
+  // :global(.rollout) {
+  //   right: 52% !important;
+  //   transform: rotate(0deg) !important;
+  // }
+  :global(.rollup) {
+    right: -50% !important;
+    .hamburger {
+      right: 52% !important;
+      transform: rotate(0deg) !important;
+    }
   }
-  .hamburger-container {
+  .top-nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0%;
     z-index: 5;
     overflow: hidden;
+    transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     .contact-link,
     .resume-link {
@@ -164,11 +170,16 @@
 
   .hamburger {
     display: block;
+    right: -50px;
     border: none;
     text-decoration: none;
     background: none;
     cursor: pointer;
     position: relative;
+    transform: rotate(180deg);
+    transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      transform 500ms ease-in-out;
+
     -webkit-user-select: none;
     user-select: none;
 
@@ -238,8 +249,9 @@
   }
 </style>
 
+<svelte:window bind:scrollY={y} />
 <section>
-  <div class="hamburger-container">
+  <div class="top-nav {headerClass}" >
     <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
       <p class="m-0">Contact</p>
     </a>
@@ -257,10 +269,17 @@
     class="full-menu d-flex flex-column justify-content-center
     align-items-center"
     id="full-menu">
-    <a href="mailto:timkimdesigns@gmail.com" class="menu-contact" on:click={handleHamburger}>
+    <a
+      href="mailto:timkimdesigns@gmail.com"
+      class="menu-contact"
+      on:click={handleHamburger}>
       <h1 class="m-0">Contact</h1>
     </a>
-    <a href="./images/TK_Dev_Resume.pdf" download class="menu-resume" on:class:={handleHamburger}>
+    <a
+      href="./images/TK_Dev_Resume.pdf"
+      download
+      class="menu-resume"
+      on:class:={handleHamburger}>
       <h1 class="m-0">Download Resume</h1>
     </a>
   </div>
