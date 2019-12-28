@@ -1,5 +1,6 @@
 <script>
   import "sal.js/dist/sal.css";
+  import { fade } from "svelte/transition";
 
   let y = 0;
   let lastY = 0;
@@ -15,11 +16,12 @@
     const changedDirection = scrollDirection !== lastDirection;
     if (scrollDirection === "down" && y > headerHeight) {
       result = "rollup";
-      // result = scrollDirection === "down" ? "rollup" : "";
       lastDirection = scrollDirection;
     } else if (scrollDirection === "up" && y > headerHeight) {
       result = "rollup";
       lastDirection = scrollDirection;
+    } else if (window.innerWidth < 768) {
+      result = "rollup";
     } else {
       result = "";
       lastDirection = scrollDirection;
@@ -53,15 +55,16 @@
 </script>
 
 <style type="text/scss">
-  // :global(.rollout) {
-  //   right: 52% !important;
-  //   transform: rotate(0deg) !important;
-  // }
   :global(.rollup) {
-    right: -50% !important;
+    right: -51% !important;
+    .contact-link,
+    .resume-link {
+      opacity: 0 !important;
+    }
     .hamburger {
       right: 52% !important;
       transform: rotate(0deg) !important;
+      opacity: 1;
     }
   }
   .top-nav {
@@ -79,6 +82,7 @@
     .contact-link,
     .resume-link {
       display: inline-block;
+      opacity: 1;
       border: none;
       padding: 0.5rem 1rem;
       margin: 1rem;
@@ -90,7 +94,8 @@
       font-size: 1rem;
       cursor: pointer;
       text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
+      transition: background 250ms ease-in-out, transform 150ms ease,
+        opacity 100ms linear;
 
       &:hover,
       &:focus {
@@ -123,7 +128,7 @@
           }
         }
       }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         display: none;
       }
     }
@@ -180,6 +185,7 @@
 
   .hamburger {
     display: block;
+    opacity: 0;
     right: -50px;
     border: none;
     text-decoration: none;
@@ -188,7 +194,10 @@
     position: relative;
     transform: rotate(180deg);
     transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
-      transform 500ms ease-in-out;
+      transform 500ms ease-in-out, opacity 250ms linear;
+    @media only screen and (max-width: 576px) {
+      top: 10px;
+    }
 
     -webkit-user-select: none;
     user-select: none;
@@ -261,7 +270,9 @@
 
 <svelte:window bind:scrollY={y} />
 <section>
-  <div class="top-nav {headerClass}" >
+  <div
+    class="top-nav {headerClass}"
+    transition:fade={{ delay: 250, duration: 1500 }}>
     <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
       <p class="m-0">Contact</p>
     </a>

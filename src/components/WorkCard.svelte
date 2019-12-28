@@ -41,13 +41,23 @@
       border-radius: 4px;
     }
     .image-container {
+      min-height: 370px;
       border-radius: 4px;
       .site-image {
         margin: -5rem -2rem 5rem 0;
+        cursor: pointer;
+        @media only screen and (max-width: 576px) {
+          margin: -5rem -2rem 1rem 0;
+        }
       }
+
       .mobile-image {
         margin: 0 5rem 0 -3rem;
         max-width: 180px;
+        @media only screen and (max-width: 576px) {
+          margin: 0 0rem 0 -3rem;
+          max-width: 120px;
+        }
       }
     }
     .framework-label {
@@ -82,8 +92,13 @@
 <section>
   <div class="card-container-desktop">
     <div class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <h4 class="title mb-5">{title}</h4>
+      </div>
+      <div
+        class="col-12 col-md-6 image-container d-flex justify-content-center
+        align-items-center">
 
-      <div class="col-12 col-md-6 image-container d-flex justify-content-center align-items-center">
         <img
           src={image1}
           class="site-image"
@@ -91,6 +106,7 @@
           data-sal="slide-up"
           data-sal-easing="ease-out-sine"
           data-sal-duration="250" />
+
         <img
           class="mobile-image"
           src={image2}
@@ -104,7 +120,7 @@
       <div class="col-12 col-md-6">
 
         <div class="content-container">
-          <h4 class="title">{title}</h4>
+
           <p class="description">
             OVERVIEW
             <br />
