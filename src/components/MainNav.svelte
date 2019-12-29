@@ -75,7 +75,7 @@
     position: fixed;
     top: 0;
     right: 0%;
-    z-index: 5;
+    z-index: 6;
     overflow: hidden;
     transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -143,7 +143,7 @@
     width: 100vw;
     background-color: #0069ed;
     color: #f8fafc;
-    z-index: 3;
+    z-index: 5;
     .menu-contact,
     .menu-resume {
       display: inline-block;

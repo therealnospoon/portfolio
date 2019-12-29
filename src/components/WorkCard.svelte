@@ -19,6 +19,7 @@
   export let image1;
   export let image2;
   export let image3;
+  export let gifId;
   export let siteUrl;
   export let stack;
 
@@ -28,22 +29,23 @@
     });
   }
 
+ 
+
   function handleGif() {
-    let gifPlaying = false;
-    const siteGif = document.getElementById("site-gif");
-    if(!gifPlaying) {
-      siteGif.style.opacity = 1;
-      siteGif.style.zIndex = 4;
-      gifPlaying = true;
-    } else {
-      siteGif.style.opacity = 0;
-      siteGif.style.zIndex = 1;
-      gifPlaying = false;
-    }
+   dispatch("gifclick", {
+     gifId: gifId
+   });
   }
 </script>
 
 <style type="text/scss">
+:global(.gifPlaying) {
+    opacity: 1 !important;
+    z-index: 4 !important;
+    & ~ .mobile-image-container {
+      opacity: 0;
+    }
+}
   .card-container-desktop {
     display: flex;
     align-items: center;
@@ -79,7 +81,7 @@
           align-items: center;
           content: "\f01d";
           font-family: FontAwesome;
-          font-size: 100px;
+          font-size: 75px;
           color: #fff;
           opacity: 0;
           transition: opacity 250ms ease-in;
@@ -94,7 +96,7 @@
           position: absolute;
           top: 0;
           left: 0;
-          height: auto;
+          height: 100%;
           width: 100%;
           opacity: 0;
           z-index: 1;
@@ -103,8 +105,9 @@
         }
       }
       .mobile-image-container {
-        margin-left: -3rem;
+        margin: 0 0 -2rem -3rem;
         z-index: 3;
+        transition: opacity 250ms ease-in;
         @media only screen and (max-width: 576px) {
           margin: 0 0 0 -3rem;
         }
@@ -161,9 +164,8 @@
           <img
             src={image3}
             class="site-gif"
-            id="site-gif"
-            alt="site gif for {title}"
-            on:click={handleGif} />
+            id={gifId}
+            alt="site gif for {title}" />
         </div>
         <div class="mobile-image-container">
           <img
