@@ -78,7 +78,7 @@
     <div class="skills-container container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 d-flex flex-column align-items-center">
-          <h4>Skills</h4>
+          <h2>Skills</h2>
         </div>
         <div
           class="skills-box d-flex align-items-center col-12"

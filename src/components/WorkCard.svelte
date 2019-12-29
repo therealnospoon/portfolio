@@ -27,13 +27,27 @@
       url: siteUrl
     });
   }
+
+  function handleGif() {
+    let gifPlaying = false;
+    const siteGif = document.getElementById("site-gif");
+    if(!gifPlaying) {
+      siteGif.style.opacity = 1;
+      siteGif.style.zIndex = 4;
+      gifPlaying = true;
+    } else {
+      siteGif.style.opacity = 0;
+      siteGif.style.zIndex = 1;
+      gifPlaying = false;
+    }
+  }
 </script>
 
 <style type="text/scss">
   .card-container-desktop {
     display: flex;
     align-items: center;
-    min-height: 700px;
+    min-height: 75vh;
     color: #454f5b;
     padding: 0 0.5rem;
     img {
@@ -41,22 +55,58 @@
       border-radius: 4px;
     }
     .image-container {
-      min-height: 370px;
       border-radius: 4px;
-      .site-image {
+      @media only screen and (max-width: 576px) {
+        min-height: 320px;
+      }
+      .site-image-container {
+        position: relative;
         margin: -5rem -2rem 5rem 0;
         cursor: pointer;
         @media only screen and (max-width: 576px) {
-          margin: -5rem -2rem 1rem 0;
+          margin: -5rem -2rem 2rem 0;
+        }
+        &:after {
+          border-radius: 4px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "\f01d";
+          font-family: FontAwesome;
+          font-size: 100px;
+          color: #fff;
+          opacity: 0;
+          transition: opacity 250ms ease-in;
+        }
+        &:hover:after {
+          opacity: 1;
+        }
+        .site-image {
+          z-index: 2;
+        }
+        .site-gif {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: auto;
+          width: 100%;
+          opacity: 0;
+          z-index: 1;
+          transition: opacity 250ms ease-in;
+          cursor: pointer;
         }
       }
-
-      .mobile-image {
-        margin: 0 5rem 0 -3rem;
-        max-width: 180px;
+      .mobile-image-container {
+        margin-left: -3rem;
+        z-index: 3;
         @media only screen and (max-width: 576px) {
-          margin: 0 0rem 0 -3rem;
-          max-width: 120px;
+          margin: 0 0 0 -3rem;
         }
       }
     }
@@ -92,50 +142,50 @@
 <section>
   <div class="card-container-desktop">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center align-items-center">
-        <h4 class="title mb-5">{title}</h4>
+      <div class="col-12 d-flex justify-content-center align-items-center mb-5">
+        <h3 class="title mb-5">{title}</h3>
       </div>
       <div
         class="col-12 col-md-6 image-container d-flex justify-content-center
         align-items-center">
 
-        <img
-          src={image1}
-          class="site-image"
-          alt="site image for {title}"
-          data-sal="slide-up"
-          data-sal-easing="ease-out-sine"
-          data-sal-duration="250" />
+        <div class="site-image-container" on:click={handleGif}>
+          <img
+            src={image1}
+            class="site-image"
+            alt="site image for {title}"
+            data-sal="slide-up"
+            data-sal-easing="ease-out-sine"
+            data-sal-duration="250" />
 
-        <img
-          class="mobile-image"
-          src={image2}
-          alt="site image for {title}"
-          data-sal="slide-up"
-          data-sal-easing="ease-out-sine"
-          data-sal-duration="250"
-          data-sal-delay="250" />
+          <img
+            src={image3}
+            class="site-gif"
+            id="site-gif"
+            alt="site gif for {title}"
+            on:click={handleGif} />
+        </div>
+        <div class="mobile-image-container">
+          <img
+            class="mobile-image"
+            src={image2}
+            alt="site image for {title}"
+            data-sal="slide-up"
+            data-sal-easing="ease-out-sine"
+            data-sal-duration="250"
+            data-sal-delay="250" />
+        </div>
 
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 d-flex align-items-center">
 
         <div class="content-container">
-
-          <p class="description">
-            OVERVIEW
-            <br />
-            {description}
-          </p>
-          <p class="challenge">
-            CHALLENGE
-            <br />
-            {challenge}
-          </p>
-          <p class="technologies">
-            TECHNOLOGIES
-            <br />
-            {technologies}
-          </p>
+          <h4>Overview</h4>
+          <p class="description">{description}</p>
+          <h4>Challenge</h4>
+          <p class="challenge">{challenge}</p>
+          <h4>Technologies</h4>
+          <p class="technologies">{technologies}</p>
           <a href={siteUrl} target="_blank" class="site-btn">
             <p class="m-0">Visit Site</p>
           </a>

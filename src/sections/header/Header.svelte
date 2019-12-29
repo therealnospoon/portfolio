@@ -140,17 +140,17 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <h1 class="mt-5">Hi, my name is Tim.</h1>
-              <h4 class="mt-2">
-                I am a UI developer from Seattle, WA. I strive to build clean
+              <h1 class="mt-5 mb-4">Hi, I'm Tim</h1>
+              <h5 class="mt-2">
+                I'm a UI developer from Seattle, WA. I strive to build clean
                 and refreshing digital experiences.
                 <br />
                 <br />
                 Check out some of my
                 <a href="#work" class="work-link">
-                  <h4 class="m-0 d-inline">Recent Work</h4>
+                  <h5 class="m-0 d-inline">Recent Work</h5>
                 </a>
-              </h4>
+              </h5>
             </div>
           </div>
         </div>
