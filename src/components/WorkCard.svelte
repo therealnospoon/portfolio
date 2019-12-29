@@ -49,7 +49,7 @@
   .card-container-desktop {
     display: flex;
     align-items: center;
-    min-height: 75vh;
+    min-height: 80vh;
     color: #454f5b;
     padding: 0 0.5rem;
     img {
@@ -58,6 +58,7 @@
     }
     .image-container {
       border-radius: 4px;
+       min-height: 80vh;
       @media only screen and (max-width: 576px) {
         min-height: 320px;
       }
@@ -66,7 +67,7 @@
         margin: -5rem -2rem 5rem 0;
         cursor: pointer;
         @media only screen and (max-width: 576px) {
-          margin: -5rem -2rem 2rem 0;
+          margin: -5rem 0 2rem 0;
         }
         &:after {
           border-radius: 4px;
@@ -100,7 +101,7 @@
           width: 100%;
           opacity: 0;
           z-index: 1;
-          transition: opacity 250ms ease-in;
+          transition: opacity 250ms ease-in 250ms;
           cursor: pointer;
         }
       }
@@ -143,10 +144,10 @@
 </style>
 
 <section>
-  <div class="card-container-desktop">
+  <div class="card-container-desktop my-4">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center align-items-center mb-5">
-        <h3 class="title mb-5">{title}</h3>
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <h3 class="title mb-2">{title}</h3>
       </div>
       <div
         class="col-12 col-md-6 image-container d-flex justify-content-center

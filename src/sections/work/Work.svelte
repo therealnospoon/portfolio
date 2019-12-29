@@ -59,28 +59,28 @@
         "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
       stack: [skills.vue, skills.sass, skills.wordpress]
     },
-    {
-      title: "Red Twig Cafe",
-      description:
-        "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
-      image1: "./images/RedTwigPic.jpg",
-      image2: "./images/growing-sql-site-mobile.png",
-      image3: "./images/growing-sql-server.gif",
-      gifId: "gif4",
-      siteUrl: "https://www.redtwig.com",
-      stack: [skills.vue, skills.sass]
-    },
-    {
-      title: "Edmonds Segway Tours",
-      description:
-        "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
-      image1: "./images/EdmondsSegwayPic.jpg",
-      image2: "./images/growing-sql-site-mobile.png",
-      image3: "./images/growing-sql-server.gif",
-      gifId: "gif5",
-      siteUrl: "https://www.edmondssegwaytours.com",
-      stack: [skills.svelte, skills.sass]
-    }
+    // {
+    //   title: "Red Twig Cafe",
+    //   description:
+    //     "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
+    //   image1: "./images/RedTwigPic.jpg",
+    //   image2: "./images/growing-sql-site-mobile.png",
+    //   image3: "./images/growing-sql-server.gif",
+    //   gifId: "gif4",
+    //   siteUrl: "https://www.redtwig.com",
+    //   stack: [skills.vue, skills.sass]
+    // },
+    // {
+    //   title: "Edmonds Segway Tours",
+    //   description:
+    //     "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
+    //   image1: "./images/EdmondsSegwayPic.jpg",
+    //   image2: "./images/growing-sql-site-mobile.png",
+    //   image3: "./images/growing-sql-server.gif",
+    //   gifId: "gif5",
+    //   siteUrl: "https://www.edmondssegwaytours.com",
+    //   stack: [skills.svelte, skills.sass]
+    // }
   ];
 
   function handleGifClick(e) {
