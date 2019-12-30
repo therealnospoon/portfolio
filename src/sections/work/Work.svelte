@@ -59,6 +59,22 @@
         "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
       stack: [skills.vue, skills.sass, skills.wordpress]
     },
+    {
+      title: "SAP Concur - Self-Guided Demo",
+      description:
+        "I helped in the localization effort of Concur's online self-guided walkthrough demo of their application",
+      challenge:
+        "This project was primarily developed by another team and was handed off to my team to take across the finish line. The project was foundationally built in the Vue.js framework and is an interactive demo that showcases Microsoft 365 applications in specific contexts such as the classroom and displays how impactful it can be for teachers and students. My task was to fix the broken UI elements through testing across browsers, optimize assets as much as I can and to make sure the experience was ready to ship for our client. I accomplished this through testing via different browsers and devices of varying screen size, communicating with our design team to obtain higher quality/optimized assets and vigorous testing.",
+      technologies:
+        "Vue, Browserstack, Mobile/Tablet test devices",
+      image1: "./images/concur-demo-site.png",
+      image2: "./images/concur-demo-mobile.png",
+      image3: "./images/concur-demo.gif",
+      gifId: "gif4",
+      siteUrl:
+        "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
+      stack: [skills.vue, skills.sass]
+    },
     // {
     //   title: "Red Twig Cafe",
     //   description:
