@@ -49,7 +49,7 @@
   .card-container-desktop {
     display: flex;
     align-items: center;
-    min-height: 80vh;
+    min-height: 70vh;
     color: #454f5b;
     padding: 0 0.5rem;
     img {
@@ -58,9 +58,24 @@
     }
     .image-container {
       border-radius: 4px;
-       min-height: 80vh;
+      align-items: center;
+       min-height: 70vh;
+      @media only screen and (max-width: 768px) {
+        min-height: 58vh;
+        align-items: flex-end;
+      }
       @media only screen and (max-width: 576px) {
+        min-height: 440px;
+        align-items: flex-end;
+      }
+      @media only screen and (max-width: 475px) {
+        min-height: 380px;
+      }
+      @media only screen and (max-width: 425px) {
         min-height: 320px;
+      }
+      @media only screen and (max-width: 375px) {
+        min-height: 285px;
       }
       .site-image-container {
         position: relative;
@@ -109,7 +124,7 @@
         margin: 0 0 -2rem -3rem;
         z-index: 3;
         transition: opacity 250ms ease-in;
-        @media only screen and (max-width: 576px) {
+        @media only screen and (max-width: 768px) {
           margin: 0 0 0 -3rem;
         }
       }
@@ -147,11 +162,10 @@
   <div class="card-container-desktop my-4">
     <div class="row">
       <div class="col-12 d-flex justify-content-center align-items-center">
-        <h3 class="title mb-2">{title}</h3>
+        <h3 class="title mb-4">{title}</h3>
       </div>
       <div
-        class="col-12 col-md-6 image-container d-flex justify-content-center
-        align-items-center">
+        class="col-12 col-md-6 image-container d-flex justify-content-center">
 
         <div class="site-image-container" on:click={handleGif}>
           <img

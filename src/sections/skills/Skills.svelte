@@ -32,7 +32,6 @@
     skills.figma,
     skills.illustrator,
     skills.node,
-    skills.three
   ];
   // const designerTools = [
   //   "Figma",
@@ -46,19 +45,33 @@
 <style type="text/scss">
   .section-wrapper {
     background-color: #f8fafc;
+    height: 100%;
     color: #454f5b;
+    @media only screen and (min-width: 1280px) {
+      height: 75vh;
+    }
   }
   .skills-box {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap:wrap;
-    align-items: center;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    // justify-content: space-around;
+    // flex-wrap:wrap;
+    // align-items: center;
     text-align: center;
     margin: 3rem;
-
-    // .skill-row {
-    //   justify-content: center;
-    // }
+    @media only screen and (min-width: 475px) {
+       grid-template-rows: repeat(7, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (min-width: 768px) {
+       grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media only screen and (min-width: 1000px) {
+       grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(8, 1fr);
+    }
 
     .skill-badge {
       margin: 1rem;
@@ -81,14 +94,10 @@
           <h2>Skills</h2>
         </div>
         <div
-          class="skills-box d-flex align-items-center col-12"
+          class="skills-box col-12"
           >
 
-          <!-- <p>
-                As a developer, I write clean, organized and performant code
-              </p> -->
-          <!-- <h5 class="mt-4">Development tools:</h5> -->
-          <!-- <ul> -->
+        
           {#each developerTools as tool, devToolIndex}
             <div
               class="skill-badge mt-3"
@@ -102,33 +111,7 @@
               <p class="mt-1">{tool.name}</p>
             </div>
           {/each}
-          <!-- </ul> -->
-
-          <!-- <div
-              class="skill-column col-12 col-md-6 d-flex flex-column
-              align-items-center"
-              data-sal="fade"
-              data-sal-easing="ease-in-out-quad"
-              data-sal-duration="500">
-              <i class="fas fa-pencil-ruler fa-2x mb-4" />
-              <h4 class="mb-3">Designer</h4>
-              <p>
-                As a designer, I create simple, beautiful, and powerful designs
-              </p>
-              <h5 class="mt-4">Design tools:</h5>
-              <ul>
-                {#each designerTools as tool, desToolIndex}
-                  <li
-                    class="mt-3"
-                    data-sal="fade"
-                    data-sal-easing="ease-in-out-quad"
-                    data-sal-duration="500"
-                    data-sal-delay={100 * desToolIndex}>
-                    <p>{tool}</p>
-                  </li>
-                {/each}
-              </ul>
-            </div> -->
+         
 
         </div>
       </div>
