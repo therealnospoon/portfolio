@@ -14,7 +14,7 @@
 
   const projects = [
     {
-      title: "Microsoft - Growing SQL Server",
+      title: "Growing SQL Server (Microsoft)",
       description:
         "I helped create a production site for Microsoft that beautifully illustrates SQL Server's evolution through the years",
       challenge:
@@ -29,7 +29,7 @@
       stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
-      title: "Microsoft - DevOps Fundamentals",
+      title: "DevOps Fundamentals (Microsoft)",
       description:
         "I created a website for potential decision makers to explore the basic benefits and DevOps functionality of Microsoft Azure",
       challenge:
@@ -44,7 +44,7 @@
       stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
-      title: "Microsoft - Education Interactive Demos",
+      title: "Education Interactive Demos (Microsoft)",
       description:
         "I worked on cross-browser compatibility, responsiveness and general polish on Microsoft 365 interactable demos that showcased it's powerful impact in the realm of education",
       challenge:
@@ -60,7 +60,7 @@
       stack: [skills.vue, skills.sass, skills.wordpress]
     },
     {
-      title: "SAP Concur - Self-Guided Demo",
+      title: "Self-Guided Demo (SAP Concur)",
       description:
         "I helped in the localization effort of Concur's online self-guided walkthrough demo of their application",
       challenge:

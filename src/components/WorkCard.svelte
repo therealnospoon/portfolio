@@ -29,29 +29,30 @@
     });
   }
 
- 
-
   function handleGif() {
-   dispatch("gifclick", {
-     gifId: gifId
-   });
+    dispatch("gifclick", {
+      gifId: gifId
+    });
   }
 </script>
 
 <style type="text/scss">
-:global(.gifPlaying) {
+  :global(.gifPlaying) {
     opacity: 1 !important;
     z-index: 4 !important;
     & ~ .mobile-image-container {
       opacity: 0;
     }
-}
+  }
   .card-container-desktop {
     display: flex;
     align-items: center;
-    min-height: 70vh;
+    // min-height: 70vh;
     color: #454f5b;
     padding: 0 0.5rem;
+    @media only screen and (min-width: 1200px) {
+      max-width: 60vw;
+    }
     img {
       width: 100%;
       border-radius: 4px;
@@ -59,27 +60,27 @@
     .image-container {
       border-radius: 4px;
       align-items: center;
-       min-height: 70vh;
-      @media only screen and (max-width: 768px) {
-        min-height: 58vh;
-        align-items: flex-end;
-      }
-      @media only screen and (max-width: 576px) {
-        min-height: 440px;
-        align-items: flex-end;
-      }
-      @media only screen and (max-width: 475px) {
-        min-height: 380px;
-      }
-      @media only screen and (max-width: 425px) {
-        min-height: 320px;
-      }
-      @media only screen and (max-width: 375px) {
-        min-height: 285px;
-      }
+      // min-height: 70vh;
+      // @media only screen and (max-width: 768px) {
+      //   min-height: 58vh;
+      //   align-items: flex-end;
+      // }
+      // @media only screen and (max-width: 576px) {
+      //   min-height: 440px;
+      //   align-items: flex-end;
+      // }
+      // @media only screen and (max-width: 475px) {
+      //   min-height: 380px;
+      // }
+      // @media only screen and (max-width: 425px) {
+      //   min-height: 320px;
+      // }
+      // @media only screen and (max-width: 375px) {
+      //   min-height: 285px;
+      // }
       .site-image-container {
         position: relative;
-        margin: -5rem -2rem 5rem 0;
+        margin: -5rem -2rem 2rem 0;
         cursor: pointer;
         @media only screen and (max-width: 576px) {
           margin: -5rem 0 2rem 0;
@@ -121,11 +122,16 @@
         }
       }
       .mobile-image-container {
-        margin: 0 0 -2rem -3rem;
+        margin: 0 0 -6rem -3rem;
+        border-radius: 10px;
         z-index: 3;
         transition: opacity 250ms ease-in;
         @media only screen and (max-width: 768px) {
           margin: 0 0 0 -3rem;
+        }
+        img {
+          box-shadow: -5px 8px 21px -6px rgba(0, 0, 0, 0.75);
+          border-radius: 10px;
         }
       }
     }
@@ -137,44 +143,61 @@
     }
     .site-btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
+      margin-top: 1rem;
       text-decoration: none;
-      border-radius: 2px;
-      font-size: 1rem;
-      background: #0069ed;
-      color: #f8fafc;
+      color: #0069ed;
       text-align: center;
-      transition: background 250ms ease-in-out;
+      p {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 2rem !important;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 80%;
+          left: 1%;
+          height: 30%;
+          background: #ed0076a2;
+          width: 100%;
+          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          @media only screen and (min-width: 576px) {
+            width: 0;
+          }
+        }
+      }
       &:hover,
       &:focus {
-        background: #0053ba;
+        p {
+          &:after {
+            width: 100%;
+          }
+        }
       }
     }
-    // @media only screen and (min-width: 576px) {
-    //   display: flex;
-    // }
   }
 </style>
 
-<section>
+<section class="my-5">
   <div class="card-container-desktop my-4">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center align-items-center">
-        <h3 class="title mb-4">{title}</h3>
-      </div>
-      <div
-        class="col-12 col-md-6 image-container d-flex justify-content-center">
 
-        <div class="site-image-container" on:click={handleGif}>
+      <div class="col-12 image-container d-flex justify-content-center">
+
+        <div
+          class="site-image-container"
+          on:click={handleGif}
+          data-sal="slide-up"
+          data-sal-easing="ease-out-back"
+          data-sal-duration="250">
           <img
             src={image1}
             class="site-image"
             alt="site image for {title}"
             data-sal="slide-up"
-            data-sal-easing="ease-out-sine"
-            data-sal-duration="250" />
+            data-sal-easing="ease-out-back"
+            data-sal-duration="500"
+            data-sal-delay="100" />
 
           <img
             src={image3}
@@ -188,15 +211,16 @@
             src={image2}
             alt="site image for {title}"
             data-sal="slide-up"
-            data-sal-easing="ease-out-sine"
+            data-sal-easing="ease-out-back"
             data-sal-duration="250"
-            data-sal-delay="250" />
+            data-sal-delay="500" />
         </div>
 
       </div>
-      <div class="col-12 col-md-6 d-flex align-items-center">
+      <div class="col-12 d-flex align-items-center">
 
         <div class="content-container">
+          <h3 class="title my-4">{title}</h3>
           <h4>Overview</h4>
           <p class="description">{description}</p>
           <h4>Challenge</h4>

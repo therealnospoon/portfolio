@@ -49,6 +49,13 @@
 </script>
 
 <style type="text/scss">
+  h5 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    @media only screen and (min-width: 576px) {
+      font-size: 1.7rem;
+    }
+  }
   .section-wrapper {
     height: 110vh;
     background: #1f86ca;
@@ -66,20 +73,18 @@
   .profile-card {
     background-color: #f8fafc;
     border-radius: 3px;
-    padding: 4rem 1rem;
-    max-width: 600px;
+    max-width: 620px;
     flex-wrap: wrap;
     overflow-x: hidden;
     color: rgb(80, 80, 80);
 
-    // .pic-container {
-    //   .lines {
-    //     height: 1px;
-    //     width: 200px;
-    //     background: rgb(80, 80, 80);
-    //     padding: 0;
-    //   }
-    // }
+    .main-phrase {
+      font-size: 3.5rem;
+      @media only screen and (min-width: 576px) {
+        font-size: 5rem;
+      }
+    }
+
     .profile-pic {
       height: 100px;
       width: 100px;
@@ -93,24 +98,30 @@
     .work-link {
       text-decoration: none;
       appearance: none;
-      h4 {
+      h5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
         position: relative;
         color: #0069ed;
+        font-size: 2rem;
         &:after {
           content: "";
-          width: 0;
-          height: 2px;
-          background-color: #0069ed;
           position: absolute;
-          top: 90%;
-          left: 0;
+          top: 85%;
+          left: 1%;
+          height: 30%;
+          background: #ed0076a2;
+          width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          @media only screen and (min-width: 576px) {
+            width: 0;
+          }
         }
       }
 
       &:hover,
       &:focus {
-        h4 {
+        h5 {
           &:after {
             width: 100%;
           }
@@ -129,7 +140,8 @@
       data-speed="-50">
       {#if isLoaded}
         <div
-          class="profile-card d-flex align-items-center justify-content-center container"
+          class="profile-card d-flex align-items-center justify-content-center
+          container"
           id="keyart-1"
           data-speed="30"
           transition:fade={{ delay: 250, duration: 1500 }}>
@@ -140,13 +152,13 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <h1 class="mt-5 mb-4">Hi, I'm Tim</h1>
+              <h1 class="main-phrase mt-5 mb-4">Hi, I'm Tim</h1>
               <h5 class="mt-2">
-                I'm a UI developer from Seattle, WA. I strive to build clean
-                and refreshing digital experiences.
+                I'm a UI developer from Seattle, WA. I strive to build clean and
+                refreshing digital experiences.
                 <br />
                 <br />
-                Check out some of my
+                Here's my
                 <a href="#work" class="work-link">
                   <h5 class="m-0 d-inline">Recent Work</h5>
                 </a>

@@ -55,9 +55,6 @@
     display: grid;
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    // justify-content: space-around;
-    // flex-wrap:wrap;
-    // align-items: center;
     text-align: center;
     margin: 3rem;
     @media only screen and (min-width: 475px) {
