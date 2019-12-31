@@ -81,7 +81,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          content: "\f01d";
+          content: "\f04b";
           font-family: FontAwesome;
           font-size: 75px;
           color: #fff;

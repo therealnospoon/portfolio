@@ -73,7 +73,7 @@
     &:hover,
     &:focus {
       animation-name: levitate;
-      animation-duration: 750ms;
+      animation-duration: 1500ms;
       animation-iteration-count: infinite;
       animation-timing-function: cubic-bezier(.63, .12, .33, 1.1);
     }
@@ -81,8 +81,11 @@
       from {
         transform: translate(0, 0px);
       }
-      50% {
+      15% {
         transform: translate(0, -10px);
+      }
+      30% {
+        transform: translate(0, -0px);
       }
       to {
         transform: translate(0, -0px);

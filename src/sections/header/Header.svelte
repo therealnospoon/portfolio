@@ -158,8 +158,7 @@
             <div class="col-12">
               <h1 class="main-phrase mt-5 mb-4">Hi, I'm Tim</h1>
               <h5 class="mt-2">
-                I'm a UI developer from Seattle, WA. I strive to build clean and
-                refreshing digital experiences.
+                I'm a UI developer from Seattle, WA. I strive to make sites that are so fresh and so clean
                 <br />
                 <br />
                 See my
