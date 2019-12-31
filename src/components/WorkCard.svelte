@@ -213,7 +213,7 @@
             data-sal="slide-up"
             data-sal-easing="ease-out-back"
             data-sal-duration="250"
-            data-sal-delay="500" />
+            data-sal-delay="250" />
         </div>
 
       </div>

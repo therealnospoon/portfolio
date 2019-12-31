@@ -86,7 +86,6 @@
       border: none;
       padding: 0.5rem 1rem;
       margin: 1rem;
-      width: 170px;
       text-decoration: none;
       background: #0069ed;
       color: #f8fafc;
@@ -150,7 +149,6 @@
       border: none;
       padding: 0.5rem 1rem;
       margin: 1rem;
-      // width: 170px;
       text-decoration: none;
       color: #f8fafc;
       border-radius: 2px;
@@ -222,7 +220,7 @@
       &:checked ~ span {
         opacity: 1;
 
-        transform: rotate(-45deg) translate(0, -1px);
+        transform: rotate(-45deg) translate(0, -3px);
         background: #f8fafc;
       }
       &:checked ~ span:nth-last-child(2) {
@@ -230,21 +228,18 @@
         transform: rotate(0deg) scale(0.2, 0.2);
       }
       &:checked ~ span:nth-last-child(3) {
-        transform: rotate(45deg) translate(1px, -1px);
+        transform: rotate(45deg) translate(3px, 0px);
       }
     }
     span {
       display: block;
       width: 33px;
-      height: 4px;
+      height: 6px;
       margin-bottom: 5px;
       position: relative;
-
       background: #0069ed;
-      border-radius: 3px;
-
+      border-radius: 1.5px;
       z-index: 1;
-
       transform-origin: 4px 0px;
 
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),

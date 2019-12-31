@@ -1,48 +1,52 @@
 <script>
-import { createEventDispatcher } from "svelte";
-const dispatch = createEventDispatcher();
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
 
-function backToTop() {
-  dispatch("gototop");
-}
-
+  function backToTop() {
+    dispatch("gototop");
+  }
 </script>
 
 <style type="text/scss">
   section {
-    background: #1f86ca;
-    color: #fff;
+    background: #f8fafc;
   }
 
   .top-btn,
   .email-link {
+    display: inline-block;
     text-decoration: none;
-    color: #ffffff;
-    position: relative;
-    &:after {
-      content: "";
-      width: 0;
-      height: 2px;
-      background-color: #fff;
-      position: absolute;
-      top: 99.9%;
-      left: 0;
-      transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    &:hover {
+    color: #0069ed;
+    text-align: center;
+    p {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 2rem !important;
+      position: relative;
       &:after {
+        content: "";
+        position: absolute;
+        top: 83%;
+        left: 0;
+        height: 30%;
+        background: #ed0076a2;
         width: 100%;
+        transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        @media only screen and (min-width: 576px) {
+          width: 0;
+        }
+      }
+    }
+    &:hover,
+    &:focus {
+      p {
+        &:after {
+          width: 100%;
+        }
       }
     }
   }
 
-  .email-row {
-    display: flex;
-    justify-content: flex-end;
-    @media only screen and (max-width: 576px) {
-      justify-content: center;
-    }
-  }
 </style>
 
 <section id="#contact">
@@ -50,17 +54,22 @@ function backToTop() {
     <div class="row">
       <div class="col-12 d-flex justify-content-center my-3">
         <a href="#top" class="top-btn" on:click={backToTop}>
-          <h5 class="m-0">Back To Top</h5>
+          <p class="m-0">Back To Top</p>
         </a>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 mb-3 email-row">
+      <div class="col-12 mt-4 mb-5 email-row d-flex justify-content-center align-items-center">
         <a
           href="mailto:timkimdesigns@gmail.com"
-          class="email-link d-flex align-items-center">
-          <i class="far fa-envelope mr-2" />
-          <p class="m-0">timkimdesigns@gmail.com</p>
+          class="email-link d-flex align-items-center mx-4 mb-3">
+          <i class="far fa-envelope fa-3x" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tkdev/"
+          target="_blank"
+          class="email-link d-flex align-items-center mx-4 mb-3">
+          <i class="fab fa-linkedin fa-3x"/>
         </a>
       </div>
     </div>
