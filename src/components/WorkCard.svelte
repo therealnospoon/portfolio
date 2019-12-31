@@ -37,6 +37,9 @@
 </script>
 
 <style type="text/scss">
+@import "../assets/styles/base/_variables.scss";
+
+
   :global(.gifPlaying) {
     opacity: 1 !important;
     z-index: 4 !important;
@@ -44,7 +47,7 @@
   .card-container-desktop {
     display: flex;
     align-items: center;
-    color: #454f5b;
+    color: $primary;
     padding: 0 0.5rem;
     @media only screen and (min-width: 1200px) {
       max-width: 60vw;
@@ -101,7 +104,7 @@
             font-weight: 900 !important;
             font-size: 1rem !important;
             letter-spacing: 0.02em;
-            color: #0069ed;
+            color: $cta;
           }
         }
         .site-image {
@@ -141,7 +144,7 @@
       display: inline-block;
       margin-top: 1rem;
       text-decoration: none;
-      color: #0069ed;
+      color: $cta;
       text-align: center;
       p {
         font-family: "Playfair Display", serif;
@@ -154,7 +157,7 @@
           top: 80%;
           left: 1%;
           height: 30%;
-          background: #ed0076a2;
+          background: $linkhover;
           width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           @media only screen and (min-width: 576px) {

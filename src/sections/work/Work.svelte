@@ -105,13 +105,14 @@
   }
 </script>
 
-<style>
+<style type="text/scss">
+@import "../../assets/styles/base/_variables.scss";
   .section-wrapper {
-    background-color: #f8fafc;
+    background-color: $background;
   }
 
   .section-title {
-    color: #454f5b;
+    color: $primary;
   }
 </style>
 
