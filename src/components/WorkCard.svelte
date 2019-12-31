@@ -40,14 +40,10 @@
   :global(.gifPlaying) {
     opacity: 1 !important;
     z-index: 4 !important;
-    & ~ .mobile-image-container {
-      opacity: 0;
-    }
   }
   .card-container-desktop {
     display: flex;
     align-items: center;
-    // min-height: 70vh;
     color: #454f5b;
     padding: 0 0.5rem;
     @media only screen and (min-width: 1200px) {
@@ -101,10 +97,22 @@
           font-size: 75px;
           color: #fff;
           opacity: 0;
-          transition: opacity 250ms ease-in;
+          transition: opacity 250ms ease-out;
         }
         &:hover:after {
           opacity: 1;
+        }
+        .click-message {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          p {
+            font-family: "Playfair Display", serif;
+            font-weight: 900 !important;
+            font-size: 1rem !important;
+            letter-spacing: .02em;
+            color: #0069ed;
+          }
         }
         .site-image {
           z-index: 2;
@@ -198,6 +206,9 @@
             data-sal-easing="ease-out-back"
             data-sal-duration="500"
             data-sal-delay="100" />
+          <div class="click-message mt-2">
+            <p>Click image for preview</p>
+          </div>
 
           <img
             src={image3}
