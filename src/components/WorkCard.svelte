@@ -1,182 +1,251 @@
 <script>
+  import { onMount } from "svelte";
   import { createEventDispatcher } from "svelte";
+  import sal from "sal.js";
+  import "sal.js/dist/sal.css";
+
+  onMount(async () => {
+    sal({
+      threshold: 0.2,
+      once: true
+    });
+  });
   const dispatch = createEventDispatcher();
 
   export let title;
   export let description;
-  export let imageUrl;
+  export let challenge;
+  export let technologies;
+  export let image1;
+  export let image2;
+  export let image3;
+  export let gifId;
   export let siteUrl;
-  export let framework;
+  export let stack;
 
   function siteOpening() {
     dispatch("siteclick", {
       url: siteUrl
     });
   }
+
+  function handleGif() {
+    dispatch("gifclick", {
+      gifId: gifId
+    });
+  }
 </script>
 
 <style type="text/scss">
+  :global(.gifPlaying) {
+    opacity: 1 !important;
+    z-index: 4 !important;
+  }
   .card-container-desktop {
-    display: none;
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    align-items: center;
+    color: #454f5b;
     padding: 0 0.5rem;
+    @media only screen and (min-width: 1200px) {
+      max-width: 60vw;
+    }
     img {
       width: 100%;
       border-radius: 4px;
-      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
     }
     .image-container {
-      position: relative;
-      padding: 0;
-      overflow: hidden;
       border-radius: 4px;
-      .content-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(16, 59, 199, 0.6);
-        border-radius: 4px;
-        opacity: 0;
-        transition: opacity 250ms ease-in-out;
+      align-items: center;
+      // min-height: 70vh;
+      // @media only screen and (max-width: 768px) {
+      //   min-height: 58vh;
+      //   align-items: flex-end;
+      // }
+      // @media only screen and (max-width: 576px) {
+      //   min-height: 440px;
+      //   align-items: flex-end;
+      // }
+      // @media only screen and (max-width: 475px) {
+      //   min-height: 380px;
+      // }
+      // @media only screen and (max-width: 425px) {
+      //   min-height: 320px;
+      // }
+      // @media only screen and (max-width: 375px) {
+      //   min-height: 285px;
+      // }
+      .site-image-container {
+        position: relative;
+        margin: -5rem -2rem 2rem 0;
+        cursor: pointer;
+        @media only screen and (max-width: 576px) {
+          margin: -5rem 0 2rem 0;
+        }
+        &:after {
+          border-radius: 4px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "\f01d";
+          font-family: FontAwesome;
+          font-size: 75px;
+          color: #fff;
+          opacity: 0;
+          transition: opacity 250ms ease-out;
+        }
+        &:hover:after {
+          opacity: 1;
+        }
+        .click-message {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          @media only screen and (min-width: 576px) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          p {
+            font-family: "Playfair Display", serif;
+            font-weight: 900 !important;
+            font-size: 1rem !important;
+            letter-spacing: .02em;
+            color: #0069ed;
+          }
+        }
+        .site-image {
+          z-index: 2;
+        }
+        .site-gif {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          z-index: 1;
+          transition: opacity 250ms ease-in 250ms;
+          cursor: pointer;
+        }
+      }
+      .mobile-image-container {
+        margin: 0 0 -6rem -3rem;
+        border-radius: 10px;
+        z-index: 3;
+        transition: opacity 250ms ease-in;
+        @media only screen and (max-width: 768px) {
+          margin: 0 0 0 -3rem;
+        }
+        img {
+          box-shadow: -5px 8px 21px -6px rgba(0, 0, 0, 0.75);
+          border-radius: 10px;
+        }
       }
     }
     .framework-label {
-      color: #fff;
-      opacity: 0;
-      transition: opacity 250ms ease-in-out;
+      opacity: 1;
     }
     .title {
       position: relative;
-      display: inline;
-      margin: 1rem 0;
-      color: #fff;
-    }
-    .description {
-      color: transparent;
-      transition: color 500ms ease-in;
     }
     .site-btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
+      margin-top: 1rem;
       text-decoration: none;
-      border-radius: 2px;
-      font-size: 1rem;
-      background: #fff;
       color: #0069ed;
-      border: 1px #0069ed solid;
       text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
+      p {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 2rem !important;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 80%;
+          left: 1%;
+          height: 30%;
+          background: #ed0076a2;
+          width: 100%;
+          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          @media only screen and (min-width: 576px) {
+            width: 0;
+          }
+        }
+      }
       &:hover,
       &:focus {
-        background: #0069ed;
-        color: #fff;
+        p {
+          &:after {
+            width: 100%;
+          }
+        }
       }
-    }
-    &:hover {
-      transform: translateY(-10px);
-      cursor: pointer;
-      img {
-        transform: scale(1.15);
-        opacity: 0;
-      }
-      .framework-label {
-        opacity: 1;
-      }
-      .description {
-        color: #fff;
-      }
-      .content-container {
-        opacity: 1;
-      }
-    }
-    @media only screen and (min-width: 576px) {
-      display: block;
-    }
-  }
-  .card-container-mobile {
-    background-color: #fff;
-    border-radius: 4px;
-    color: #353535;
-    box-shadow: 1px 2px 5px 2px #05336b9d;
-    img {
-      width: 100%;
-      border-radius: 4px 4px 0 0;
-    }
-    .site-btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
-      text-decoration: none;
-      border-radius: 2px;
-      font-size: 1rem;
-      background: #0069ed;
-      color: #fff;
-      text-align: center;
-    }
-
-    .title {
-      position: relative;
-      display: inline;
-      margin: 1rem 0;
-    }
-
-    @media only screen and (min-width: 576px) {
-      display: none;
     }
   }
 </style>
 
-<section>
-  <div class="card-container-desktop">
+<section class="my-5">
+  <div class="card-container-desktop my-4">
     <div class="row">
-      <div class="col-12 image-container">
-        <img src={imageUrl} alt="site image for {title}" />
+
+      <div class="col-12 image-container d-flex justify-content-center">
+
+        <div
+          class="site-image-container"
+          on:click={handleGif}
+          data-sal="slide-up"
+          data-sal-easing="ease-out-back"
+          data-sal-duration="250">
+          <img
+            src={image1}
+            class="site-image"
+            alt="site image for {title}"
+            data-sal="slide-up"
+            data-sal-easing="ease-out-back"
+            data-sal-duration="500"
+            data-sal-delay="100" />
+          <div class="click-message mt-2">
+            <p>Click image for preview</p>
+          </div>
+
+          <img
+            src={image3}
+            class="site-gif"
+            id={gifId}
+            alt="site gif for {title}" />
+        </div>
+        <div class="mobile-image-container">
+          <img
+            class="mobile-image"
+            src={image2}
+            alt="site image for {title}"
+            data-sal="slide-up"
+            data-sal-easing="ease-out-back"
+            data-sal-duration="250"
+            data-sal-delay="250" />
+        </div>
+
+      </div>
+      <div class="col-12 d-flex align-items-center">
+
         <div class="content-container">
-          <h4 class="title">{title}</h4>
-          <p class="description px-5">{description}</p>
+          <h3 class="title my-4">{title}</h3>
+          <h4>Overview</h4>
+          <p class="description">{description}</p>
+          <h4>Challenge</h4>
+          <p class="challenge">{challenge}</p>
+          <h4>Technologies</h4>
+          <p class="technologies">{technologies}</p>
           <a href={siteUrl} target="_blank" class="site-btn">
             <p class="m-0">Visit Site</p>
           </a>
         </div>
-      </div>
-    </div>
-    <div class="row framework-label">
-      <div class="col-12 px-0 pt-1">
-        <h5>Built with {framework}</h5>
-      </div>
-    </div>
-  </div>
-
-  <!-- mobile version of the card-->
-  <div class="card-container-mobile">
-    <div class="row image-container">
-      <div class="col-12">
-        <img src={imageUrl} alt="site image for {title}" />
-      </div>
-    </div>
-    <div class="row px-4 pt-3">
-      <div class="col-12 mt-2">
-        <h4>{title}</h4>
-        <p class="title">{description}</p>
-      </div>
-    </div>
-    <div class="row mt-2 framework-label px-4">
-      <div class="col-12">
-        <p class="description">(Built with {framework})</p>
-      </div>
-      <div class="col-12 pb-4 d-flex justify-content-center">
-        <a href={siteUrl} target="_blank" class="site-btn">
-          <p class="m-0">Visit Site</p>
-        </a>
       </div>
     </div>
   </div>

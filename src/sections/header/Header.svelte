@@ -11,7 +11,7 @@
   onMount(async () => {
     await checkBgStatus();
     toggleBgLoaded();
-    initParallax();
+    // initParallax();
   });
 
   function initParallax() {
@@ -46,63 +46,45 @@
       isLoaded = true;
     }
   }
-
-  function entrance(node, { delay, duration }) {
-    return {
-      delay,
-      duration,
-      css: t => {
-        const eased = quartOut(t);
-        return `transform: scale(${9 - eased * 8});
-						opacity: ${t * 0.9};`;
-      }
-    };
-  }
-
 </script>
 
 <style type="text/scss">
+  h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    @media only screen and (min-width: 576px) {
+      font-size: 1.7rem;
+    }
+  }
   .section-wrapper {
     height: 110vh;
     background: #1f86ca;
-    position: relative;
     z-index: 10;
     overflow: hidden;
-    @media only screen and (max-width: 576px) {
-      height: 120vh;
-      .header-bg {
-        height: 120vh;
-      }
-    }
   }
 
   .header-bg {
     background-size: cover;
     background-position: center center;
-    // position: absolute;
     height: 110vh;
-    background-image: url("./images/portfolio_bg.jpg");
-  }
-  .parallax {
-    position: sticky;
+    background-color: #f8fafc;
   }
 
   .profile-card {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #f8fafc;
     border-radius: 3px;
-    padding: 4rem 0;
-    max-width: 500px;
+    max-width: 620px;
+    flex-wrap: wrap;
     overflow-x: hidden;
-    color: rgb(80, 80, 80);
+    color: #454f5b;
 
-    .pic-container {
-      .lines {
-        height: 1px;
-        width: 200px;
-        background: rgb(80, 80, 80);
-        padding: 0;
+    .main-phrase {
+      font-size: 3rem;
+      @media only screen and (min-width: 576px) {
+        font-size: 5rem;
       }
     }
+
     .profile-pic {
       height: 100px;
       width: 100px;
@@ -112,50 +94,36 @@
     .profile-blurb {
       max-width: 400px;
     }
-    .contact-link,
-    .resume-link {
-      display: inline-block;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0 0;
-      width: 170px;
+
+    .work-link {
       text-decoration: none;
-      background: #0069ed;
-      color: #ffffff;
-      border-radius: 2px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
+      appearance: none;
+      h5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        position: relative;
+        color: #0069ed;
+        font-size: 2rem;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 85%;
+          left: 1%;
+          height: 30%;
+          background: #ed0076a2;
+          width: 100%;
+          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          @media only screen and (min-width: 576px) {
+            width: 0;
+          }
+        }
+      }
 
       &:hover,
       &:focus {
-        background: #0053ba;
-      }
-      &.resume-link {
-        background: #fff;
-        color: #0069ed;
-
-        p {
-          position: relative;
+        h5 {
           &:after {
-            content: "";
-            width: 0;
-            height: 2px;
-            background-color: #0069ed;
-            position: absolute;
-            top: 90%;
-            left: 0;
-            transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          }
-        }
-
-        &:hover,
-        &:focus {
-          p {
-            &:after {
-              width: 100%;
-            }
+            width: 100%;
           }
         }
       }
@@ -163,53 +131,46 @@
   }
 </style>
 
-
 <section>
   <div class="section-wrapper">
 
     <div
-      class="header-bg d-flex justify-content-center align-items-center parallax"
+      class="header-bg d-flex justify-content-center align-items-center"
       id="keyart-0"
       data-speed="-50">
       {#if isLoaded}
         <div
-          class="profile-card d-flex flex-column justify-content-center
-          align-items-center parallax"
+          class="profile-card d-flex align-items-center justify-content-center
+          container"
           id="keyart-1"
           data-speed="30"
-          transition:entrance={{ delay: 750, duration: 1500 }}>
-          <div class="row pic-container">
-            <div class="col-12 d-flex align-items-center">
-              <div class="lines" />
-              <img
-                class="profile-pic"
-                src={profilePic}
-                alt="timkim-profile-picture" />
-              <div class="lines" />
+          transition:fade={{ delay: 250, duration: 1500 }}>
+          <div class="row w-100">
+            <div class="col-12 d-flex justify-content-center">
+              <img class="profile-pic" src={profilePic} />
             </div>
           </div>
-          <h1 class="mt-5">Tim Kim</h1>
-          <h4 class="mt-2">DEVELOPER | DESIGNER</h4>
-          <p class="profile-blurb text-center mt-2 px-3">
-            Hi, I'm a developer from Seattle, WA. My interests include (but are
-            not limited to): Playing/listening to music, cooking and discovering
-            new foods, building things with my hands, going on adventures with
-            my wife, snowboarding...etc.
-            <br />
-            <br />
-            Let's build something wonderful together!
-          </p>
-
-          <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
-            <p class="m-0">Get in touch</p>
-          </a>
-
-          <a href="./images/TK_Dev_Resume.pdf" download class="resume-link">
-            <p class="m-0">Download Resume</p>
-          </a>
-
+          <div class="row">
+            <div class="col-12">
+              <h1 class="main-phrase mt-5 mb-4">Hi, I'm Tim</h1>
+              <h5 class="mt-2">
+                I'm a UI developer from Seattle, WA. I strive to build clean and
+                refreshing digital experiences.
+                <br />
+                <br />
+                See my
+                <a href="#work" class="work-link">
+                  <h5 class="m-0 d-inline">Recent Work</h5>
+                </a>
+              </h5>
+            </div>
+          </div>
         </div>
       {/if}
     </div>
+    <!-- My interests include (but are
+            not limited to): playing/listening to music, cooking and discovering
+            new foods, building things with my hands, going on adventures with
+            my wife, snowboarding...etc. -->
   </div>
 </section>
