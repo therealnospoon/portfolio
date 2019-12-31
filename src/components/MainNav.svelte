@@ -1,6 +1,5 @@
 <script>
   import "sal.js/dist/sal.css";
-  import { fade } from "svelte/transition";
 
   let y = 0;
   let lastY = 0;
@@ -58,13 +57,14 @@
   :global(.rollup) {
     right: -51% !important;
     .contact-link,
-    .resume-link {
+    .resume-link,
+    .work-link {
       opacity: 0 !important;
     }
     .hamburger {
       right: 52% !important;
       transform: rotate(0deg) !important;
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
   .top-nav {
@@ -81,55 +81,90 @@
 
     .contact-link,
     .resume-link {
-      display: inline-block;
+      position: relative;
+      display: none;
       opacity: 1;
-      border: none;
+      border: solid 1px #0069ed;
       padding: 0.5rem 1rem;
       margin: 1rem;
       text-decoration: none;
-      background: #0069ed;
-      color: #f8fafc;
+      color: #0069ed;
       border-radius: 2px;
-      font-size: 1rem;
-      cursor: pointer;
+      overflow: hidden;
       text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease,
-        opacity 100ms linear;
-
+      transition: transform 150ms ease, opacity 100ms linear, color 250ms linear,
+        background-color 250ms linear;
+      cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -300%;
+        right: -200%;
+        width: 200%;
+        height: 400%;
+        background-color: #0069ed;
+        border-radius: 45%;
+        opacity: 1;
+        transition: top 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          right 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 300ms linear;
+      }
       &:hover,
       &:focus {
-        background: #0053ba;
+        background-color: #0069ed;
+        color: #f8fafc;
+        &:before {
+          opacity: 0;
+          top: -100%;
+          right: -75%;
+        }
       }
-      &.resume-link {
-        background: #f8fafc;
-        color: #0069ed;
-
-        p {
-          position: relative;
-          &:after {
-            content: "";
+      p {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 1.3rem !important;
+      }
+      @media only screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
+    .work-link {
+      display: none;
+      text-decoration: none;
+      opacity: 1;
+      margin: 1rem;
+      color: #0069ed;
+      text-align: center;
+      transition: opacity 100ms linear;
+      p {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 1.3rem !important;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 83%;
+          left: 0;
+          height: 30%;
+          background: #ed0076a2;
+          width: 100%;
+          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          @media only screen and (min-width: 576px) {
             width: 0;
-            height: 2px;
-            background-color: #0069ed;
-            position: absolute;
-            top: 90%;
-            left: 0;
-            transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          }
-        }
-
-        &:hover,
-        &:focus {
-          p {
-            &:after {
-              width: 100%;
-            }
           }
         }
       }
-      @media only screen and (max-width: 767px) {
-        display: none;
+      &:hover,
+      &:focus {
+        p {
+          &:after {
+            width: 100%;
+          }
+        }
       }
+    @media only screen and (min-width: 768px) {
+      display: inline-block;
+    }
     }
   }
 
@@ -138,13 +173,18 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 250ms ease-in 100ms;
-    height: 100vh;
+    height: 105vh;
     width: 100vw;
     background-color: #0069ed;
     color: #f8fafc;
     z-index: 5;
+    @media only screen and (min-width: 576px) {
+      height: 100vh;
+    }
     .menu-contact,
-    .menu-resume {
+    .menu-resume,
+    .menu-work,
+    .menu-top {
       display: inline-block;
       border: none;
       padding: 0.5rem 1rem;
@@ -152,30 +192,12 @@
       text-decoration: none;
       color: #f8fafc;
       border-radius: 2px;
-      font-size: 1rem;
-      cursor: pointer;
       text-align: center;
-      transition: background 250ms ease-in-out, transform 150ms ease;
+      cursor: pointer;
       h1 {
-        position: relative;
-        &:after {
-          content: "";
-          width: 0;
-          height: 2px;
-          background-color: #f8fafc;
-          position: absolute;
-          top: 90%;
-          left: 0;
-          transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-      }
-
-      &:hover,
-      &:focus {
-        h1 {
-          &:after {
-            width: 100%;
-          }
+        font-size: 2.5rem !important;
+        @media only screen and (min-width: 576px) {
+          font-size: 4rem !important;
         }
       }
     }
@@ -220,7 +242,7 @@
       &:checked ~ span {
         opacity: 1;
 
-        transform: rotate(-45deg) translate(0, -3px);
+        transform: rotate(-45deg) translate(0, -2px);
         background: #f8fafc;
       }
       &:checked ~ span:nth-last-child(2) {
@@ -228,17 +250,17 @@
         transform: rotate(0deg) scale(0.2, 0.2);
       }
       &:checked ~ span:nth-last-child(3) {
-        transform: rotate(45deg) translate(3px, 0px);
+        transform: rotate(45deg) translate(2px, -1px);
       }
     }
     span {
       display: block;
       width: 33px;
       height: 6px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       position: relative;
       background: #0069ed;
-      border-radius: 1.5px;
+      border-radius: 2px;
       z-index: 1;
       transform-origin: 4px 0px;
 
@@ -265,9 +287,10 @@
 
 <svelte:window bind:scrollY={y} />
 <section>
-  <div
-    class="top-nav {headerClass}"
-    transition:fade={{ delay: 250, duration: 1500 }}>
+  <div class="top-nav {headerClass}">
+    <a href="#work" class="work-link">
+      <p class="m-0">Recent Work</p>
+    </a>
     <a href="mailto:timkimdesigns@gmail.com" class="contact-link">
       <p class="m-0">Contact</p>
     </a>
@@ -295,8 +318,20 @@
       href="./images/TK_Dev_Resume.pdf"
       download
       class="menu-resume"
-      on:class:={handleHamburger}>
+      on:click={handleHamburger}>
       <h1 class="m-0">Download Resume</h1>
+    </a>
+    <a
+      href="#work"
+      class="menu-work"
+      on:click={handleHamburger}>
+      <h1 class="m-0">Recent Work</h1>
+    </a>
+    <a
+      href="#top"
+      class="menu-top"
+      on:click={handleHamburger}>
+      <h1 class="m-0">Back To Top</h1>
     </a>
   </div>
   <div class="blue-circle" id="bluecircle" />

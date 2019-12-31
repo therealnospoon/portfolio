@@ -118,7 +118,7 @@
 <section id="work">
   <div class="section-wrapper d-flex justify-content-center">
     <div class="container d-flex justify-content-center flex-column">
-      <h2 class="section-title text-center my-5">Featured Work</h2>
+      <h2 class="section-title text-center my-5">Recent Work</h2>
       <div class="row mb-3">
         {#each projects as card, cardIndex}
           <div class="col-12 mb-5 d-flex justify-content-center">

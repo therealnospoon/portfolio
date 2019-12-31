@@ -32,7 +32,10 @@
     letter-spacing: .01em;
   }
   :global(h2) {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 3rem !important;
+    }
   }
   :global(h3) {
     font-weight: 700 !important;

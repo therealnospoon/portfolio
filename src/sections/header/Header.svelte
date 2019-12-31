@@ -50,7 +50,7 @@
 
 <style type="text/scss">
   h5 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.2;
     @media only screen and (min-width: 576px) {
       font-size: 1.7rem;
@@ -76,10 +76,10 @@
     max-width: 620px;
     flex-wrap: wrap;
     overflow-x: hidden;
-    color: rgb(80, 80, 80);
+    color: #454f5b;
 
     .main-phrase {
-      font-size: 3.5rem;
+      font-size: 3rem;
       @media only screen and (min-width: 576px) {
         font-size: 5rem;
       }
@@ -158,7 +158,7 @@
                 refreshing digital experiences.
                 <br />
                 <br />
-                Here's my
+                See my
                 <a href="#work" class="work-link">
                   <h5 class="m-0 d-inline">Recent Work</h5>
                 </a>

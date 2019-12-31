@@ -106,6 +106,10 @@
           position: absolute;
           top: 100%;
           left: 0;
+          @media only screen and (min-width: 576px) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
           p {
             font-family: "Playfair Display", serif;
             font-weight: 900 !important;
