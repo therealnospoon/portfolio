@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import sal from "sal.js";
+  import skills from "./skills";
   import "sal.js/dist/sal.css";
 
   onMount(async () => {
@@ -11,46 +12,72 @@
   });
 
   const developerTools = [
-    "HTML, CSS/SCSS, JS",
-    "Vue, React, Redux, Svelte",
-    "Node, VS Code",
-    "Firebase, Stripe",
-    "Gulp, Webpack, Rollup"
+    skills.bash,
+    skills.bootstrap,
+    skills.css,
+    skills.git,
+    skills.gulp,
+    skills.html,
+    skills.jquery,
+    skills.js,
+    skills.react,
+    skills.rollup,
+    skills.sass,
+    skills.svelte,
+    skills.vue,
+    skills.webpack,
+    skills.wordpress,
+    skills.npm,
+    skills.photoshop,
+    skills.figma,
+    skills.illustrator,
+    skills.node,
   ];
-  const designerTools = [
-    "Figma",
-    "Adobe Illustrator",
-    "Sketch",
-    "Invision",
-    "Adobe Photoshop"
-  ];
+  // const designerTools = [
+  //   "Figma",
+  //   "Adobe Illustrator",
+  //   "Sketch",
+  //   "Invision",
+  //   "Adobe Photoshop"
+  // ];
 </script>
 
 <style type="text/scss">
   .section-wrapper {
-    background-color: #1f86ca;
+    background-color: #f8fafc;
+    height: 100%;
+    color: #454f5b;
+    @media only screen and (min-width: 1280px) {
+      height: 75vh;
+    }
   }
   .skills-box {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .skill-row {
-      justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    margin: 3rem;
+    @media only screen and (min-width: 475px) {
+       grid-template-rows: repeat(7, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (min-width: 768px) {
+       grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media only screen and (min-width: 1000px) {
+       grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(8, 1fr);
     }
 
-    .skill-column {
-      text-align: center;
-      max-width: 320px;
-      margin: 3rem;
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        li {
-          margin-top: 1rem;
-        }
+    .skill-badge {
+      margin: 1rem;
+    }
+
+    .skill-icon {
+      img {
+        width: auto;
+        max-height: 55px;
       }
     }
   }
@@ -60,78 +87,29 @@
   <div class="section-wrapper">
     <div class="skills-container container">
       <div class="row justify-content-center align-items-center">
-        <h4 class="text-white pt-5">Skills</h4>
-        <div class="skills-box col-12">
-          <div class="row skill-row w-100">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <h2>Skills</h2>
+        </div>
+        <div
+          class="skills-box col-12"
+          >
+
+        
+          {#each developerTools as tool, devToolIndex}
             <div
-              class="skill-column col-12 col-md-6 d-flex flex-column
-              align-items-center"
-              data-sal="fade"
+              class="skill-badge mt-3"
+              data-sal="slide-right"
               data-sal-easing="ease-in-out-quad"
-              data-sal-duration="500"
-            >
-              <i
-                class="fas fa-code fa-2x mb-4"
-              />
-              <h4
-                class="mb-3"
-              >
-                Developer
-              </h4>
-              <p>
-                As a developer, I write clean, organized and performant code
-              </p>
-              <h5 class="mt-4">
-                Development tools:
-              </h5>
-              <ul>
-                {#each developerTools as tool, devToolIndex}
-                  <li
-                    class="mt-3"
-                    data-sal="fade"
-                    data-sal-easing="ease-in-out-quad"
-                    data-sal-duration="500"
-                    data-sal-delay={100 * devToolIndex}>
-                    {tool}
-                  </li>
-                {/each}
-              </ul>
+              data-sal-duration="250"
+              data-sal-delay={50 * devToolIndex}>
+              <span class="skill-icon">
+                <img src={tool.image} />
+              </span>
+              <p class="mt-1">{tool.name}</p>
             </div>
-            <div
-              class="skill-column col-12 col-md-6 d-flex flex-column
-              align-items-center"
-              data-sal="fade"
-              data-sal-easing="ease-in-out-quad"
-              data-sal-duration="500"
-            >
-              <i
-                class="fas fa-pencil-ruler fa-2x mb-4"
-              />
-              <h4
-                class="mb-3"
-              >
-                Designer
-              </h4>
-              <p>
-                As a designer, I create simple, beautiful, and powerful designs
-              </p>
-              <h5 class="mt-4">
-                Design tools:
-              </h5>
-              <ul>
-                {#each designerTools as tool, desToolIndex}
-                  <li
-                    class="mt-3"
-                    data-sal="fade"
-                    data-sal-easing="ease-in-out-quad"
-                    data-sal-duration="500"
-                    data-sal-delay={100 * desToolIndex}>
-                    {tool}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          </div>
+          {/each}
+         
+
         </div>
       </div>
     </div>

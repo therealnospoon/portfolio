@@ -3,13 +3,12 @@
   import Work from "./sections/work/Work.svelte";
   import Skills from "./sections/skills/Skills.svelte";
   import Contact from "./sections/contact/Contact.svelte";
+  import MainNav from "./components/MainNav.svelte";
   import "scroll-behavior-polyfill";
 
   import { onMount } from "svelte";
 
-  onMount(async () => {
-   
-  });
+  onMount(async () => {});
 
   let bgImage = "./images/portfolio_bg.jpg";
 
@@ -21,19 +20,46 @@
 <style type="text/scss">
   @import "assets/styles/base/variables";
   @import "assets/styles/base/mixins";
+  @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300,400,500|Nunito+Sans:400,600,800,900|PT+Serif:400,700|Playfair+Display:900|Rufina:400,700|Source+Sans+Pro&display=swap');
 
-  :global(h1, h2, h3, h4, h5, p) {
-    font-family: "Red Hat Display", sans-serif;
-    font-weight: 400;
+  :global(h3, h4, h5, p) {
+    font-family: "Lora", serif;
+    font-weight: 400 !important;
   }
+  :global(h1, h2) {
+    font-family: "Playfair Display", serif;
+    font-weight: 900 !important;
+    letter-spacing: .01em;
+  }
+  :global(h2) {
+    font-size: 2.5rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 3rem !important;
+    }
+  }
+  :global(h3) {
+    font-weight: 700 !important;
+    font-size: 2.8rem !important;
+  }
+  :global(h4) {
+    font-size: 2.2rem !important;
+  }
+  :global(p) {
+    font-size: 1.3rem !important;
+  }
+
   :global(html, body) {
     scroll-behavior: smooth;
+    position: relative;
   }
 </style>
 
 <div>
+
+  <MainNav />
   <Header />
   <Skills />
   <Work />
   <Contact on:gototop={scrollToTop} />
+
 </div>
