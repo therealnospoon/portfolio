@@ -42,12 +42,14 @@
       bluecircle.style.transform = "translateY(-100%)";
       menu.style.opacity = 0;
       menu.style.pointerEvents = "none";
+      document.body.style.overflowY = "scroll";
     } else {
       inputCheck.checked = true;
       menuOpen = true;
       menu.style.opacity = 1;
       menu.style.pointerEvents = "all";
       bluecircle.style.transform = "translateY(-47%)";
+      document.body.style.overflowY = "hidden";
     }
     console.log(menuOpen);
   }

@@ -149,7 +149,7 @@
           container"
           id="keyart-1"
           data-speed="30"
-          transition:fade={{ delay: 250, duration: 1500 }}>
+          transition:fade={{ duration: 500 }}>
           <div class="row w-100">
             <div class="col-12 d-flex justify-content-center">
               <img class="profile-pic" src={profilePic} />
