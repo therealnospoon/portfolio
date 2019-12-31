@@ -73,11 +73,16 @@
   .profile-card {
     background-color: #f8fafc;
     border-radius: 3px;
-    max-width: 620px;
+    max-width: 300px;
     flex-wrap: wrap;
     overflow-x: hidden;
     color: #454f5b;
-
+    @media only screen and (min-width: 400px) {
+      max-width: 380px;
+    }
+    @media only screen and (min-width: 576px) {
+      max-width: 620px;
+    }
     .main-phrase {
       font-size: 3rem;
       @media only screen and (min-width: 576px) {
@@ -144,7 +149,7 @@
           container"
           id="keyart-1"
           data-speed="30"
-          transition:fade={{ delay: 250, duration: 1500 }}>
+          transition:fade={{ duration: 500 }}>
           <div class="row w-100">
             <div class="col-12 d-flex justify-content-center">
               <img class="profile-pic" src={profilePic} />
@@ -168,9 +173,5 @@
         </div>
       {/if}
     </div>
-    <!-- My interests include (but are
-            not limited to): playing/listening to music, cooking and discovering
-            new foods, building things with my hands, going on adventures with
-            my wife, snowboarding...etc. -->
   </div>
 </section>

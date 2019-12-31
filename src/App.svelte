@@ -39,13 +39,22 @@
   }
   :global(h3) {
     font-weight: 700 !important;
-    font-size: 2.8rem !important;
+    font-size: 2.3rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 2.8rem !important;
+    }
   }
   :global(h4) {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 2.2rem !important;
+    }
   }
   :global(p) {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 1.3rem !important;
+    }
   }
 
   :global(html, body) {
