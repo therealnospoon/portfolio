@@ -77,6 +77,9 @@
     flex-wrap: wrap;
     overflow-x: hidden;
     color: #454f5b;
+    @media only screen and (min-width: 400px) {
+      max-width: 380px;
+    }
     @media only screen and (min-width: 576px) {
       max-width: 620px;
     }
@@ -170,9 +173,5 @@
         </div>
       {/if}
     </div>
-    <!-- My interests include (but are
-            not limited to): playing/listening to music, cooking and discovering
-            new foods, building things with my hands, going on adventures with
-            my wife, snowboarding...etc. -->
   </div>
 </section>

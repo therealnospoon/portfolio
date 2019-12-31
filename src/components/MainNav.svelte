@@ -84,16 +84,16 @@
       position: relative;
       display: none;
       opacity: 1;
-      border: solid 1px #0069ed;
+      border: solid 1px #454f5b;
+      border-radius: 1px;
       padding: 0.5rem 1rem;
       margin: 1rem;
       text-decoration: none;
-      color: #0069ed;
-      // border-radius: 2px;
+      color: #454f5b;
       overflow: hidden;
       text-align: center;
-      transition: transform 150ms ease, opacity 100ms linear, color 250ms linear,
-        background-color 250ms linear;
+      transition: transform 150ms ease, opacity 100ms linear, color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 250ms linear, border-color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       cursor: pointer;
       &:before {
         content: "";
@@ -110,6 +110,7 @@
       }
       &:hover,
       &:focus {
+        border-color: #0069ed;
         background-color: #0069ed;
         color: #f8fafc;
         &:before {
@@ -132,9 +133,9 @@
       text-decoration: none;
       opacity: 1;
       margin: 1rem;
-      color: #0069ed;
+      color: #454f5b;
       text-align: center;
-      transition: opacity 100ms linear;
+      transition: opacity 100ms linear, color 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
       p {
         font-family: "Playfair Display", serif;
         font-weight: 900;
@@ -156,6 +157,7 @@
       }
       &:hover,
       &:focus {
+        color: #0069ed;
         p {
           &:after {
             width: 100%;
