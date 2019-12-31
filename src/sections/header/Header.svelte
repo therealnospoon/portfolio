@@ -49,6 +49,7 @@
 </script>
 
 <style type="text/scss">
+@import "../../assets/styles/base/variables";
   h5 {
     font-size: 1.3rem;
     line-height: 1.2;
@@ -58,7 +59,6 @@
   }
   .section-wrapper {
     height: 110vh;
-    background: #1f86ca;
     z-index: 10;
     overflow: hidden;
   }
@@ -75,8 +75,7 @@
     border-radius: 3px;
     max-width: 300px;
     flex-wrap: wrap;
-    overflow-x: hidden;
-    color: #454f5b;
+    color: $primary;
     @media only screen and (min-width: 400px) {
       max-width: 380px;
     }
@@ -107,7 +106,7 @@
         font-family: "Playfair Display", serif;
         font-weight: 900;
         position: relative;
-        color: #0069ed;
+        color: $cta;
         font-size: 2rem;
         &:after {
           content: "";
@@ -115,7 +114,7 @@
           top: 85%;
           left: 1%;
           height: 30%;
-          background: #ed0076a2;
+          background: $linkhover;
           width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           @media only screen and (min-width: 576px) {
