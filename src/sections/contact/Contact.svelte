@@ -8,14 +8,15 @@
 </script>
 
 <style type="text/scss">
+@import "../../assets/styles/base/variables";
   section {
-    background: #f8fafc;
+    background: $background;
   }
 
   .top-btn {
     display: inline-block;
     text-decoration: none;
-    color: #0069ed;
+    color: $cta;
     text-align: center;
     p {
       font-family: "Playfair Display", serif;
@@ -28,7 +29,7 @@
         top: 83%;
         left: 0;
         height: 30%;
-        background: #ed0076a2;
+        background: $linkhover;
         width: 100%;
         transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         @media only screen and (min-width: 576px) {
@@ -48,7 +49,7 @@
   .email-link {
     display: inline-block;
     text-decoration: none;
-    color: #0069ed;
+    color: $cta;
     text-align: center;
     p {
       font-family: "Playfair Display", serif;
@@ -61,7 +62,7 @@
         top: 83%;
         left: 0;
         height: 30%;
-        background: #ed0076a2;
+        background: $linkhover;
         width: 100%;
         transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         @media only screen and (min-width: 576px) {
