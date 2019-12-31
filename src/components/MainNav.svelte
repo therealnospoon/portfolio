@@ -89,7 +89,7 @@
       margin: 1rem;
       text-decoration: none;
       color: #0069ed;
-      border-radius: 2px;
+      // border-radius: 2px;
       overflow: hidden;
       text-align: center;
       transition: transform 150ms ease, opacity 100ms linear, color 250ms linear,
@@ -260,7 +260,7 @@
       margin-bottom: 4px;
       position: relative;
       background: #0069ed;
-      border-radius: 2px;
+      border-radius: 1.5px;
       z-index: 1;
       transform-origin: 4px 0px;
 

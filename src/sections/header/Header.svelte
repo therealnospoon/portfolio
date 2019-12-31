@@ -73,11 +73,13 @@
   .profile-card {
     background-color: #f8fafc;
     border-radius: 3px;
-    max-width: 620px;
+    max-width: 300px;
     flex-wrap: wrap;
     overflow-x: hidden;
     color: #454f5b;
-
+    @media only screen and (min-width: 576px) {
+      max-width: 620px;
+    }
     .main-phrase {
       font-size: 3rem;
       @media only screen and (min-width: 576px) {
