@@ -115,7 +115,7 @@
       &:focus {
         border-color: $cta;
         background-color: $cta;
-        color: #f8fafc;
+        color: $background;
         &:before {
           opacity: 0;
           top: -100%;
@@ -181,7 +181,7 @@
     height: 105vh;
     width: 100vw;
     background-color: $cta;
-    color: #f8fafc;
+    color: $background;
     z-index: 5;
     @media only screen and (min-width: 576px) {
       height: 100vh;
@@ -195,7 +195,7 @@
       padding: 0.5rem 1rem;
       margin: 1rem;
       text-decoration: none;
-      color: #f8fafc;
+      color: $background;
       border-radius: 2px;
       text-align: center;
       cursor: pointer;
@@ -248,7 +248,7 @@
         opacity: 1;
 
         transform: rotate(-45deg) translate(0, -2px);
-        background: #f8fafc;
+        background: $background;
       }
       &:checked ~ span:nth-last-child(2) {
         opacity: 0;

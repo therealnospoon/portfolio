@@ -67,11 +67,11 @@
     background-size: cover;
     background-position: center center;
     height: 110vh;
-    background-color: #f8fafc;
+    background-color: $background;
   }
 
   .profile-card {
-    background-color: #f8fafc;
+    background-color: $background;
     border-radius: 3px;
     max-width: 300px;
     flex-wrap: wrap;

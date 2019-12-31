@@ -10,7 +10,7 @@
 <style type="text/scss">
 @import "../../assets/styles/base/variables";
   section {
-    background: #f8fafc;
+    background: $background;
   }
 
   .top-btn {

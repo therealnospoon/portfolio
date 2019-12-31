@@ -46,7 +46,7 @@
 @import "../../assets/styles/base/_variables.scss";
 
   .section-wrapper {
-    background-color: #f8fafc;
+    background-color: $background;
     height: 100%;
     color: $primary;
     @media only screen and (min-width: 1280px) {
