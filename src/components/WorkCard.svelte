@@ -37,6 +37,8 @@
 </script>
 
 <style type="text/scss">
+  @import "../assets/styles/base/_variables.scss";
+
   :global(.gifPlaying) {
     opacity: 1 !important;
     z-index: 4 !important;
@@ -44,7 +46,7 @@
   .card-container-desktop {
     display: flex;
     align-items: center;
-    color: #454f5b;
+    color: $primary;
     padding: 0 0.5rem;
     @media only screen and (min-width: 1200px) {
       max-width: 60vw;
@@ -56,30 +58,16 @@
     .image-container {
       border-radius: 4px;
       align-items: center;
-      // min-height: 70vh;
-      // @media only screen and (max-width: 768px) {
-      //   min-height: 58vh;
-      //   align-items: flex-end;
-      // }
-      // @media only screen and (max-width: 576px) {
-      //   min-height: 440px;
-      //   align-items: flex-end;
-      // }
-      // @media only screen and (max-width: 475px) {
-      //   min-height: 380px;
-      // }
-      // @media only screen and (max-width: 425px) {
-      //   min-height: 320px;
-      // }
-      // @media only screen and (max-width: 375px) {
-      //   min-height: 285px;
-      // }
       .site-image-container {
         position: relative;
         margin: -5rem -2rem 2rem 0;
         cursor: pointer;
         @media only screen and (max-width: 576px) {
           margin: -5rem 0 2rem 0;
+        }
+        &:hover,
+        &:focus {
+          z-index: 4;
         }
         &:after {
           border-radius: 4px;
@@ -92,7 +80,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          content: "\f01d";
+          content: "\f04b";
           font-family: FontAwesome;
           font-size: 75px;
           color: #fff;
@@ -104,6 +92,7 @@
         }
         .click-message {
           position: absolute;
+          pointer-events: none;
           top: 100%;
           left: 0;
           @media only screen and (min-width: 576px) {
@@ -114,8 +103,8 @@
             font-family: "Playfair Display", serif;
             font-weight: 900 !important;
             font-size: 1rem !important;
-            letter-spacing: .02em;
-            color: #0069ed;
+            letter-spacing: 0.02em;
+            color: $cta;
           }
         }
         .site-image {
@@ -132,11 +121,18 @@
           transition: opacity 250ms ease-in 250ms;
           cursor: pointer;
         }
+        &.no-gif {
+          pointer-events: none;
+          .click-message {
+            display: none;
+          }
+        }
       }
       .mobile-image-container {
         margin: 0 0 -6rem -3rem;
         border-radius: 10px;
         z-index: 3;
+        opacity: 1;
         transition: opacity 250ms ease-in;
         @media only screen and (max-width: 768px) {
           margin: 0 0 0 -3rem;
@@ -147,9 +143,6 @@
         }
       }
     }
-    .framework-label {
-      opacity: 1;
-    }
     .title {
       position: relative;
     }
@@ -157,7 +150,7 @@
       display: inline-block;
       margin-top: 1rem;
       text-decoration: none;
-      color: #0069ed;
+      color: $cta;
       text-align: center;
       p {
         font-family: "Playfair Display", serif;
@@ -170,7 +163,7 @@
           top: 80%;
           left: 1%;
           height: 30%;
-          background: #ed0076a2;
+          background: $linkhover;
           width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           @media only screen and (min-width: 576px) {
@@ -197,7 +190,7 @@
       <div class="col-12 image-container d-flex justify-content-center">
 
         <div
-          class="site-image-container"
+          class="site-image-container {image3 === null ? 'no-gif' : ''}"
           on:click={handleGif}
           data-sal="slide-up"
           data-sal-easing="ease-out-back"
@@ -210,7 +203,12 @@
             data-sal-easing="ease-out-back"
             data-sal-duration="500"
             data-sal-delay="100" />
-          <div class="click-message mt-2">
+          <div
+            class="click-message mt-2"
+            data-sal="fade-in"
+            data-sal-easing="ease-out-back"
+            data-sal-duration="500"
+            data-sal-delay="400">
             <p>Click image for preview</p>
           </div>
 

@@ -43,10 +43,12 @@
 </script>
 
 <style type="text/scss">
+@import "../../assets/styles/base/_variables.scss";
+
   .section-wrapper {
-    background-color: #f8fafc;
+    background-color: $background;
     height: 100%;
-    color: #454f5b;
+    color: $primary;
     @media only screen and (min-width: 1280px) {
       height: 75vh;
     }
@@ -101,7 +103,7 @@
               data-sal="slide-right"
               data-sal-easing="ease-in-out-quad"
               data-sal-duration="250"
-              data-sal-delay={50 * devToolIndex}>
+              data-sal-delay={devToolIndex * 50}>
               <span class="skill-icon">
                 <img src={tool.image} />
               </span>

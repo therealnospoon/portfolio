@@ -49,6 +49,7 @@
 </script>
 
 <style type="text/scss">
+@import "../../assets/styles/base/variables";
   h5 {
     font-size: 1.3rem;
     line-height: 1.2;
@@ -58,7 +59,6 @@
   }
   .section-wrapper {
     height: 110vh;
-    background: #1f86ca;
     z-index: 10;
     overflow: hidden;
   }
@@ -67,17 +67,21 @@
     background-size: cover;
     background-position: center center;
     height: 110vh;
-    background-color: #f8fafc;
+    background-color: $background;
   }
 
   .profile-card {
-    background-color: #f8fafc;
+    background-color: $background;
     border-radius: 3px;
-    max-width: 620px;
+    max-width: 300px;
     flex-wrap: wrap;
-    overflow-x: hidden;
-    color: #454f5b;
-
+    color: $primary;
+    @media only screen and (min-width: 400px) {
+      max-width: 380px;
+    }
+    @media only screen and (min-width: 576px) {
+      max-width: 620px;
+    }
     .main-phrase {
       font-size: 3rem;
       @media only screen and (min-width: 576px) {
@@ -102,7 +106,7 @@
         font-family: "Playfair Display", serif;
         font-weight: 900;
         position: relative;
-        color: #0069ed;
+        color: $cta;
         font-size: 2rem;
         &:after {
           content: "";
@@ -110,7 +114,7 @@
           top: 85%;
           left: 1%;
           height: 30%;
-          background: #ed0076a2;
+          background: $linkhover;
           width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           @media only screen and (min-width: 576px) {
@@ -144,7 +148,7 @@
           container"
           id="keyart-1"
           data-speed="30"
-          transition:fade={{ delay: 250, duration: 1500 }}>
+          transition:fade={{ duration: 500 }}>
           <div class="row w-100">
             <div class="col-12 d-flex justify-content-center">
               <img class="profile-pic" src={profilePic} />
@@ -154,8 +158,7 @@
             <div class="col-12">
               <h1 class="main-phrase mt-5 mb-4">Hi, I'm Tim</h1>
               <h5 class="mt-2">
-                I'm a UI developer from Seattle, WA. I strive to build clean and
-                refreshing digital experiences.
+                I'm a UI developer from Seattle, WA. I strive to make sites that are so fresh and so clean
                 <br />
                 <br />
                 See my
@@ -168,9 +171,5 @@
         </div>
       {/if}
     </div>
-    <!-- My interests include (but are
-            not limited to): playing/listening to music, cooking and discovering
-            new foods, building things with my hands, going on adventures with
-            my wife, snowboarding...etc. -->
   </div>
 </section>

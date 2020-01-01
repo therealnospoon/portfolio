@@ -42,18 +42,21 @@
       bluecircle.style.transform = "translateY(-100%)";
       menu.style.opacity = 0;
       menu.style.pointerEvents = "none";
+      document.body.style.overflowY = "scroll";
     } else {
       inputCheck.checked = true;
       menuOpen = true;
       menu.style.opacity = 1;
       menu.style.pointerEvents = "all";
       bluecircle.style.transform = "translateY(-47%)";
+      document.body.style.overflowY = "hidden";
     }
     console.log(menuOpen);
   }
 </script>
 
 <style type="text/scss">
+@import "../assets/styles/base/variables";
   :global(.rollup) {
     right: -51% !important;
     .contact-link,
@@ -84,16 +87,16 @@
       position: relative;
       display: none;
       opacity: 1;
-      border: solid 1px #0069ed;
+      border: solid 1px $primary;
+      border-radius: 1px;
       padding: 0.5rem 1rem;
       margin: 1rem;
       text-decoration: none;
-      color: #0069ed;
-      border-radius: 2px;
+      color: $primary;
       overflow: hidden;
       text-align: center;
-      transition: transform 150ms ease, opacity 100ms linear, color 250ms linear,
-        background-color 250ms linear;
+      transition: transform 150ms ease, opacity 100ms linear, color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 250ms linear, border-color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       cursor: pointer;
       &:before {
         content: "";
@@ -102,7 +105,7 @@
         right: -200%;
         width: 200%;
         height: 400%;
-        background-color: #0069ed;
+        background-color: $cta;
         border-radius: 45%;
         opacity: 1;
         transition: top 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -110,8 +113,9 @@
       }
       &:hover,
       &:focus {
-        background-color: #0069ed;
-        color: #f8fafc;
+        border-color: $cta;
+        background-color: $cta;
+        color: $background;
         &:before {
           opacity: 0;
           top: -100%;
@@ -132,9 +136,9 @@
       text-decoration: none;
       opacity: 1;
       margin: 1rem;
-      color: #0069ed;
+      color: $primary;
       text-align: center;
-      transition: opacity 100ms linear;
+      transition: opacity 100ms linear, color 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
       p {
         font-family: "Playfair Display", serif;
         font-weight: 900;
@@ -146,7 +150,7 @@
           top: 83%;
           left: 0;
           height: 30%;
-          background: #ed0076a2;
+          background: $linkhover;
           width: 100%;
           transition: width 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           @media only screen and (min-width: 576px) {
@@ -156,6 +160,7 @@
       }
       &:hover,
       &:focus {
+        color: $cta;
         p {
           &:after {
             width: 100%;
@@ -175,8 +180,8 @@
     transition: opacity 250ms ease-in 100ms;
     height: 105vh;
     width: 100vw;
-    background-color: #0069ed;
-    color: #f8fafc;
+    background-color: $cta;
+    color: $background;
     z-index: 5;
     @media only screen and (min-width: 576px) {
       height: 100vh;
@@ -190,7 +195,7 @@
       padding: 0.5rem 1rem;
       margin: 1rem;
       text-decoration: none;
-      color: #f8fafc;
+      color: $background;
       border-radius: 2px;
       text-align: center;
       cursor: pointer;
@@ -243,7 +248,7 @@
         opacity: 1;
 
         transform: rotate(-45deg) translate(0, -2px);
-        background: #f8fafc;
+        background: $background;
       }
       &:checked ~ span:nth-last-child(2) {
         opacity: 0;
@@ -259,8 +264,8 @@
       height: 6px;
       margin-bottom: 4px;
       position: relative;
-      background: #0069ed;
-      border-radius: 2px;
+      background: $cta;
+      border-radius: 1.5px;
       z-index: 1;
       transform-origin: 4px 0px;
 
@@ -279,7 +284,8 @@
     height: 410vh;
     border-radius: 30%;
     position: fixed;
-    background-color: #0069ed;
+    z-index: 4;
+    background-color: $cta;
     transform: translateY(-100%);
     transition: transform 400ms ease-in-out;
   }

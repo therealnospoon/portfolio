@@ -20,7 +20,7 @@
 <style type="text/scss">
   @import "assets/styles/base/variables";
   @import "assets/styles/base/mixins";
-  @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300,400,500|Nunito+Sans:400,600,800,900|PT+Serif:400,700|Playfair+Display:900|Rufina:400,700|Source+Sans+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Playfair+Display:900&display=swap');
 
   :global(h3, h4, h5, p) {
     font-family: "Lora", serif;
@@ -39,13 +39,22 @@
   }
   :global(h3) {
     font-weight: 700 !important;
-    font-size: 2.8rem !important;
+    font-size: 2.3rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 2.8rem !important;
+    }
   }
   :global(h4) {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 2.2rem !important;
+    }
   }
   :global(p) {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
+    @media only screen and (min-width: 576px) {
+      font-size: 1.3rem !important;
+    }
   }
 
   :global(html, body) {
