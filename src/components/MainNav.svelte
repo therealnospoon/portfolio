@@ -284,6 +284,7 @@
     height: 410vh;
     border-radius: 30%;
     position: fixed;
+    z-index: 4;
     background-color: $cta;
     transform: translateY(-100%);
     transition: transform 400ms ease-in-out;
