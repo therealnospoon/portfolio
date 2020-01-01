@@ -59,15 +59,15 @@ const projects = [
     gifId: "gif4",
     siteUrl: "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
     stack: [skills.vue, skills.sass]
-  }
+  },
   // {
   //   title: "Red Twig Cafe",
   //   description:
   //     "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
   //   image1: "./images/RedTwigPic.jpg",
   //   image2: "./images/growing-sql-site-mobile.png",
-  //   image3: "./images/growing-sql-server.gif",
-  //   gifId: "gif4",
+  //   image3: null,
+  //   gifId: "gif5",
   //   siteUrl: "https://www.redtwig.com",
   //   stack: [skills.vue, skills.sass]
   // },
@@ -77,8 +77,8 @@ const projects = [
   //     "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
   //   image1: "./images/EdmondsSegwayPic.jpg",
   //   image2: "./images/growing-sql-site-mobile.png",
-  //   image3: "./images/growing-sql-server.gif",
-  //   gifId: "gif5",
+  //   image3: null,
+  //   gifId: "gif6",
   //   siteUrl: "https://www.edmondssegwaytours.com",
   //   stack: [skills.svelte, skills.sass]
   // }
