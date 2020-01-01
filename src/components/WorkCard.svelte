@@ -37,8 +37,7 @@
 </script>
 
 <style type="text/scss">
-@import "../assets/styles/base/_variables.scss";
-
+  @import "../assets/styles/base/_variables.scss";
 
   :global(.gifPlaying) {
     opacity: 1 !important;
@@ -93,6 +92,7 @@
         }
         .click-message {
           position: absolute;
+          pointer-events: none;
           top: 100%;
           left: 0;
           @media only screen and (min-width: 576px) {
@@ -120,6 +120,12 @@
           z-index: 1;
           transition: opacity 250ms ease-in 250ms;
           cursor: pointer;
+        }
+        &.no-gif {
+          pointer-events: none;
+          .click-message {
+            display: none;
+          }
         }
       }
       .mobile-image-container {
@@ -184,7 +190,7 @@
       <div class="col-12 image-container d-flex justify-content-center">
 
         <div
-          class="site-image-container"
+          class="site-image-container {image3 === null ? 'no-gif' : ''}"
           on:click={handleGif}
           data-sal="slide-up"
           data-sal-easing="ease-out-back"
@@ -197,7 +203,12 @@
             data-sal-easing="ease-out-back"
             data-sal-duration="500"
             data-sal-delay="100" />
-          <div class="click-message mt-2">
+          <div
+            class="click-message mt-2"
+            data-sal="fade-in"
+            data-sal-easing="ease-out-back"
+            data-sal-duration="500"
+            data-sal-delay="400">
             <p>Click image for preview</p>
           </div>
 
