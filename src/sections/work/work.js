@@ -63,9 +63,11 @@ const projects = [
   // {
   //   title: "Red Twig Cafe",
   //   description:
-  //     "I helped to build a redesigned website for a local cafe roastery in Edmonds, WA using Vue.js, a component driven Javascript framework",
-  //   image1: "./images/RedTwigPic.jpg",
-  //   image2: "./images/growing-sql-site-mobile.png",
+  //     "I helped redesign and build a website for a local cafe roastery in Edmonds, WA using Vue JS",
+  //   challenge: "For this project...",
+  //   technologies: "stuff",
+  //   image1: "./images/redtwig-site.jpg",
+  //   image2: "./images/redtwig-mobile.jpg",
   //   image3: null,
   //   gifId: "gif5",
   //   siteUrl: "https://www.redtwig.com",
@@ -73,10 +75,11 @@ const projects = [
   // },
   // {
   //   title: "Edmonds Segway Tours",
-  //   description:
-  //     "I built a website for a Segway tour company using Svelte, a very lightweight JS library that compiles to simple JavaScript.",
-  //   image1: "./images/EdmondsSegwayPic.jpg",
-  //   image2: "./images/growing-sql-site-mobile.png",
+  //   description: "I built a website for a Segway tour company using Svelte JS.",
+  //   challenge: "For this project...",
+  //   technologies: "stuff",
+  //   image1: "./images/edmondssegway-site.jpg",
+  //   image2: "./images/edmondssegway-mobile.jpg",
   //   image3: null,
   //   gifId: "gif6",
   //   siteUrl: "https://www.edmondssegwaytours.com",
