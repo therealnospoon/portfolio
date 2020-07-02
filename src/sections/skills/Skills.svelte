@@ -68,8 +68,8 @@
       grid-template-columns: repeat(5, 1fr);
     }
     @media only screen and (min-width: 1000px) {
-       grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: repeat(8, 1fr);
+       grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
     }
 
     .skill-badge {
