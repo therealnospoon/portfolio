@@ -9,7 +9,7 @@ const projects = [
     technologies: "Svelte, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
     image1: "./images/tagpool_edited.jpg",
     image2: "./images/tagpool_mobile_screenshot.png",
-    image3: "./images/tagpool_demo_downsized.gif",
+    image3: "./images/tagpool_demo.gif",
     gifId: "gif5",
     siteUrl: "https://www.redtwig.com",
     stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm]
