@@ -2,6 +2,19 @@ import skills from "../skills/skills";
 
 const projects = [
   {
+    title: "Tagpool",
+    description:
+      "An Instagram hashtag generator/management tool for iOS",
+    challenge: "For this project...",
+    technologies: "stuff",
+    image1: "./images/redtwig-site.jpg",
+    image2: "./images/redtwig-mobile.jpg",
+    image3: null,
+    gifId: "gif5",
+    siteUrl: "https://www.redtwig.com",
+    stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm]
+  },
+  {
     title: "Growing SQL Server (Microsoft)",
     description:
       "I helped create a production site for Microsoft that beautifully illustrates SQL Server's evolution throughout the years.",
@@ -16,36 +29,36 @@ const projects = [
     siteUrl: "https://discover.microsoft.com/growing-sql-server/#/",
     stack: [skills.vue, skills.sass, skills.wordpress]
   },
-  {
-    title: "DevOps Fundamentals (Microsoft)",
-    description:
-      "I built this for potential decision makers to explore the basic benefits and functionality of DevOps with Microsoft Azure.",
-    challenge:
-      "This was a fairly straightforward site save for the fact that the meat of the site, the media assets (videos) were hosted by a third-party company hence requiring some thinking around how to implement it as well as the architecture of the entire site. Harnessing the power of the Vue JS framework, I was able to utilize the benefits of it's component driven capabilites that resulted in a clean and functional site with a codebase that would allow any developer to jump into with ease. Additionally, making this site helped me to grasp the importance of structuring my code in a way that achieves high-performance as well as readability.",
-    technologies: "Vue JS, Wordpress, Bootstrap, Vidyard",
-    image1: "./images/devops-fundamentals-site.jpg",
-    image2: "./images/devops-fundamentals-mobile.jpg",
-    image3: "./images/devops-fundamentals.gif",
-    gifId: "gif2",
-    siteUrl: "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
-    stack: [skills.vue, skills.sass, skills.wordpress]
-  },
-  {
-    title: "Education Interactive Demos (Microsoft)",
-    description:
-      "I worked on cross-browser compatibility, responsiveness and cosmetic bug-fixes on these Microsoft 365 interactive demo sites.",
-    challenge:
-      "This project was handed off to my team to take across the finish line after primary development had taken place. These sites were built in Vue JS are interactive demos that showcase Microsoft 365 applications in specific contexts (such as the classroom) and displays how impactful it can be for improving workflow for teachers and students. My task was to fix the broken UI elements and to make sure they were cross-browser compatible. I accomplished this by utilizing various tools to optimize assets, tested across multiple browsers and devices made sure the experience achieved the quality that we considered ready for shipment to the client.",
-    technologies:
-      "Vue JS, Wordpress, Browserstack, Mobile/Tablet test devices, Adobe Illustrator",
-    image1: "./images/education-demos-site.jpg",
-    image2: "./images/education-demos-mobile.jpg",
-    image3: "./images/education-demos.gif",
-    gifId: "gif3",
-    siteUrl:
-      "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
-    stack: [skills.vue, skills.sass, skills.wordpress, skills.illustrator]
-  },
+  // {
+  //   title: "DevOps Fundamentals (Microsoft)",
+  //   description:
+  //     "I built this for potential decision makers to explore the basic benefits and functionality of DevOps with Microsoft Azure.",
+  //   challenge:
+  //     "This was a fairly straightforward site save for the fact that the meat of the site, the media assets (videos) were hosted by a third-party company hence requiring some thinking around how to implement it as well as the architecture of the entire site. Harnessing the power of the Vue JS framework, I was able to utilize the benefits of it's component driven capabilites that resulted in a clean and functional site with a codebase that would allow any developer to jump into with ease. Additionally, making this site helped me to grasp the importance of structuring my code in a way that achieves high-performance as well as readability.",
+  //   technologies: "Vue JS, Wordpress, Bootstrap, Vidyard",
+  //   image1: "./images/devops-fundamentals-site.jpg",
+  //   image2: "./images/devops-fundamentals-mobile.jpg",
+  //   image3: "./images/devops-fundamentals.gif",
+  //   gifId: "gif2",
+  //   siteUrl: "https://discover.microsoft.com/devops-fundamentals-with-azure/#/",
+  //   stack: [skills.vue, skills.sass, skills.wordpress]
+  // },
+  // {
+  //   title: "Education Interactive Demos (Microsoft)",
+  //   description:
+  //     "I worked on cross-browser compatibility, responsiveness and cosmetic bug-fixes on these Microsoft 365 interactive demo sites.",
+  //   challenge:
+  //     "This project was handed off to my team to take across the finish line after primary development had taken place. These sites were built in Vue JS are interactive demos that showcase Microsoft 365 applications in specific contexts (such as the classroom) and displays how impactful it can be for improving workflow for teachers and students. My task was to fix the broken UI elements and to make sure they were cross-browser compatible. I accomplished this by utilizing various tools to optimize assets, tested across multiple browsers and devices made sure the experience achieved the quality that we considered ready for shipment to the client.",
+  //   technologies:
+  //     "Vue JS, Wordpress, Browserstack, Mobile/Tablet test devices, Adobe Illustrator",
+  //   image1: "./images/education-demos-site.jpg",
+  //   image2: "./images/education-demos-mobile.jpg",
+  //   image3: "./images/education-demos.gif",
+  //   gifId: "gif3",
+  //   siteUrl:
+  //     "https://discover.microsoft.com/digital-education-demo/#/personalize-learning",
+  //   stack: [skills.vue, skills.sass, skills.wordpress, skills.illustrator]
+  // },
   {
     title: "Self-Guided Demo (SAP Concur)",
     description:
@@ -60,31 +73,19 @@ const projects = [
     siteUrl: "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
     stack: [skills.vue, skills.sass]
   },
-  // {
-  //   title: "Red Twig Cafe",
-  //   description:
-  //     "I helped redesign and build a website for a local cafe roastery in Edmonds, WA using Vue JS",
-  //   challenge: "For this project...",
-  //   technologies: "stuff",
-  //   image1: "./images/redtwig-site.jpg",
-  //   image2: "./images/redtwig-mobile.jpg",
-  //   image3: null,
-  //   gifId: "gif5",
-  //   siteUrl: "https://www.redtwig.com",
-  //   stack: [skills.vue, skills.sass]
-  // },
-  // {
-  //   title: "Edmonds Segway Tours",
-  //   description: "I built a website for a Segway tour company using Svelte JS.",
-  //   challenge: "For this project...",
-  //   technologies: "stuff",
-  //   image1: "./images/edmondssegway-site.jpg",
-  //   image2: "./images/edmondssegway-mobile.jpg",
-  //   image3: null,
-  //   gifId: "gif6",
-  //   siteUrl: "https://www.edmondssegwaytours.com",
-  //   stack: [skills.svelte, skills.sass]
-  // }
+  {
+    title: "Red Twig Cafe",
+    description:
+      "I helped redesign and build a website for a local cafe roastery in Edmonds, WA using Vue JS",
+    challenge: "For this project...",
+    technologies: "stuff",
+    image1: "./images/redtwig-site.jpg",
+    image2: "./images/redtwig-mobile.jpg",
+    image3: null,
+    gifId: "gif5",
+    siteUrl: "https://www.redtwig.com",
+    stack: [skills.vue, skills.sass]
+  }
 ];
 
 export default projects;

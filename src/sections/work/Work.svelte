@@ -2,7 +2,7 @@
   import WorkCard from "../../components/WorkCard.svelte";
   import { onMount } from "svelte";
   import sal from "sal.js";
-  import projects from "./work";
+  import projects from "./work.js";
   import "sal.js/dist/sal.css";
 
   onMount(async () => {
