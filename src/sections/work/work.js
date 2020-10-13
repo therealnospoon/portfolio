@@ -6,10 +6,10 @@ const projects = [
     description:
       "An Instagram hashtag generator/management tool for iOS",
     challenge: "For this project...",
-    technologies: "stuff",
-    image1: "./images/redtwig-site.jpg",
-    image2: "./images/redtwig-mobile.jpg",
-    image3: null,
+    technologies: "Svelte, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
+    image1: "./images/tagpool_edited.jpg",
+    image2: "./images/tagpool_mobile_screenshot.png",
+    image3: "./images/tagpool_demo_downsized.gif",
     gifId: "gif5",
     siteUrl: "https://www.redtwig.com",
     stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm]
