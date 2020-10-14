@@ -21,7 +21,9 @@
   export let image3;
   export let gifId;
   export let siteUrl;
+  export let isApp;
   export let stack;
+  export let githubUrl;
 
   function siteOpening() {
     dispatch("siteclick", {
@@ -151,7 +153,7 @@
       margin-top: 1rem;
       text-decoration: none;
       color: $cta;
-      text-align: center;
+      text-align: left;
       p {
         font-family: "Playfair Display", serif;
         font-weight: 900;
@@ -233,16 +235,30 @@
       <div class="col-12 d-flex align-items-center">
 
         <div class="content-container">
-          <h3 class="title my-4">{title}</h3>
-          <h4>Overview</h4>
-          <p class="description">{description}</p>
-          <h4>Challenge</h4>
-          <p class="challenge">{challenge}</p>
-          <h4>Technologies</h4>
-          <p class="technologies">{technologies}</p>
-          <a href={siteUrl} target="_blank" class="site-btn">
-            <p class="m-0">Visit Site</p>
-          </a>
+            <h3 class="title mt-4">{title}</h3>
+            <p class="description">{description}</p>
+            <h4 class="mt-4">About</h4>
+            <p class="about">{challenge}</p>
+            <h4>Technologies</h4>
+            <p class="technologies">{technologies}</p>
+            <div class="row">
+                <div class="col-12">
+                    <a href={siteUrl} target="_blank" class="site-btn">
+                        {#if isApp}
+                        <p class="m-0">View App</p>
+                        {:else}
+                        <p class="m-0">Visit Site</p>
+                        {/if}
+                    </a>
+                </div>
+                {#if githubUrl}
+                <div class="col-12">
+                    <a href={githubUrl} target="_blank" class="site-btn">
+                        <p class="m-0">Github</p>
+                    </a>
+                </div>
+                {/if}
+            </div>   
         </div>
       </div>
     </div>

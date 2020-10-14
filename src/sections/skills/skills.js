@@ -25,6 +25,11 @@ export default {
       name: "Bootstrap",
       url: "https://getbootstrap.com/"
     },
+    cordova: {
+      image: "images/icons/cordova_128.png",
+      name: "Cordova",
+      url: "https://cordova.apache.org/"
+    },
     html: {
       image: "images/icons/html.png",
       name: "HTML",
