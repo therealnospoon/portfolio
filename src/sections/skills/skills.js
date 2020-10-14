@@ -149,5 +149,10 @@ export default {
       image: "images/icons/illustrator.png",
       name: "Illustrator",
       url: "https://www.adobe.com/products/illustrator.html"
-    }
+    },
+    xstate: {
+      image: "images/icons/xstatelogo.png",
+      name: "Xstate",
+      url: "https://xstate.js.org/docs/",
+    },
   };

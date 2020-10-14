@@ -5,7 +5,7 @@ const projects = [
     title: "Tagpool",
     description:
       "An Instagram hashtag generator/management tool for iOS",
-    challenge: "Tagpool was developed for the mobile platform and is a tool for Instagram users to assist in the optimization of their posts by generating relevant pools of hashtags that are managed and stored in the app. While as simple as it was to conceptualize, this was a unique challenge for me as it was one of the first times having to work closer with the backend data. I used X-state, a state management library, to scaffold the user-flows in this application and subsequently have learned how powerful it is to manage states in a very logical, uni-directional stream. Not only did it help me make structural decisions, the process of putting the flows together helps to avoid potential friction points that could've easily been overlooked.",
+    challenge: "Tagpool was developed for iOS and is a tool that provides Instagram users an easy and convenient way to optimize hashtag utilization in their posts. This was my first time designing and building a mobile application myself and it was very satisfying to see my vision come together aesthetically and functionally. I used Xstate.js, a state management library, to architect as seamless a user-flow experience as possible. Through it all, I learned how powerful it is to manage states in a very logical, uni-directional stream while also avoiding potential user friction points.",
     technologies: "Svelte, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
     image1: "./images/tagpool_edited.jpg",
     image2: "./images/tagpool_mobile_screenshot.png",
@@ -14,7 +14,7 @@ const projects = [
     siteUrl: "https://www.redtwig.com",
     isApp: true,
     githubUrl: "",
-    stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm]
+    stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm, skills.cordova, skills.xstate]
   },
   {
     title: "Growing SQL Server (Microsoft)",
@@ -23,7 +23,7 @@ const projects = [
     challenge:
       "This was a wonderfully designed experience that leveraged SVG capabilities and animation libraries to bring it to life. The challenging part of this project was choosing the best implemententation of the SVG drawing and the background animations while maintaining cross-browser compatibility and responsiveness. The primary developers on this site used the Scrollmagic library paired with Greensock animations to achieve this unique functionality. My role on this site was making sure the site was tested vigorously across IE, Edge and multiple mobile/tablet. Due to the nature of SVGs and animation libraries, testing for cross-browser compatibility and reponsiveness is extremely important. I was able to complete testing using various browsers as well as multiple testing devices that I had available to me.",
     technologies:
-      "Vue JS, Scrollmagic, Greensock, Wordpress, Browserstack, Mobile/Tablet test devices",
+      "Vue.js, Scrollmagic, Greensock, Wordpress, Browserstack, Mobile/Tablet test devices",
     image1: "./images/growing-sql-site.jpg",
     image2: "./images/growing-sql-mobile.jpg",
     image3: "./images/growing-sql-server.gif",
@@ -68,7 +68,7 @@ const projects = [
       "I worked on localizing SAP Concur's online, self-guided walkthrough demo of their mobile app.",
     challenge:
       "For this project, the client tasked our team of developers to take the existing self-guided demo that had initially been created for American users and to give it the ability to reach their international customers. What this meant for us was taking the existing codebase and restructuring it so that it would be flexibile to take in all the languages required for this effort. My primary job was replacing existing hard-coded content into variables that would take in and display whatever localized language/content was called for in the build process of the project. Accomplishing this required setting up environment variables and a whole set of scripts to run for each locale depending on which one our team was working on. This was a truly unique project experience that taught me the value of always taking into consideration the fact that clients can change or add objectives to existing projects and to prepare for that at the start of the project is always beneficial.",
-    technologies: "Vue, Browserstack, Mobile/Tablet test devices, Babel Edit",
+    technologies: "Vue.js, Browserstack, Mobile/Tablet test devices, Babel Edit",
     image1: "./images/concur-demo-site.jpg",
     image2: "./images/concur-demo-mobile.jpg",
     image3: "./images/concur-demo.gif",
@@ -81,9 +81,9 @@ const projects = [
   {
     title: "Red Twig Cafe",
     description:
-      "I helped redesign and build a website for a local cafe roastery in Edmonds, WA using Vue JS",
-    challenge: "For this project...",
-    technologies: "stuff",
+      "A website for a local cafe roastery in Edmonds, WA",
+    challenge: "This is a simple Vue.js project that allows users to view Red Twig's rotational menu, order merchandise and even order take/out and delivery using a 3rd party integrated application. Part of our job in making this site was to make sure that it would be an easy experience for any outside or new developers to jump in and update as the cafe undergoes rotational menu items and merchandise. We decided that Vue's templating would help us achieve this well by componentizing as much of the site as possible and methodically structuring files and directories.",
+    technologies: "Vue.js, Node, Sass",
     image1: "./images/redtwig-site.jpg",
     image2: "./images/redtwig-mobile.jpg",
     image3: null,
@@ -91,7 +91,7 @@ const projects = [
     siteUrl: "https://www.redtwig.com",
     isApp: false,
     githubUrl: "",
-    stack: [skills.vue, skills.sass]
+    stack: [skills.vue, skills.sass, skills.node]
   }
 ];
 
