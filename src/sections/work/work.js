@@ -5,7 +5,7 @@ const projects = [
     title: "Tagpool",
     description:
       "An Instagram hashtag generator/management tool for iOS",
-    challenge: "For this project...",
+    challenge: "Tagpool was developed for the mobile platform and is a tool for Instagram users to assist in the optimization of their posts by generating relevant pools of hashtags that are managed and stored in the app. While as simple as it was to conceptualize, this was a unique challenge for me as it was one of the first times having to work closer with the backend data. I used X-state, a state management library, to scaffold the user-flows in this application and subsequently have learned how powerful it is to manage states in a very logical, uni-directional stream. Not only did it help me make structural decisions, the process of putting the flows together helps to avoid potential friction points that could've easily been overlooked.",
     technologies: "Svelte, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
     image1: "./images/tagpool_edited.jpg",
     image2: "./images/tagpool_mobile_screenshot.png",
