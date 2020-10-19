@@ -85,7 +85,7 @@ const projects = [
     title: "Red Twig Cafe",
     description:
       "A website for a local cafe roastery in Edmonds, WA",
-    challenge: "This is a simple Vue.js project that allows users to view Red Twig's rotational menu, order merchandise and even order take/out and delivery using a 3rd party integrated application. Part of our job in making this site was to make sure that it would be an easy experience for any outside or new developers to jump in and update as the cafe undergoes rotational menu items and merchandise. We decided that Vue's templating would help us achieve this well by componentizing as much of the site as possible and methodically structuring files and directories.",
+    challenge: "This is a simple Vue.js project that allows users to view Red Twig's rotational menu, order merchandise and even order take/out and delivery. Part of our job in making this site was to make sure that it would be an easy experience for any outside or new developers to jump in and update as the cafe undergoes rotational menu items and merchandise. We decided that Vue's templating would help us achieve this well by componentizing as much of the site as possible and methodically structuring files and directories.",
     technologies: "Vue.js, Node, Sass",
     image1: "./images/redtwig-site.jpg",
     image2: "./images/redtwig-mobile.jpg",
