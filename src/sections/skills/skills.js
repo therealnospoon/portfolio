@@ -25,6 +25,11 @@ export default {
       name: "Bootstrap",
       url: "https://getbootstrap.com/"
     },
+    cordova: {
+      image: "images/icons/cordova_128.png",
+      name: "Cordova",
+      url: "https://cordova.apache.org/"
+    },
     html: {
       image: "images/icons/html.png",
       name: "HTML",
@@ -144,5 +149,10 @@ export default {
       image: "images/icons/illustrator.png",
       name: "Illustrator",
       url: "https://www.adobe.com/products/illustrator.html"
-    }
+    },
+    xstate: {
+      image: "images/icons/xstatelogo.png",
+      name: "Xstate",
+      url: "https://xstate.js.org/docs/",
+    },
   };
