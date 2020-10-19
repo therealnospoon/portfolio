@@ -32,14 +32,8 @@
     skills.figma,
     skills.illustrator,
     skills.node,
+    skills.cordova,
   ];
-  // const designerTools = [
-  //   "Figma",
-  //   "Adobe Illustrator",
-  //   "Sketch",
-  //   "Invision",
-  //   "Adobe Photoshop"
-  // ];
 </script>
 
 <style type="text/scss">
