@@ -11,8 +11,9 @@ const projects = [
     image2: "./images/tagpool_mobile_screenshot.png",
     image3: "./images/tagpool_demo.gif",
     gifId: "gif5",
-    siteUrl: "https://www.redtwig.com",
+    siteUrl: "",
     isApp: true,
+    workLink: false,
     githubUrl: "",
     stack: [skills.svelte, skills.sass, skills.illustrator, skills.figma, skills.npm, skills.cordova, skills.xstate]
   },
@@ -29,6 +30,7 @@ const projects = [
     image3: "./images/growing-sql-server.gif",
     gifId: "gif1",
     siteUrl: "https://discover.microsoft.com/growing-sql-server/#/",
+    workLink: false,
     isApp: false,
     stack: [skills.vue, skills.sass, skills.wordpress]
   },
@@ -76,6 +78,7 @@ const projects = [
     siteUrl: "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
     isApp: false,
     githubUrl: "",
+    workLink: true,
     stack: [skills.vue, skills.sass]
   },
   {
@@ -89,6 +92,7 @@ const projects = [
     image3: null,
     gifId: "gif5",
     siteUrl: "https://www.redtwig.com",
+    workLink: true,
     isApp: false,
     githubUrl: "",
     stack: [skills.vue, skills.sass, skills.node]

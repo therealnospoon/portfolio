@@ -33,7 +33,6 @@
     skills.illustrator,
     skills.node,
     skills.cordova,
-    skills.xstate,
   ];
 </script>
 

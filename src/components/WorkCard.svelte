@@ -24,6 +24,7 @@
   export let isApp;
   export let stack;
   export let githubUrl;
+  export let workLink;
 
   function siteOpening() {
     dispatch("siteclick", {
@@ -243,6 +244,7 @@
             <p class="technologies">{technologies}</p>
             <div class="row">
                 <div class="col-12">
+                    {#if workLink}
                     <a href={siteUrl} target="_blank" class="site-btn">
                         {#if isApp}
                         <p class="m-0">View App</p>
@@ -250,6 +252,7 @@
                         <p class="m-0">Visit Site</p>
                         {/if}
                     </a>
+                    {/if}
                 </div>
                 {#if githubUrl}
                 <div class="col-12">
