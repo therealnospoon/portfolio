@@ -1,28 +1,39 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
-  "devDependencies": {
-    "rollup": "^1.12.0",
-    "rollup-plugin-alias": "^2.2.0",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-scss": "^1.0.2",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0",
-    "svelte-preprocess": "^3.2.0-alpha.2"
-  },
-  "dependencies": {
-    "sal.js": "^0.6.4",
-    "scroll-behavior-polyfill": "^2.0.13",
-    "sirv-cli": "^0.4.4",
-    "splitting": "^1.0.6"
-  },
+  "name": "website",
+  "version": "0.0.1",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev"
+    "dev": "dotenv -- svelte-kit dev --host",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "lint": "eslint --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^1.0.0-next.14",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.43",
+    "@sveltejs/adapter-node": "^1.0.0-next.0",
+    "@sveltejs/kit": "next",
+    "dotenv-cli": "^4.1.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "sass": "^1.49.0",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.2"
+  },
+  "type": "module",
+  "dependencies": {
+    "@solana/web3.js": "^1.32.0",
+    "@sveltejs/adapter-static": "^1.0.0-next.0",
+    "@taquito/beacon-wallet": "^11.1.0",
+    "@taquito/taquito": "^11.1.0",
+    "@temple-wallet/dapp": "^6.1.0",
+    "aos": "^3.0.0-beta.6",
+    "borsh": "^0.7.0",
+    "buffer": "^6.0.3",
+    "crypto-js": "^4.1.1",
+    "discord.js": "^13.6.0",
+    "lodash.chunk": "^4.2.0",
+    "node-fetch": "^3.2.0",
+    "puppeteer": "^13.1.2"
   }
 }
