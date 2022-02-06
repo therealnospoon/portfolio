@@ -34,6 +34,9 @@
     "discord.js": "^13.6.0",
     "lodash.chunk": "^4.2.0",
     "node-fetch": "^3.2.0",
-    "puppeteer": "^13.1.2"
+    "puppeteer": "^13.1.2",
+    "sal.js": "^0.8.5",
+    "scroll-behavior-polyfill": "^2.0.13",
+    "splitting": "^1.0.6"
   }
 }

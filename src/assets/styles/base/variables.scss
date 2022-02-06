@@ -1,0 +1,20 @@
+$background: #f8fafc;
+$primary: #454f5b;
+$cta: #0074e1;
+$linkhover: #ff004ca8;
+// $cta: #7cd3bc;
+// $linkhover: #0059bea9;
+// $cta: #9fedd7;
+// $linkhover: #fce181;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif;
