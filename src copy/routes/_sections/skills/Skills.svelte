@@ -37,7 +37,6 @@
 </script>
 
 <style lang="scss">
-@import "../../../assets/styles/main.scss";
 
   .section-wrapper {
     background-color: $background;

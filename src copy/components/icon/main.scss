@@ -1,5 +1,5 @@
 @import './base/';
-@import './bootstrap/bootstrap.scss';
+// @import './bootstrap/bootstrap.scss';
 
 // Used in utility builders and also sets base font size.
 $spacer: 16;
@@ -55,40 +55,3 @@ $spacer: 16;
     --box-shadow: -0.15rem -0.15rem 0.75rem 0.05rem rgb(0, 0, 0);
 }
 
-// Size controlled by icon.svelte
-.icon {
-    width: auto;
-    height: var(--icon-normal);
-
-    &[data-size="medium"] {
-        height: var(--icon-medium);
-    }
-
-    &[data-size="large"] {
-        height: var(--icon-large);
-    }
-
-    use[data-color="light"]  {
-        fill: var(--color-light-gray)
-    }
-
-    use[data-color="white"]  {
-        fill: var(--color-white)
-    }
-
-    use[data-color="dark"] {
-        fill: var(--color-black);
-    }
-
-    use[data-color="primary"] {
-        fill: var(--color-primary);
-    }
-
-    use[data-color="danger"] {
-        fill: var(--color-red);
-    }
-}
-
-.icon-cache {
-    display: none;
-}

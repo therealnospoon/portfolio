@@ -1,5 +1,5 @@
 <style lang="scss">
-@import "../../../assets/styles/main.scss";
+
   h5 {
     font-size: 1.3rem;
     line-height: 1.2;

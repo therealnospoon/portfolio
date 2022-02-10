@@ -1,5 +1,4 @@
 <style lang="scss">
-  @import "../../assets/styles/main.scss";
 
   :global(.gifPlaying) {
     opacity: 1 !important;

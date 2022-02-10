@@ -1,5 +1,5 @@
 <style lang="scss">
-@import "../../../assets/styles/main.scss";
+
   section {
     background: $background;
   }

@@ -1,0 +1,73 @@
+[
+    {
+    "title"       : "Art Generator",
+    "description" : "A tool for creating generative art",
+    "challenge"   : "bladaeeahlbja;lsejf;alskjdf.",
+    "technologies": "Sveltekit, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
+    "image"       : {
+        "static"    : "/images/studio/home.png", 
+        "animated"  : "", 
+        "slideshow" : ["/images/studio/home.png", "/images/studio/project.png", "/images/studio/attribute.png", "/images/studio/settings.png", "/images/studio/generate.png"],
+        "mobile"    : ""
+    },
+    "gifId": "gif5",
+    "siteUrl": "",
+    "isApp": true,
+    "workLink": false,
+    "githubUrl": "",
+    "stack": ["sveltekit", "sass", "figma", "npm", "node"]
+    },
+    {
+    "title"       : "Tagpool",
+    "description" : "An Instagram hashtag generator/management tool for iOS",
+    "challenge"   : "Tagpool was developed for iOS and is a tool that provides Instagram users an easy and convenient way to optimize hashtag utilization in their posts. This was my first time designing and building a mobile application myself and it was very satisfying to see my vision come together aesthetically and functionally. I used Xstate.js, a state management library, to architect as seamless a user-flow experience as possible. Through it all, I learned how powerful it is to manage states in a very logical, uni-directional stream while also avoiding potential user friction points.",
+    "technologies": "Svelte, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
+    "image"       : {
+        "static"    : "/images/tagpool_edited.jpg", 
+        "animated"  : "/images/tagpool_demo.gif", 
+        "slideshow" : [],
+        "mobile"    : "/images/tagpool_mobile_screenshot.png"
+    },
+    "gifId": "gif5",
+    "siteUrl": "",
+    "isApp": true,
+    "workLink": false,
+    "githubUrl": "",
+    "stack": ["svelte", "sass", "illustrator", "figma", "npm", "cordova", "xstate"]
+    },
+    {
+    "title": "Growing SQL Server (Microsoft)",
+    "description": "I helped create a production site for Microsoft that beautifully illustrates SQL Server's evolution throughout the years.",
+    "challenge": "This was a wonderfully designed experience that leveraged SVG capabilities and animation libraries to bring it to life. The challenging part of this project was choosing the best implemententation of the SVG drawing and the background animations while maintaining cross-browser compatibility and responsiveness. The primary developers on this site used the Scrollmagic library paired with Greensock animations to achieve this unique functionality. My role on this site was making sure the site was tested vigorously across IE, Edge and multiple mobile/tablet. Due to the nature of SVGs and animation libraries, testing for cross-browser compatibility and reponsiveness is extremely important. I was able to complete testing using various browsers as well as multiple testing devices that I had available to me.",
+    "technologies": "Vue.js, Scrollmagic, Greensock, Wordpress, Browserstack, Mobile/Tablet test devices",
+    "image"       : {
+        "static"    : "/images/growing-sql-site.jpg", 
+        "animated"  : "/images/growing-sql-server.gif", 
+        "slideshow" : [],
+        "mobile"    : "/images/growing-sql-mobile.jpg"
+    },
+    "gifId": "gif1",
+    "siteUrl": "https://discover.microsoft.com/growing-sql-server/#/",
+    "workLink": false,
+    "isApp": false,
+    "stack": ["vue", "sass", "wordpress"]
+    },
+    {
+    "title": "Self-Guided Demo (SAP Concur)",
+    "description": "I worked on localizing SAP Concur's online, self-guided walkthrough demo of their mobile app.",
+    "challenge": "For this project, the client tasked our team of developers to take the existing self-guided demo that had initially been created for American users and to give it the ability to reach their international customers. What this meant for us was taking the existing codebase and restructuring it so that it would be flexibile to take in all the languages required for this effort. My primary job was replacing existing hard-coded content into variables that would take in and display whatever localized language/content was called for in the build process of the project. Accomplishing this required setting up environment variables and a whole set of scripts to run for each locale depending on which one our team was working on. This was a truly unique project experience that taught me the value of always taking into consideration the fact that clients can change or add objectives to existing projects and to prepare for that at the start of the project is always beneficial.",
+    "technologies": "Vue.js, Browserstack, Mobile/Tablet test devices, Babel Edit",
+    "image"       : {
+        "static"    : "/images/concur-demo-site.jpg", 
+        "animated"  : "/images/concur-demo.gif", 
+        "slideshow" : [],
+        "mobile"    : "/images/concur-demo-mobile.jpg"
+    },
+    "gifId": "gif4",
+    "siteUrl": "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
+    "isApp": false,
+    "githubUrl": "",
+    "workLink": true,
+    "stack": ["vue", "sass"]
+    }
+]
