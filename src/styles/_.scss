@@ -29,7 +29,7 @@ $spacer: 16;
 
     // Text
     --base-font-size: #{$spacer}px;
-    // --font-family: 'Poppins', sans-serif;
+    --font-family: 'Poppins', sans-serif;
     // --font-regular: 300;
     // --font-medium: 400;
     // --font-bold: 500;
@@ -99,6 +99,9 @@ h4 {
 
 h5 {
     font-size: 1.7rem;
+    @media only screen and (min-width: 576px) {
+        font-size: 2rem ;
+    }
 }
 
 p {
@@ -110,7 +113,7 @@ p {
 }
 
 html, body {
-    background-color: var(--color-background) !important;
+    background-color: var(--color-background);
     scroll-behavior: smooth;
     position: relative;
 }

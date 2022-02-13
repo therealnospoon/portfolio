@@ -158,5 +158,10 @@
       "image": "images/icons/xstatelogo.png",
       "name": "Xstate",
       "url": "https://xstate.js.org/docs/"
+    },
+    "python": {
+      "image": "images/icons/pythonlogo.png",
+      "name": "Python",
+      "url": "https://docs.python.org/3/"
     }
 }

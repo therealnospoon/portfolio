@@ -1,5 +1,5 @@
 <div class="container" id="work">
-    <div class="col-12 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center mb-5">
         <h2>Recent Work</h2>
     </div>
     {#each projects as project}
@@ -11,10 +11,10 @@
     {/each}
 </div>
 
-<style>
-.row {
-    margin-bottom: 15rem;
-}
+<style lang="scss">
+    .row {
+        margin-bottom: 3rem;
+    }
 </style>
 
 

@@ -4,6 +4,7 @@
         max-width: 620px;
         display: flex;
         align-items: center;
+        padding: 0 2.5rem;
     }
     .avatar {
         height:8rem;
@@ -11,15 +12,25 @@
         border-radius: 50%;
         margin: auto;
     }
-    .hello-there {
-        font-size: 5rem !important;
-    }
     .recent-work-btn {
         text-decoration: none;
         appearance: none;
-        font-size: 2rem;
+        font-size: 1.7rem;
+        margin-left: -.6rem;
+        background: transparent;
         color: var(--color-primary);
+        @media only screen and (min-width: 576px) {
+            font-size: 2rem ;
+        }
     }
+
+    .hello-there {
+       font-size: 3.5rem;
+        @media only screen and (min-width: 576px) {
+            font-size: 5rem ;
+        }
+    }
+
 </style>
 
 <div class="container intro-wrapper">
@@ -28,7 +39,7 @@
             <img class="avatar" src="/images/profile_pic.jpg" alt="timothy kim"/>
             <div class="intro-text-wrapper">
                 <h1 class="hello-there mt-5 mb-4">Hi, I'm Tim</h1>
-                <h5>I'm a UI developer and designer from Seattle, WA. I enjoy UX research and building applications that are a joy to use. <br><br></h5>
+                <h5>I'm a UI developer and designer from Seattle, WA. I like building enjoyable applications. <br><br></h5>
                 <h5>See my <a href="#work" class="recent-work-btn button button-underline">Recent Work</a></h5>
             </div>
         </div>

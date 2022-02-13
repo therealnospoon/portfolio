@@ -5,11 +5,9 @@
         top: 1rem;
         right: 0;
         z-index: 6;
-        overflow: hidden;
-        transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        // @media only screen and (min-width: 768px) {
-        //     top: 0;
-        // }
+        @media only screen and (min-width: 576px) {
+            transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
         .button {
             margin: 1rem 1rem 0 0;
         }
@@ -39,19 +37,23 @@
         cursor: pointer;
         position: relative;
         transform: rotate(180deg);
-        transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        transform 500ms ease-in-out, opacity 250ms linear;
-        @media only screen and (max-width: 576px) {
-        // top: .25rem;
+        top: .25rem;
+        @media only screen and (min-width: 576px) {
+            top: 0;
+            transition: right 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            transform 500ms ease-in-out, opacity 250ms linear;
         }
 
         .hamburger-box {
             display: block;
             position: absolute;
-            top: -7px;
-            left: -5px;
             cursor: pointer;
             z-index: 2;
+
+            @media only screen and (min-width: 576px) {
+                top: -7px;
+            left: -5px;
+            }
 
             &.fullmenu {
                 .span3 {
@@ -133,7 +135,6 @@
     }
     .blue-circle {
         --blue-scale: 0;
-
         width: 100vw;
         height: 100vh;
         border-radius: 50%;
@@ -151,6 +152,8 @@
     }
 
 </style>
+
+<svelte:window bind:innerWidth />
 
 <IntersectionObserver on:event={intersectionHandler} >
 <nav 
@@ -235,15 +238,31 @@ class:showHamburger={$showHamburger}
 
 <script>
 import IntersectionObserver from "$components/intersection-observer.svelte";
-import showHamburger from "/src/components/showHamburger.js";
+import { showHamburger } from "/src/components/navStore.js";
 import { quintInOut } from "svelte/easing";
 import { fly } from "svelte/transition";
+import { onMount } from "svelte";
 
 let menuOpen = false;
+let innerWidth;
 
-const toggleMenu = () => (menuOpen = !menuOpen);
+const toggleMenu = () => { 
+    menuOpen = !menuOpen
+    
+    if (menuOpen) {
+        document.body.style.overflowY = "hidden";
+    } else {
+        document.body.style.overflowY = "scroll";
+    }
+
+};
 
 const intersectionHandler = ({ detail }) => $showHamburger = !detail.isIntersecting;
 
+onMount(() => {
+    if (innerWidth < 576) {
+        $showHamburger = true;
+    }
+})
 </script>
 
