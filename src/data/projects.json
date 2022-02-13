@@ -1,23 +1,5 @@
 [
     {
-    "title"       : "Art Generator",
-    "description" : "A tool for creating generative art",
-    "challenge"   : "bladaeeahlbja;lsejf;alskjdf.",
-    "technologies": "Sveltekit, Sass, Adobe Illustrator, Figma, Node, Cordova, Xstate, XCR",
-    "image"       : {
-        "static"    : "/images/studio/home.png", 
-        "animated"  : "", 
-        "slideshow" : ["/images/studio/home.png", "/images/studio/project.png", "/images/studio/attribute.png", "/images/studio/settings.png", "/images/studio/generate.png"],
-        "mobile"    : ""
-    },
-    "gifId": "gif5",
-    "siteUrl": "",
-    "isApp": true,
-    "workLink": false,
-    "githubUrl": "",
-    "stack": ["sveltekit", "sass", "figma", "npm", "node"]
-    },
-    {
     "title"       : "Tagpool",
     "description" : "An Instagram hashtag generator/management tool for iOS",
     "challenge"   : "Tagpool was developed for iOS and is a tool that provides Instagram users an easy and convenient way to optimize hashtag utilization in their posts. This was my first time designing and building a mobile application myself and it was very satisfying to see my vision come together aesthetically and functionally. I used Xstate.js, a state management library, to architect as seamless a user-flow experience as possible. Through it all, I learned how powerful it is to manage states in a very logical, uni-directional stream while also avoiding potential user friction points.",
@@ -28,9 +10,7 @@
         "slideshow" : [],
         "mobile"    : "/images/tagpool_mobile_screenshot.png"
     },
-    "gifId": "gif5",
     "siteUrl": "",
-    "isApp": true,
     "workLink": false,
     "githubUrl": "",
     "stack": ["svelte", "sass", "illustrator", "figma", "npm", "cordova", "xstate"]
@@ -46,10 +26,8 @@
         "slideshow" : [],
         "mobile"    : "/images/growing-sql-mobile.jpg"
     },
-    "gifId": "gif1",
     "siteUrl": "https://discover.microsoft.com/growing-sql-server/#/",
     "workLink": false,
-    "isApp": false,
     "stack": ["vue", "sass", "wordpress"]
     },
     {
@@ -63,11 +41,25 @@
         "slideshow" : [],
         "mobile"    : "/images/concur-demo-mobile.jpg"
     },
-    "gifId": "gif4",
     "siteUrl": "https://www.concur.fr/self-guided-demo-expense-fr-fr#/",
-    "isApp": false,
     "githubUrl": "",
     "workLink": true,
     "stack": ["vue", "sass"]
+    },
+    {
+        "title"       : "Generative art maker",
+        "description" : "I built a GUI for creating generative art using Sveltekit",
+        "challenge"   : "For this project, I aimed to provide artists and creatives a tool to facilitate quick and easy generation of art with a fresh aesthetic. Keeping in mind that the goal was to help artists quickly build collections of generated art, the focus for this project was creating an enjoyable experience in what could be a tedious process involving lots of moving parts. Essentially, I helped design and build a workflow that would allow the artist to have concise and pleasant interactions with the tool to generate their art collections.",
+        "technologies": "Sveltekit, Sass, Figma, Node, Xstate, XCR",
+        "image"       : {
+            "static"    : "/images/studio/home.png", 
+            "animated"  : "", 
+            "slideshow" : ["/images/studio/home.png", "/images/studio/project.png", "/images/studio/attribute.png", "/images/studio/settings.png", "/images/studio/generate.png"],
+            "mobile"    : ""
+        },
+        "siteUrl": "",
+        "workLink": false,
+        "githubUrl": "",
+        "stack": ["sveltekit", "sass", "figma", "npm", "node"]
     }
 ]
