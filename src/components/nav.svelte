@@ -72,7 +72,6 @@
                 }
             }
         }
-       
         span {
             display: block;
             width: 33px;
@@ -95,8 +94,6 @@
             }
         }
     }
-
-
     .full-menu {
         position: fixed;
         opacity: 1;
@@ -123,13 +120,11 @@
             border-radius: 2px;
             text-align: center;
             cursor: pointer;
-            font-size: 2.5rem !important;
-            font-family: "Playfair Display", serif;
-            font-weight: 900;
+            font-size: 2.4rem;
             letter-spacing: .01em;
             background: transparent;
             @media only screen and (min-width: 576px) {
-            font-size: 4rem !important;
+            font-size: 4rem;
             }
         }
     }
@@ -143,14 +138,13 @@
         right: 0;
         background-color: var(--color-primary);
         transform: translate(50%, -50%) scale(var(--blue-scale));
-        transition: transform 400ms ease-in-out;
+        transition: transform 500ms linear;
         transform-origin: top center;
 
         &.active {
             --blue-scale: 6;
         }
     }
-
 </style>
 
 <svelte:window bind:innerWidth />
